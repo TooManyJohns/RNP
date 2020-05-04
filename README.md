@@ -7,4 +7,12 @@ It's using ReactNative version 2.18, and will be primarily tested on iOS Mobile 
 
 # To run the app:
 The Current Project Scope is focused on iOS as I'm on limited time to do this project. If time permits I will try and branch out to other platforms on 10ft and android devices.
-react-native run-ios
+
+
+$ yarn install
+
+Start the bundling Server in ../RNProject:
+
+$ yarn start
+
+$ react-native run-ios

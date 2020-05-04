@@ -1,11 +1,17 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 
 import {
   View,
   Text,
   StyleSheet,
-  TextInput
+  TextInput,
+  ScrollView,
+  FlatList
 } from 'react-native'
+
+import Header from 'components/Header'
+
+import IndexBox from 'components/IndexBox'
 
 /*
 Contains:
@@ -13,44 +19,52 @@ name: Name of Pokemon
 no: Pokedex Number of that Pokemon
 This is hardcoded for now, later will be taken from an api on the web.
 */
-const pokemon = [
+const pokemonList = [
   {name: 'Bulbasaur', no: '1'},
   {name: 'Ivysaur', no: '2'},
   {name: 'Venesaur', no: '3'},
-  {name: 'Squirtle', no: '4'},
-  {name: 'Warturtle', no: '5'},
+  {name: 'Charmander', no: '4'},
+  {name: 'Charmeleon', no: '5'},
 ]
 
 
 export default class App extends Component {
+
+  state = {
+    search: null
+  }
+
   render() {
+
+    console.log("search: ", this.state.search)
     return (
       <View style={{
         flex: 1
         //backgroundColor: 'orange', //#E83030 for menu
       }}>
-        <Text style={styleSelect.header}>RNDex</Text>
-
-        <TextInput style={styleSelect.input}></TextInput>
-
-        <View style={styleSelect.gridView}>
-          {
-            pokemon.map((pokemon) => {
-              return (
-                <View key={pokemon.name} style={styleSelect.indexContainer}> 
-                  <View>
-                    <Text style={styleSelect.gridIndexNo}>
-                      {pokemon.no}
-                    </Text>
-                    <Text style={{textAlign: 'center'}}> 
-                      {pokemon.name}.png
-                    </Text>
-                  </View>
-                </View>
-              )
+      <Header />
+        <TextInput 
+        style={styleSelect.input}
+        placeholder ="Pokemon Name"
+        onChangeText={text => {
+          this.setState({ search: text})
+        }}
+        value={this.state.search}
+        ></TextInput>
+        <FlatList 
+          data={           
+            pokemonList.filter(pokeIndex => {      
+              return !this.state.search ||     
+              pokeIndex.name.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1
             })
-          }
-        </View>
+          } 
+          renderItem={({item}) => 
+          <IndexBox pokeIndex={item} />
+          } 
+          keyExtractor={item => item.name}
+          initialNumToRender = {30} //amount of items to render at a time
+          numColumns= {5}
+        />
       </View>
     );
   }
@@ -59,35 +73,16 @@ export default class App extends Component {
 
 const styleSelect = StyleSheet.create({
   //Title of Project
-  header: {
-    padding: 40, //allows for text wrapping around a screen
-    fontSize: 30,
-    textAlign: 'center',
-    color: 'grey',
-    fontWeight: '300',
-  }, 
   //Grid of Pokemon Map out in View
-  gridView: {
-    flexDirection: 'row',
-    alignItems:'center',
-  },
-  indexContainer:{
-    flex: 1, //now all pokemon containers on grid will take up even amount of space
-  },
-  //Index number text
-  gridIndexNo: {
-    textAlign: 'center',
-    color: 'grey',
-  },
   input: {
-    marginBottom: 30,
+    marginBottom: 0,
     padding: 10,
     paddingHorizontal: 20,
     fontSize: 16,
     color: '#444',
     borderBottomWidth: 1,
     borderColor: '#ddd',
-    backgroundColor: 'grey'
+    backgroundColor: '#F5F5F5'
   }
 
 })
