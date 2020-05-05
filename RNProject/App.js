@@ -6,12 +6,13 @@ import {
   StyleSheet,
   TextInput,
   ScrollView,
-  FlatList
+  FlatList,
 } from 'react-native'
 
 import Header from 'components/Header'
 
 import IndexBox from 'components/IndexBox'
+
 
 /*
 Contains:
@@ -20,11 +21,34 @@ no: Pokedex Number of that Pokemon
 This is hardcoded for now, later will be taken from an api on the web.
 */
 const pokemonList = [
-  {name: 'Bulbasaur', no: '1'},
-  {name: 'Ivysaur', no: '2'},
-  {name: 'Venesaur', no: '3'},
-  {name: 'Charmander', no: '4'},
-  {name: 'Charmeleon', no: '5'},
+  {name: 'Bulbasaur', no: '001'},
+  {name: 'Ivysaur', no: '002'},
+  {name: 'Venesaur', no: '003'},
+  {name: 'Charmander', no: '004'},
+  {name: 'Charmeleon', no: '005'},
+  {name: 'Charizard', no: '006'},
+  {name: 'Squirtle', no: '007'},
+  {name: 'Warturtle', no: '008'},
+  {name: 'Blastoise', no: '009'},
+  {name: 'Caterpie', no: '010'},
+  {name: 'Metapod', no: '011'},
+  {name: 'Butterfree', no: '012'},
+  {name: 'Weedle', no: '013'},
+  {name: 'Kakuna', no: '014'},
+  {name: 'Beedrill', no: '015'},
+  {name: 'Pidgey', no: '016'},
+  {name: 'Pidgeotto', no: '017'},
+  {name: 'Pidgeot', no: '018'},
+  {name: 'Rattata', no: '019'},
+  {name: 'Raticate', no: '020'},
+  {name: 'Spearow', no: '021'},
+  {name: 'Fearow', no: '022'},
+  {name: 'Ekans', no: '023'},
+  {name: 'Arbok', no: '019'},
+  {name: 'Pikachu', no: '020'},
+  {name: 'Raichu', no: '021'},
+  {name: 'Sandshrew', no: '022'},
+  {name: 'Sandslash', no: '023'},
 ]
 
 
