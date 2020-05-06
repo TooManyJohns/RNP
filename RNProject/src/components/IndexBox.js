@@ -7,8 +7,6 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity,
-    TouchableHighlight,
-    TouchableWithoutFeedback,
     Image
 } from 'react-native'
 
@@ -18,10 +16,6 @@ export default class IndexBox extends Component {
       showInfo: false
     }
 
-    infoPressed = () => {
-      this.setState({showInfo: !this.state.showInfo})
-    }
-
     render() {
         const {
             pokeIndex
@@ -29,7 +23,7 @@ export default class IndexBox extends Component {
 
         return (
             <View key={pokeIndex.name} style={styles.indexContainer}> 
-            <TouchableOpacity onPress = {this.infoPressed} style={styles.gridIndexButton}>
+            <TouchableOpacity style={styles.gridIndexButton}>
             <View style={styles.imgPokeball}>            
               <Image source = {img_gPokeball} style={styles.imgPokeball} resizeMode="contain" />
             </View>
@@ -43,34 +37,32 @@ export default class IndexBox extends Component {
             </View>
             </TouchableOpacity>
           </View>
-          
         )
     }
 }
 
 const styles = StyleSheet.create ({
-
-    indexContainer:{ //how the containers of the pokemon on the grid will be stylized, (reminder: don't add flex, will break searching)
-        flexDirection: 'row',
-        padding:10,
-        alignContent: 'flex-start',
-      },
-      gridIndexNo: { //style of index number text
-        textAlign: 'right',
-        color: 'grey',
-      },
-      gridIndexSpr: { //will eventually be the style of the image of the pokemon sprites
-          textAlign: 'center',
-      },
-      gridIndexButton: {
-        borderWidth: 1,
-        borderColor: 'grey',
-        borderRadius: 2,
-        width: 55,
-        height: 55
-      },
-      imgPokeball: {
-        width: 10,
-        height: 10
-      }
+  indexContainer:{ //how the containers of the pokemon on the grid will be stylized, (reminder: don't add flex, will break searching)
+    flexDirection: 'row',
+    padding:10,
+    alignContent: 'flex-start',
+  },
+  gridIndexNo: { //style of index number text
+    textAlign: 'right',
+      color: 'grey',
+  },
+  gridIndexSpr: { //will eventually be the style of the image of the pokemon sprites
+    textAlign: 'center',
+  },
+  gridIndexButton: {
+    borderWidth: 1,
+    borderColor: 'grey',
+    borderRadius: 2,
+    width: 55,
+    height: 55
+    },
+  imgPokeball: {
+    width: 10,
+    height: 10
+  }
 })
