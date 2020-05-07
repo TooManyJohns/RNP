@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-import img_gPokeball from 'assets/grid_Pokeball.png'
+import img_gPokeball from 'assets/grid/grid_Pokeball.png'
 
 import {
     View,
