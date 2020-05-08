@@ -4,7 +4,7 @@ import { View, StyleSheet, TextInput, FlatList } from "react-native";
 
 import Header from "components/Header";
 import IndexBox from "components/IndexBox";
-import GridBackground from "components/GridBackground";
+import GridHeader from "components/GridProfileHeader";
 
 /*
 Contains:
@@ -57,7 +57,7 @@ export default class App extends Component {
           //backgroundColor: 'orange', //#E83030 for menu
         }}
       >
-        <GridProfileHeader />
+        <GridHeader />
         <TextInput
           style={styleSelect.input}
           placeholder="Pokemon Name"
