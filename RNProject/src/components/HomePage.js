@@ -18,7 +18,7 @@ export default class HomePage extends Component {
     render () {
         const { navigate } = this.props.navigation;
 
-        infoPressed = () => {
+        menuPressed = () => {
             //this.props.navigate('Info')
             this.props.navigation.navigate('Info')
         }

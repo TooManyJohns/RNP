@@ -1,7 +1,7 @@
 # RNP
 
-This is a ReactNative training project for myself that will be worked on throughout the Summer of 2020.
-It's purpose is to re-create the Pokedex Application from HeartGold/Soulsilver as a fun exercise to get me aquainted with the framework.
+This is a React + ReactNative training project for myself that will be worked on throughout the Summer of 2020.
+It's purpose is to re-create the Pokedex Application from HeartGold/Soulsilver as a fun exercise to get me aquainted with them.
 
 ~~Versions (note for myself)~~
 "react": "16.11.0",
