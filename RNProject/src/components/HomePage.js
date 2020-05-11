@@ -16,27 +16,6 @@ import {
 } from 'react-native'
 
 export default class HomePage extends Component {
-
-
-    state = {
-        pokemon: null
-    }
-
-    componentDidMount() {
-        db.collection('test')
-        .get()
-        .then( snapshot => {
-            const testList = []
-            snapshot.forEach(doc => {
-                const data = doc.data();
-                testList.push(data);
-            })
-            this.setState({pokemon: testList})
-        })
-        .catch (error => console.log(error))
-    }
-
-
     render () {
         const { navigate } = this.props.navigation;
 
@@ -44,7 +23,6 @@ export default class HomePage extends Component {
             //this.props.navigate('Info')
             this.props.navigation.navigate('Info')
         }
-
         return (
             // Menu Buttons { Search, Open, Quit }
             <View style={styleHomePage.container}>
@@ -66,16 +44,6 @@ export default class HomePage extends Component {
                 </TouchableOpacity>
                 </View>
             </View>
-
-            {
-                this.state.pokemon &&
-                this.state.pokemon.map( pokemon => {
-                    return (
-                    <Text>{pokemon.name}</Text>
-                    )
-                })
-            }
-
             </View>
         )
     }

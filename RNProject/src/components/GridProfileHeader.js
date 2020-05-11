@@ -33,7 +33,7 @@ export default class GridProfileHeader extends Component {
               <View style={styleSelect.titleCard}>
                 <View style={styleSelect.indexName}>
                   <Text style={styleSelect.boldText}>
-                    {pkmn.no + "     " + pkmn.name}
+                    {pkmn.index + "     " + pkmn.name}
                   </Text>
                 </View>
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {db, auth} from '/Users/John/github/RNP/RNProject/index.js';
 
 import img_gPokeball from "assets/grid/grid_Pokeball.png";
 
@@ -23,17 +23,44 @@ no: Pokedex Number of that Pokemon
 This is hardcoded for now, later will be taken from an api on the web.
 */
 const pokemonList = [
-  { name: "Bulbasaur", no: "001" },
-  { name: "Ivysaur", no: "002" },
-  { name: "Venesaur", no: "003" },
+  { name: "Bulbasaur", index: "001" },
 ];
 
 export default class App extends Component {
-  state = {
-    search: null,
-    showInfo: false,
-    pokeSelected: pokemonList[0], //default it to the first pokemon in the list that gets displayed on initial rendering!
-  };
+
+
+  constructor() {
+    super();
+    this.state = {
+       pokemon: [],
+       search: null,
+       showInfo: false,
+       pokeSelected: pokemonList[0],
+    };
+ }
+
+ componentDidMount() {
+    this.unsubscribe = db.collection('pokedex').onSnapshot(this.getCollection);
+ }
+
+ componentWillUnmount() {
+    this.unsubscribe();
+ }
+
+ getCollection = querySnapshot => {
+    const testList = [];
+    querySnapshot.forEach(res => {
+       const { name, index} = res.data();
+       testList.push({
+          key: res.id,
+        name,
+        index
+       });
+    });
+    this.setState({
+       pokemon: testList
+    });
+ };
 
   indexClicked = (pkmn) => {
     this.setState({ showInfo: !this.state.showInfo });
@@ -46,7 +73,6 @@ export default class App extends Component {
       <View
         style={{
           flex: 1,
-          //backgroundColor: 'orange', //#E83030 for menu
         }}
       >
         <GridHeader pkmn = {this.state.pokeSelected}/>
@@ -59,7 +85,7 @@ export default class App extends Component {
           value={this.state.search}
         ></TextInput>
         <FlatList
-          data={pokemonList.filter((pokeIndex) => {
+          data={this.state.pokemon.filter((pokeIndex) => {
             return (
               !this.state.search ||
               pokeIndex.name
@@ -81,7 +107,7 @@ export default class App extends Component {
                   />
                 </View>
                 <View>
-                  <Text style={styles.gridIndexNo}>{item.no}</Text>
+                  <Text style={styles.gridIndexNo}>{item.index}</Text>
                   <Text style={styles.gridIndexSpr}>{item.name}.image</Text>
                 </View>
               </TouchableOpacity>
