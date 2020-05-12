@@ -23,7 +23,7 @@ export default class GridProfileHeader extends Component {
           <View style={styleSelect.pokeSprite}>
             <Image
               style={styleSelect.imageContainer}
-              source={img_TestSprite}
+              source={{ uri: pkmn.profSprite }}
             ></Image>
           </View>
 

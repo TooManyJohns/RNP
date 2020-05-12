@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {db} from '/Users/John/github/RNP/RNProject/index.js';
+import { db } from "/Users/John/github/RNP/RNProject/index.js";
 
 import img_gPokeball from "assets/grid/grid_Pokeball.png";
 
@@ -14,7 +14,6 @@ import {
 } from "react-native";
 
 import GridHeader from "components/GridProfileHeader";
-import img_TestSprite from "assets/grid/profile/sprTest.png";
 
 /*
 Contains:
@@ -22,62 +21,64 @@ name: Name of Pokemon
 no: Pokedex Number of that Pokemon
 This is hardcoded for now, later will be taken from an api on the web.
 */
-const pokemonList = [
-  { name: "Bulbasaur", index: "001", profSprite: 'img_TestSprite' },
-];
+const beforeLoad = [{ name: "Bulbasaur", index: "001", profSprite: undefined }];
 
 export default class App extends Component {
-
-
   constructor() {
     super();
     this.state = {
-       pokemon: [],
-       search: null,
-       showInfo: false,
-       pokeSelected: pokemonList[0],
+      pokemon: [],
+      search: null,
+      showInfo: false,
+      pokeSelected: beforeLoad[0],
+      isLoading: true,
     };
- }
+  }
 
- componentDidMount() {
-    this.unsubscribe = db.collection('pokedex').onSnapshot(this.getCollection);
- }
+  componentDidMount() {
+    this.unsubscribe = db.collection("pokedex").onSnapshot(this.getCollection);
+  }
 
- componentWillUnmount() {
+  componentWillUnmount() {
     this.unsubscribe();
- }
+  }
 
- getCollection = querySnapshot => {
+  getCollection = (querySnapshot) => {
     const testList = [];
-    querySnapshot.forEach(res => {
-       const { name, index, profSprite} = res.data();
-       testList.push({
-          key: res.id,
+    querySnapshot.forEach((res) => {
+      const { name, index, profSprite } = res.data();
+      testList.push({
+        key: res.id,
         name,
         index,
-        profSprite
-       });
+        profSprite,
+      });
     });
     this.setState({
-       pokemon: testList
+      pokemon: testList,
+      isLoading: false,
     });
-    console.log('Just took data from Firestore!')
- };
+    console.log("Just took data from Firestore!");
+  };
 
   indexClicked = (pkmn) => {
     this.setState({ showInfo: !this.state.showInfo });
-    this.setState({ pokeSelected: pkmn});
+    this.setState({ pokeSelected: pkmn });
   };
 
   render() {
+    const { isLoading } = this.state;
+
     console.log("search: ", this.state.search);
-    return (
+    return isLoading ? (
+      <Text>loading...</Text>
+    ) : (
       <View
         style={{
           flex: 1,
         }}
       >
-        <GridHeader pkmn = {this.state.pokeSelected}/>
+        <GridHeader pkmn={this.state.pokeSelected} />
         <TextInput
           style={styleSelect.input}
           placeholder="Pokemon Name"
