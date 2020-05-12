@@ -3,6 +3,7 @@ import { db } from "/Users/John/github/RNP/RNProject/index.js";
 
 import img_gPokeball from "assets/grid/grid_Pokeball.png";
 
+
 import {
   View,
   StyleSheet,
@@ -11,12 +12,13 @@ import {
   TouchableOpacity,
   Image,
   Text,
+  ImageBackground
 } from "react-native";
 
 import GridHeader from "components/GridProfileHeader";
 
 //before we load the asset, just incase (will remove later)
-const beforeLoad = [{ name: "Bulbasaur", index: "001", profSprite: undefined }];
+const beforeLoad = [{ name: "Bulbasaur", index: "001", profSprite: undefined, gridSprite: undefined, desc: ""}];
 
 export default class App extends Component {
   constructor() {
@@ -41,12 +43,14 @@ export default class App extends Component {
   getCollection = (querySnapshot) => {
     const testList = [];
     querySnapshot.forEach((res) => {
-      const { name, index, profSprite } = res.data();
+      const { name, index, profSprite, indexSprite, desc } = res.data();
       testList.push({
         key: res.id,
         name,
         index,
         profSprite,
+        indexSprite,
+        desc
       });
     });
     this.setState({
@@ -84,6 +88,7 @@ export default class App extends Component {
           }}
           value={this.state.search}
         ></TextInput>
+        <View style={styles.gridContainer}>
         <FlatList
           data={this.state.pokemon.filter((pokeIndex) => {
             return (
@@ -97,19 +102,25 @@ export default class App extends Component {
             <View key={item.name} style={styles.indexContainer}>
               <TouchableOpacity
                 onPress={() => this.indexClicked(item)}
-                style={styles.gridIndexButton}
+                style={styles.buttonContainer}
               >
-                <View style={styles.imgPokeball}>
-                  <Image
-                    source={img_gPokeball}
-                    style={styles.imgPokeball}
-                    resizeMode="contain"
-                  />
+                <View style={styles.topIndex}>
+                  <View style = {styles.topLeftIndexContainer}>
+                <Image source={img_gPokeball} style={styles.pkbSpr}>
+                </Image>
                 </View>
-                <View>
-                  <Text style={styles.gridIndexNo}>{item.index}</Text>
-                  <Text style={styles.gridIndexSpr}>{item.name}.image</Text>
+                <View style ={styles.topRightIndexContainer}>
+                   <Text> {item.index}</Text>
+                   </View>
                 </View>
+                <View style= {styles.bottomIndex}>
+                  <View style = {styles.sprIndexContainer}>
+                  <Image style={ styles.sprIndex} source = {{ uri: item.indexSprite }}>
+
+                  </Image>
+                  </View>
+                </View>
+
               </TouchableOpacity>
             </View>
           )}
@@ -117,6 +128,7 @@ export default class App extends Component {
           initialNumToRender={30} //amount of items to render at a time
           numColumns={5}
         />
+        </View>
       </View>
     );
   }
@@ -134,34 +146,65 @@ const styleSelect = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: "#ddd",
     backgroundColor: "#F5F5F5",
+    paddingBottom:10,
   },
 });
 
 const styles = StyleSheet.create({
+  gridContainer:{
+    flex:1,
+    //backgroundColor: 'blue'
+  },
   indexContainer: {
     //how the containers of the pokemon on the grid will be stylized, (reminder: don't add flex, will break searching)
     flexDirection: "row",
-    padding: 10,
     alignContent: "flex-start",
+    backgroundColor: "white",
+    borderWidth: 3,
+    borderColor: "lightgrey",
+    width: 50,
+    height: undefined,
+    aspectRatio: 1/1,
+    flex: 1,
   },
-  gridIndexNo: {
-    //style of index number text
-    textAlign: "right",
-    color: "grey",
+  buttonContainer: {
+    flex: 1,
+   // backgroundColor: '#92BBD9',
   },
-  gridIndexSpr: {
-    //will eventually be the style of the image of the pokemon sprites
-    textAlign: "center",
+  topIndex:{
+    flex:1,
+    flexDirection: "row",
   },
-  gridIndexButton: {
-    borderWidth: 1,
-    borderColor: "grey",
-    borderRadius: 2,
-    width: 55,
-    height: 55,
+  topLeftIndexContainer: {
+    flex:1
   },
-  imgPokeball: {
-    width: 10,
-    height: 10,
+  topRightIndexContainer: {
+    flex:3,
+    alignItems: "center",
+    justifyContent: "center",
   },
+  bottomIndex:{
+    flex:2,
+  },
+  pkbSpr: {
+    alignContent: "center",
+    height: undefined,
+    width: "100%",
+    aspectRatio: 102 / 116,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  sprIndexContainer: {
+    alignContent: "center",
+    //backgroundColor:'red', 
+    flex:1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  sprIndex: {
+    height: undefined,
+    width: "100%",
+    aspectRatio: 1 / 1,
+    flex:1
+  }
 });

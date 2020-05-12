@@ -68,7 +68,7 @@ export default class GridProfileHeader extends Component {
         <View style={styleSelect.footerContainer}>
           <View style={styleSelect.descContainer}>
             <View style={styleSelect.desc}>
-              <Text>Pokemon Description Here</Text>
+              <Text>{pkmn.desc}</Text>
             </View>
           </View>
         </View>
@@ -204,8 +204,9 @@ const styleSelect = StyleSheet.create({
     //backgroundColor: 'brown',
   },
   desc: {
-    backgroundColor: "white",
+    //backgroundColor: "blue",
     height: "100%",
     width: "100%",
+    marginBottom: -10
   },
 });
