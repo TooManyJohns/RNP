@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import { db, auth } from "/Users/John/github/RNP/RNProject/index.js";
 //assets
 import img_titleBackground from "assets/home/homeTEST.png";
 import img_btnOpen from "assets/home/buttons/btnOpen.png";

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { db } from "/Users/John/github/RNP/RNProject/index.js";
+import { db } from "../../index.js";
 
 import img_gPokeball from "assets/grid/grid_Pokeball.png";
 
