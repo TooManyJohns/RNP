@@ -15,12 +15,7 @@ import {
 
 import GridHeader from "components/GridProfileHeader";
 
-/*
-Contains:
-name: Name of Pokemon
-no: Pokedex Number of that Pokemon
-This is hardcoded for now, later will be taken from an api on the web.
-*/
+//before we load the asset, just incase (will remove later)
 const beforeLoad = [{ name: "Bulbasaur", index: "001", profSprite: undefined }];
 
 export default class App extends Component {
@@ -56,6 +51,7 @@ export default class App extends Component {
     });
     this.setState({
       pokemon: testList,
+      pokeSelected: testList[0],
       isLoading: false,
     });
     console.log("Just took data from Firestore!");
@@ -71,7 +67,8 @@ export default class App extends Component {
 
     console.log("search: ", this.state.search);
     return isLoading ? (
-      <Text>loading...</Text>
+      <View>
+      </View>
     ) : (
       <View
         style={{
