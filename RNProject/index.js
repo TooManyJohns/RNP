@@ -15,7 +15,13 @@ import { name as appName } from "./app.json";
 import * as firebase from "firebase";
 import "firebase/firestore";
 
-var firebaseConfig = {};
+var firebaseConfig = {
+  apiKey: "AIzaSyA0i6s-OeOme4Nj9hTRzvLGonen1Whg-zE",
+  authDomain: "hgss-pokedex.firebaseapp.com",
+  databaseURL: "https://hgss-pokedex.firebaseio.com",
+  projectId: "hgss-pokedex",
+  storageBucket: "hgss-pokedex.appspot.com",
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
