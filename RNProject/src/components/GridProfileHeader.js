@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { Text, ImageBackground, StyleSheet, View, Image } from "react-native";
 
 import img_ProfileBackground from "assets/grid/profile/grid_BackgroundProfile.png";
-import img_TestSprite from "assets/grid/profile/sprTest.png";
 
 export default class GridProfileHeader extends Component {
   render() {

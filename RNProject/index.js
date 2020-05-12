@@ -19,11 +19,10 @@ import 'firebase/firestore'
 var firebaseConfig = {
 
   };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  
-export const auth = firebase.auth();
 
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+  
 export const db = firebase.firestore();
 export default {
     firebase: firebase 

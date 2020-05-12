@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {db, auth} from '/Users/John/github/RNP/RNProject/index.js';
+import {db} from '/Users/John/github/RNP/RNProject/index.js';
 
 import img_gPokeball from "assets/grid/grid_Pokeball.png";
 
@@ -13,8 +13,8 @@ import {
   Text,
 } from "react-native";
 
-import Header from "components/Header";
 import GridHeader from "components/GridProfileHeader";
+import img_TestSprite from "assets/grid/profile/sprTest.png";
 
 /*
 Contains:
@@ -23,7 +23,7 @@ no: Pokedex Number of that Pokemon
 This is hardcoded for now, later will be taken from an api on the web.
 */
 const pokemonList = [
-  { name: "Bulbasaur", index: "001" },
+  { name: "Bulbasaur", index: "001", profSprite: 'img_TestSprite' },
 ];
 
 export default class App extends Component {
@@ -50,16 +50,18 @@ export default class App extends Component {
  getCollection = querySnapshot => {
     const testList = [];
     querySnapshot.forEach(res => {
-       const { name, index} = res.data();
+       const { name, index, profSprite} = res.data();
        testList.push({
           key: res.id,
         name,
-        index
+        index,
+        profSprite
        });
     });
     this.setState({
        pokemon: testList
     });
+    console.log('Just took data from Firestore!')
  };
 
   indexClicked = (pkmn) => {
