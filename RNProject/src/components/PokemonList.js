@@ -3,16 +3,16 @@ import { db } from "../../index.js";
 
 import img_gPokeball from "assets/grid/grid_Pokeball.png";
 
+import sty_IndexBox from 'styles/IndexBoxStyle'
+import sty_Search from 'styles/SearchStyle'
 
 import {
   View,
-  StyleSheet,
   TextInput,
   FlatList,
   TouchableOpacity,
   Image,
   Text,
-  ImageBackground
 } from "react-native";
 
 import GridHeader from "components/GridProfileHeader";
@@ -81,14 +81,14 @@ export default class App extends Component {
       >
         <GridHeader pkmn={this.state.pokeSelected} />
         <TextInput
-          style={styleSelect.input}
+          style={sty_Search.input}
           placeholder="Pokemon Name"
           onChangeText={(text) => {
             this.setState({ search: text });
           }}
           value={this.state.search}
         ></TextInput>
-        <View style={styles.gridContainer}>
+        <View style={sty_IndexBox.gridContainer}>
         <FlatList
           data={this.state.pokemon.filter((pokeIndex) => {
             return (
@@ -99,23 +99,23 @@ export default class App extends Component {
             );
           })}
           renderItem={({ item }) => (
-            <View key={item.name} style={styles.indexContainer}>
+            <View key={item.name} style={sty_IndexBox.indexContainer}>
               <TouchableOpacity
                 onPress={() => this.indexClicked(item)}
-                style={styles.buttonContainer}
+                style={sty_IndexBox.buttonContainer}
               >
-                <View style={styles.topIndex}>
-                  <View style = {styles.topLeftIndexContainer}>
-                <Image source={img_gPokeball} style={styles.pkbSpr}>
+                <View style={sty_IndexBox.topIndex}>
+                  <View style = {sty_IndexBox.topLeftIndexContainer}>
+                <Image source={img_gPokeball} style={sty_IndexBox.pkbSpr}>
                 </Image>
                 </View>
-                <View style ={styles.topRightIndexContainer}>
+                <View style ={sty_IndexBox.topRightIndexContainer}>
                    <Text> {item.index}</Text>
                    </View>
                 </View>
-                <View style= {styles.bottomIndex}>
-                  <View style = {styles.sprIndexContainer}>
-                  <Image style={ styles.sprIndex} source = {{ uri: item.indexSprite }}>
+                <View style= {sty_IndexBox.bottomIndex}>
+                  <View style = {sty_IndexBox.sprIndexContainer}>
+                  <Image style={ sty_IndexBox.sprIndex} source = {{ uri: item.indexSprite }}>
 
                   </Image>
                   </View>
@@ -134,77 +134,3 @@ export default class App extends Component {
   }
 }
 
-const styleSelect = StyleSheet.create({
-  //Title of Project
-  //Grid of Pokemon Map out in View
-  input: {
-    marginBottom: 0,
-    padding: 10,
-    paddingHorizontal: 20,
-    fontSize: 16,
-    color: "#444",
-    borderBottomWidth: 1,
-    borderColor: "#ddd",
-    backgroundColor: "#F5F5F5",
-    paddingBottom:10,
-  },
-});
-
-const styles = StyleSheet.create({
-  gridContainer:{
-    flex:1,
-    //backgroundColor: 'blue'
-  },
-  indexContainer: {
-    //how the containers of the pokemon on the grid will be stylized, (reminder: don't add flex, will break searching)
-    flexDirection: "row",
-    alignContent: "flex-start",
-    backgroundColor: "white",
-    borderWidth: 3,
-    borderColor: "lightgrey",
-    width: 50,
-    height: undefined,
-    aspectRatio: 1/1,
-    flex: 1,
-  },
-  buttonContainer: {
-    flex: 1,
-   // backgroundColor: '#92BBD9',
-  },
-  topIndex:{
-    flex:1,
-    flexDirection: "row",
-  },
-  topLeftIndexContainer: {
-    flex:1
-  },
-  topRightIndexContainer: {
-    flex:3,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  bottomIndex:{
-    flex:2,
-  },
-  pkbSpr: {
-    alignContent: "center",
-    height: undefined,
-    width: "100%",
-    aspectRatio: 102 / 116,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  sprIndexContainer: {
-    alignContent: "center",
-    //backgroundColor:'red', 
-    flex:1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  sprIndex: {
-    height: undefined,
-    width: "100%",
-    aspectRatio: 1 / 1,
-    flex:1
-  }
-});
