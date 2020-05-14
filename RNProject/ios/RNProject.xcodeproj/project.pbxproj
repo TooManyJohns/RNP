@@ -20,6 +20,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* RNProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNProjectTests.m */; };
 		4BC38866B0C9DC638B1E5FBC /* libPods-RNProject-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C744EA4DAE3156EFE78416 /* libPods-RNProject-tvOSTests.a */; };
 		5430250380F136EC119B7C94 /* libPods-RNProject-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5ED57DF2B9D379FE23A3EC9 /* libPods-RNProject-tvOS.a */; };
+		CC3B87E7DEE1430EA935C48B /* Pokmon-DS-Font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60D78741CFAB405E943D5A71 /* Pokmon-DS-Font.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		FE54EFB89B7B16337F69E451 /* Pods-RNProject-RNProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNProject-RNProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-RNProject-RNProjectTests/Pods-RNProject-RNProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF21433467C64B456D35963B /* Pods-RNProject-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNProject-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RNProject-tvOSTests/Pods-RNProject-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		60D78741CFAB405E943D5A71 /* Pokmon-DS-Font.ttf */ = {isa = PBXFileReference; name = "Pokmon-DS-Font.ttf"; path = "../assets/fonts/Pokmon-DS-Font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				5FB4F7434C2DD0B9D78591C8 /* Pods */,
+				B12A04517D634941A1FDBE24 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +200,15 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		B12A04517D634941A1FDBE24 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				60D78741CFAB405E943D5A71 /* Pokmon-DS-Font.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -340,6 +352,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				CC3B87E7DEE1430EA935C48B /* Pokmon-DS-Font.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,7 @@ For anyone curious about what the app currently looks like without wanting to do
 
 # PokemonList && Grid Profile;
 works great, I retrieve the data from a database I created using Google Cloud Firestore:
-![](https://i.imgur.com/WxeBk7u.png)
+![](https://i.imgur.com/QwVzip6.png)
 There is also a temporary search bar I did for fun to make sure I could filter throughout the list of pokemon names that get taken down from firebase. When I implemented the search screen this will be expanded.
 
 
@@ -25,6 +25,9 @@ There is also a temporary search bar I did for fun to make sure I could filter t
 
 # To run the app:
 The Current Project Scope is focused on iOS as I'm on limited time to do this project. If time permits I will try and branch out to other platforms on 10ft and android devices (and I'm currently only testing on an iPhone XR, so i can't guarantee it'll look as pretty on other iPhone models, but I've tried to keep my RN styling as device-friendly as possible within time constraints I'm giving myself, so it'll get done, **eventually**.
+
+
+You can run it in Xcode if you open up the project in **RNP/RNProject/ios/RNProject.xcworkspace**
 
 in ../RNProject
 
