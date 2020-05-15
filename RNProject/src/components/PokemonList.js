@@ -32,6 +32,8 @@ const beforeLoad = [
     profSprite: undefined,
     gridSprite: undefined,
     desc: "",
+    ht: "",
+    wt: ""
   },
 ];
 const numColumns = 5;
@@ -46,7 +48,6 @@ const formatGrid = (data, numColumns) => {
     data.push({ key: `blank-${elementsLastRow}`, empty: true });
     elementsLastRow++;
   }
-
   return data;
 };
 
@@ -80,7 +81,7 @@ export default class App extends Component {
   getCollection = (querySnapshot) => {
     const testList = [];
     querySnapshot.forEach((res) => {
-      const { name, index, profSprite, indexSprite, desc } = res.data();
+      const { name, index, profSprite, indexSprite, desc, ht, wt } = res.data();
       testList.push({
         key: res.id,
         name,
@@ -88,6 +89,8 @@ export default class App extends Component {
         profSprite,
         indexSprite,
         desc,
+        ht,
+        wt
       });
     });
     this.setState({

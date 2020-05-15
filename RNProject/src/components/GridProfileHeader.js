@@ -28,7 +28,6 @@ export default class GridProfileHeader extends Component {
               source={{ uri: pkmn.profSprite }}
             ></Image>
           </View>
-
           <View style={sty_GridProfileH.pokefactContainer}>
             <View style={sty_GridProfileH.titleCardContainer}>
               <View style={sty_GridProfileH.titleCard}>
@@ -42,7 +41,9 @@ export default class GridProfileHeader extends Component {
                 </View>
 
                 <View style={sty_GridProfileH.infoPokemon}>
-                  <Text style={sty_GridProfileH.boldText}>The Test Pokemon</Text>
+                  <Text style={sty_GridProfileH.boldText}>
+                    The Test Pokemon
+                  </Text>
                 </View>
               </View>
             </View>
@@ -59,18 +60,31 @@ export default class GridProfileHeader extends Component {
                   <View style={sty_GridProfileH.typeTwo}></View>
                 </View>
                 <View style={sty_GridProfileH.hgtwgtContainer}>
+                  <View style={sty_GridProfileH.tophgtwgtContainer}></View>
                   <View style={sty_GridProfileH.hgt}>
-                    <Text>Height</Text>
+                    <View style={sty_GridProfileH.hwTxtSpaceFront}></View>
+                    <View style={sty_GridProfileH.hwStaticTextCtn}>
+                      <Text style={sty_GridProfileH.descText}>HT</Text>
+                    </View>
+                    <View style={sty_GridProfileH.hwDynamicTextCtn}>
+                      <Text style={sty_GridProfileH.descText}> {pkmn.ht}</Text>
+                    </View>
                   </View>
                   <View style={sty_GridProfileH.wgt}>
-                    <Text>Weight</Text>
+                    <View style={sty_GridProfileH.hwTxtSpaceFront}></View>
+                    <View style={sty_GridProfileH.hwStaticTextCtn}>
+                      <Text style={sty_GridProfileH.descText}>WT</Text>
+                    </View>
+                    <View style={sty_GridProfileH.hwDynamicTextCtn}>
+                      <Text style={sty_GridProfileH.descText}> {pkmn.wt}</Text>
+                    </View>
                   </View>
+                  <View style={sty_GridProfileH.bottomhgtwgtContainer}></View>
                 </View>
               </View>
             </View>
           </View>
         </View>
-
         <View style={sty_GridProfileH.footerContainer}>
           <View style={sty_GridProfileH.descContainer}>
             <View style={sty_GridProfileH.desc}>

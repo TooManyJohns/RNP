@@ -10,7 +10,6 @@ export default StyleSheet.create({
     height: undefined,
     aspectRatio: 254 / 190,
   },
-
   //FontText
   boldText: {
     color: "white", //placeholder
@@ -30,25 +29,20 @@ export default StyleSheet.create({
   regularText: {
     color: "grey",
   },
-
   //Contains Info, **maybe languages if time permits!**
   infoContainer: {
-    //  backgroundColor: 'black',
     width: "100%",
     height: undefined,
     aspectRatio: 254 / 17,
   },
-
   //Contains Pokemon Profile Sprite, Type, Name, Index #, Footprint, Height, Weight
   midCardContainer: {
-    // backgroundColor: 'blue',
     height: undefined,
     width: "100%",
     aspectRatio: 254 / 116,
     flexDirection: "row",
   },
   pokeSprite: {
-    //  backgroundColor: 'purple',
     alignContent: "center",
     height: undefined,
     width: "40%",
@@ -57,24 +51,19 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
   imageContainer: {
-    //  backgroundColor: 'red',
     alignContent: "center",
     height: "80%",
     width: "80%",
   },
-
   pokefactContainer: {
-    // backgroundColor: 'white',
     flex: 1,
   },
   titleCardContainer: {
     paddingTop: 8,
-    // backgroundColor:'darkblue'
   },
   titleCard: {
     height: undefined,
     width: "100%",
-    // backgroundColor: 'green',
     aspectRatio: 146 / 34,
   },
   indexnameContainer: {
@@ -94,11 +83,9 @@ export default StyleSheet.create({
   },
   footerMidCard: {
     flexDirection: "row",
-    //backgroundColor: 'black',
     flex: 1,
   },
   lefthalfFooter: {
-    //backgroundColor: 'lightblue',
     flex: 1,
   },
   footprintContainer: {
@@ -112,17 +99,14 @@ export default StyleSheet.create({
   },
   righthalfFooter: {
     flex: 3,
-    // backgroundColor: "darkred",
   },
   typeContainer: {
     flex: 1,
-    //backgroundColor: "grey",
     justifyContent: "center",
     flexDirection: "row",
   },
   typeOne: {
     flex: 1,
-    //backgroundColor:'red',
   },
   typeTwo: {
     flex: 1,
@@ -130,19 +114,32 @@ export default StyleSheet.create({
   },
   hgtwgtContainer: {
     flex: 2,
-    // backgroundColor: "lightgreen",
+  },
+  tophgtwgtContainer:{
+    flex:0.2, 
+  },
+  bottomhgtwgtContainer: {
+    flex:0.8
   },
   hgt: {
     flex: 1,
-    justifyContent: "center",
+    flexDirection:'row',
   },
   wgt: {
     flex: 1,
-    justifyContent: "flex-start",
+    flexDirection:'row',
+  },
+  hwTxtSpaceFront: {
+    flex:0.15
+  },
+  hwStaticTextCtn: {
+    flex:0.5
+  },
+  hwDynamicTextCtn: {
+    flex:1
   },
   //Bottom of the profile, only contains a description of the pokemon
   footerContainer: {
-    //backgroundColor: 'yellow',
     height: undefined,
     width: "100%",
     alignContent: "flex-end",
@@ -152,10 +149,8 @@ export default StyleSheet.create({
     paddingTop: 5,
     paddingLeft: 25,
     paddingRight: 25,
-    //backgroundColor: 'brown',
   },
   desc: {
-    //backgroundColor: "blue",
     height: "100%",
     width: "100%",
     marginBottom: -10,
