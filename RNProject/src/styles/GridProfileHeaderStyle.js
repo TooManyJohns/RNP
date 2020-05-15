@@ -46,7 +46,7 @@ export default StyleSheet.create({
     alignContent: "center",
     height: undefined,
     width: "40%",
-    aspectRatio: 102 / 116,
+    aspectRatio: 1,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -79,7 +79,8 @@ export default StyleSheet.create({
   },
   infoPokemon: {
     flex: 1,
-    // backgroundColor:'pink'
+    flexDirection:'row',
+    justifyContent:'flex-end',
   },
   footerMidCard: {
     flexDirection: "row",
@@ -107,10 +108,12 @@ export default StyleSheet.create({
   },
   typeOne: {
     flex: 1,
+    flexDirection:"row"
   },
   typeTwo: {
     flex: 1,
     backgroundColor: "yellow",
+    flexDirection:'row'
   },
   hgtwgtContainer: {
     flex: 2,

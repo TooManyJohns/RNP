@@ -33,7 +33,8 @@ const beforeLoad = [
     gridSprite: undefined,
     desc: "",
     ht: "",
-    wt: ""
+    wt: "",
+    category: ""
   },
 ];
 const numColumns = 5;
@@ -81,7 +82,7 @@ export default class App extends Component {
   getCollection = (querySnapshot) => {
     const testList = [];
     querySnapshot.forEach((res) => {
-      const { name, index, profSprite, indexSprite, desc, ht, wt } = res.data();
+      const { name, index, profSprite, indexSprite, desc, ht, wt, category} = res.data();
       testList.push({
         key: res.id,
         name,
@@ -90,7 +91,8 @@ export default class App extends Component {
         indexSprite,
         desc,
         ht,
-        wt
+        wt,
+        category
       });
     });
     this.setState({

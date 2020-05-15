@@ -41,8 +41,8 @@ export default class GridProfileHeader extends Component {
                 </View>
 
                 <View style={sty_GridProfileH.infoPokemon}>
-                  <Text style={sty_GridProfileH.boldText}>
-                    The Test Pokemon
+                  <Text style={sty_GridProfileH.descText}>
+                    {pkmn.category} {"Pokémon "}
                   </Text>
                 </View>
               </View>
@@ -56,8 +56,16 @@ export default class GridProfileHeader extends Component {
               </View>
               <View style={sty_GridProfileH.righthalfFooter}>
                 <View style={sty_GridProfileH.typeContainer}>
-                  <View style={sty_GridProfileH.typeOne}></View>
-                  <View style={sty_GridProfileH.typeTwo}></View>
+                  <View style={sty_GridProfileH.typeOne}>
+                    <View style={{ flex: 9 }}></View>
+                    <View style={{ flex: 1, backgroundColor: "blue" }}></View>
+                  </View>
+                  <View style={sty_GridProfileH.typeTwo}>
+                    <View style={{ flex: 1, backgroundColor: "red" }}></View>
+                    <View
+                      style={{ flex: 0.25, backgroundColor: "purple" }}
+                    ></View>
+                  </View>
                 </View>
                 <View style={sty_GridProfileH.hgtwgtContainer}>
                   <View style={sty_GridProfileH.tophgtwgtContainer}></View>
