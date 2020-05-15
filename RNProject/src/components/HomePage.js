@@ -7,7 +7,7 @@ import img_btnOpen from "assets/home/buttons/btnOpen.png";
 import img_btnQuit from "assets/home/buttons/btnQuit.png";
 import img_btnSearch from "assets/home/buttons/btnSearch.png";
 
-import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { View, TouchableOpacity, Image } from "react-native";
 
 export default class HomePage extends Component {
   render() {

@@ -20,7 +20,6 @@ import {
   TouchableOpacity,
   Image,
   Text,
-  TouchableWithoutFeedback,
 } from "react-native";
 
 import GridHeader from "components/GridProfileHeader";
@@ -106,6 +105,7 @@ export default class App extends Component {
 
   render() {
     const { isLoading } = this.state;
+    const { navigate } = this.props.navigation;
 
     console.log("search: ", this.state.search);
     return isLoading ? (
@@ -201,7 +201,7 @@ export default class App extends Component {
               </TouchableOpacity>
             </View>
             <View style={{flex:1}}>
-              <TouchableOpacity style={{flex:1}}>
+              <TouchableOpacity style={{flex:1}} onPress={() => navigate("Home")}>
                 <Image style={sty_BtmCtn.buttonBottom} source={img_bQuit}>
                 </Image>
               </TouchableOpacity>
