@@ -13,7 +13,7 @@ For anyone curious about what the app currently looks like without wanting to do
 **This will be updated every push for now on**
 
 # Home Screen:
-4 Diffent buttons, one goes to search screen, one opens the dex, one quits (Backs out) of the app. currently only Open works. The fourth button is a filter that filters from Johto to National entries, this will be implemented as soon as the PokemonList and Grid Profiles are finished, same with the search page.
+4 Different buttons, one goes to search screen, one opens the dex, one quits (Backs out) of the app. currently only Open works. The fourth button is a filter that filters from Johto to National entries, this will be implemented as soon as the PokemonList and Grid Profiles are finished, same with the search page.
 
 # PokemonList && Grid Profile;
 Almost finished, I retrieve the data from a database I created using Google Cloud Firestore.
