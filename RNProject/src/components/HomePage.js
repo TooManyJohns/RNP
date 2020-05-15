@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import sty_HomePage from 'styles/HomePageStyle'
+import sty_HomePage from "styles/HomePageStyle";
 
 //assets
 import img_titleBackground from "assets/home/homeTEST.png";
@@ -20,32 +20,41 @@ export default class HomePage extends Component {
     return (
       // Menu Buttons { Search, Open, Quit }
       <View style={sty_HomePage.container}>
-        <Image source={img_titleBackground} />
-        <View style={sty_HomePage.footer}>
-          <View style={sty_HomePage.searchquitCtn}>
-            <TouchableOpacity
-              style={sty_HomePage.btnContainerStyle}
-              onPress={() => navigate("Info")}
-            >
-              <Image style={sty_HomePage.btnStyle} source={img_btnSearch} />
-            </TouchableOpacity>
+        <View style={sty_HomePage.top}>
+          <View style={sty_HomePage.sideTop}></View>
+          <View style={sty_HomePage.midTop}>
+            <Image
+              style={{
+                height: "100%",
+                width: undefined,
+                aspectRatio: 187 / 499,
+              }}
+              source={img_titleBackground}
+            ></Image>
           </View>
-          <View style={sty_HomePage.openCtn}>
-            <TouchableOpacity
-              style={sty_HomePage.btnContainerStyle}
-              onPress={() => navigate("Info")}
-            >
-              <Image style={sty_HomePage.btnStyle} source={img_btnOpen} />
-            </TouchableOpacity>
+          <View style={sty_HomePage.sideTop}></View>
+        </View>
+        <View style={sty_HomePage.bottom}>
+          <View style={sty_HomePage.topSpaceBottom}></View>
+          <View style={sty_HomePage.buttonBarCtn}>
+            <View style={sty_HomePage.searchCtn}>
+              <TouchableOpacity onPress={() => navigate("Info")}>
+                <Image style={sty_HomePage.search} source={img_btnSearch} />
+              </TouchableOpacity>
+            </View>
+            <View style={sty_HomePage.openCtn}>
+              <TouchableOpacity onPress={() => navigate("Info")}>
+                <Image style={sty_HomePage.open} source={img_btnOpen} />
+              </TouchableOpacity>
+            </View>
+            <View style={sty_HomePage.quitCtn}>
+              <TouchableOpacity onPress={() => navigate("Info")}>
+                <Image style={sty_HomePage.quit} source={img_btnQuit} />
+              </TouchableOpacity>
+            </View>
           </View>
-          <View style={sty_HomePage.searchquitCtn}>
-            <TouchableOpacity
-              style={sty_HomePage.btnContainerStyle}
-              onPress={() => navigate("Info")}
-            >
-              <Image style={sty_HomePage.btnStyle} source={img_btnQuit} />
-            </TouchableOpacity>
-          </View>
+          <View style={sty_HomePage.bottomButtonBarCtn}></View>
+          <View style={sty_HomePage.footer}></View>
         </View>
       </View>
     );
