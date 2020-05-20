@@ -67,41 +67,10 @@ export default class App extends Component {
       search: null,
       showInfo: false,
       pokeSelected: beforeLoad[0],
-      isLoading: true,
+      isLoading: false,
     };
   }
 
-  componentDidMount() {
-    this.unsubscribe = db.collection("pokedex").onSnapshot(this.getCollection);
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe();
-  }
-
-  getCollection = (querySnapshot) => {
-    const testList = [];
-    querySnapshot.forEach((res) => {
-      const { name, index, profSprite, indexSprite, desc, ht, wt, category} = res.data();
-      testList.push({
-        key: res.id,
-        name,
-        index,
-        profSprite,
-        indexSprite,
-        desc,
-        ht,
-        wt,
-        category
-      });
-    });
-    this.setState({
-      pokemon: testList,
-      pokeSelected: testList[0],
-      isLoading: false,
-    });
-    console.log("Just took data from Firestore!");
-  };
 
   indexClicked = (pkmn) => {
     this.setState({ showInfo: !this.state.showInfo });
