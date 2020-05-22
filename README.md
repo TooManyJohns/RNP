@@ -12,26 +12,21 @@ It's purpose is to re-create the Pokedex Application from HeartGold/SoulSilver a
 For anyone curious about what the app currently looks like without wanting to do the set up, here's some background info with some screenshots:
 **This will be updated every push for now on**
 
-# Home Screen:
-4 Different buttons, one goes to search screen, one opens the dex, one quits (Backs out) of the app. currently only Open works. The fourth button is a filter that filters from Johto to National entries, this will be implemented as soon as the PokemonList and Grid Profiles are finished, same with the search page.
-
-# PokemonList && Grid Profile;
-Almost finished, I retrieve the data from a database I created using Google Cloud Firestore.
-There is also a temporary search bar I did for fun to make sure I could filter throughout the list of pokemon names that get taken down from firebase. When I implemented the search screen this will be expanded. Should be noted I am slowly updating Pokemon data on the database as I test along, so any blank fields are not bugs, just me not filling them in yet. Only the quit button works on this page as the other 3 will be added with their specific pages on their implementation goes on the Stack Navigator.
-
-
 Picture of Progress of both Home Screen (bottom) and Pokemon List (top) images.
 
-Here: https://imgur.com/a/KbGgXbw
+iOS Here: https://imgur.com/a/KbGgXbw
 
+Android Here: https://imgur.com/a/aOo8WKg
 
 # To run the app:
-The Current Project Scope is focused on iOS as I'm on limited time to do this project. If time permits I will try and branch out to other platforms on 10ft and android devices (and I'm currently only testing on an iPhone XR, so i can't guarantee it'll look as pretty on other iPhone models, but I've tried to keep my RN styling as device-friendly as possible within time constraints I'm giving myself, so it'll get done, **eventually**.
+The current scope of the app is to run successfully on both Android, and iOS mobile devices. 
 
+**To Run on iOS**
 
-You can run it in Xcode if you open up the project in **RNP/RNProject/ios/RNProject.xcworkspace**
+Make sure you are on a Mac or a VM of Mac OS for Xcode as that is how I use to test the iOS Version, I am using Version 10.1 of Xcode to test when building/running the application from RNP/RNProject/ios/RNProject.xcworkspace 
+Download XCode, although it should work with most versions, if you want to try with 10.1 here is a link: https://developer.apple.com/download/more/?name=Xcode
 
-in ../RNProject
+Download dependencies in ../RNProject
 
 $ npm install
 
@@ -44,3 +39,19 @@ $ yarn start (may need to run yarn install)
 Make sure you have a running iPhone emulator concurrently running alongside it, or it won't be able connect to the development server. (I'll keep enhancing this guide as I further into the project, early stages I'm mostly trying to get as much done as possible)
 
 $ react-native run-ios
+
+
+**To Run on Android**
+
+I am using Android Studio to run this project, this can be done on either Mac or Windows (tested on both platforms) on it's latest version as Android Studio can be downloaded on either or here: https://developer.android.com/studio/install
+
+Download dependencies in ../RNProject
+
+$ npm install
+
+Start bundling Server in ../RNProject
+
+$ yarn start (may need to run yarn install)
+
+
+Should be noted Android is currently in the middle of having it's own UI and UX, so features may not run as consistent on there as iOS, but will be when the app has a release.
