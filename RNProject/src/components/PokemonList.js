@@ -23,6 +23,7 @@ import {
 } from "react-native";
 
 import GridHeader from "components/GridProfileHeader";
+import PokemonListStyle from "../styles/PokemonListStyle.js";
 
 //before we load the asset, just incase (will remove later)
 const beforeLoad = [
@@ -131,11 +132,13 @@ export default class App extends Component {
           value={this.state.search}
         ></TextInput>
         <View style={sty_BtmCtn.bottomContainer}>
-          <View style={sty_BtmCtn.backStartContainer}>
-            <Image
-              source={img_startSidebar}
-              style={sty_BtmCtn.bottomBackStartCtn}
-            ></Image>
+          <View style={sty_BtmCtn.sideBarBottomCtn}>
+            <View style={{flex:10}}>
+            </View>
+            <View style={sty_BtmCtn.sBCp}>
+            </View>
+            <View style={sty_BtmCtn.sBCg}>
+            </View>
           </View>
           <View style={sty_BtmCtn.gridContainer}>
             <FlatList
@@ -183,7 +186,14 @@ export default class App extends Component {
               numColumns={5}
             />
           </View>
-          <View style={sty_BtmCtn.scrollContainer}></View>
+          <View style={sty_BtmCtn.sideBarBottomCtn}>
+          <View style={sty_BtmCtn.sBCg}>
+            </View>
+          <View style={sty_BtmCtn.sBCp}>
+            </View>
+          <View style={{flex:10}}>
+            </View>
+          </View>
         </View>
         <View style={sty_BtmCtn.buttonSetContainer}>
           <View style={sty_BtmCtn.buttonSet}>

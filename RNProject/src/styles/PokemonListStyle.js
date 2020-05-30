@@ -6,8 +6,18 @@ export default StyleSheet.create({
     flexDirection: "row",
     //backgroundColor: 'blue'
   },
-  backStartContainer: {
+  sideBarBottomCtn: {
     flex: 1,
+    backgroundColor: "#E83030",
+    flexDirection:"row",
+  },
+  sBCp: {
+    flex:1, 
+    backgroundColor:"#F3A8B0"
+  },
+  sBCg: {
+    flex:1, 
+    backgroundColor:"#5A5A5A"
   },
   bottomBackStartCtn: {
     height: undefined,
@@ -68,10 +78,6 @@ export default StyleSheet.create({
     width: "100%",
     aspectRatio: 1 / 1,
     flex: 1,
-  },
-  scrollContainer: {
-    flex: 1,
-    backgroundColor: "red",
   },
   buttonSetContainer: {
     backgroundColor: "blue", 
