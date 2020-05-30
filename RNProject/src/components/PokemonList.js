@@ -195,7 +195,10 @@ export default class App extends Component {
         <View style={sty_BtmCtn.buttonSetContainer}>
           <View style={sty_BtmCtn.buttonSet}>
             <View style={{ flex: 1 }}>
-              <TouchableOpacity style={{ flex: 1 }}>
+              <TouchableOpacity 
+                style={{ flex: 1 }}
+                onPress={() => navigate("Search")}
+              >
                 <Image
                   style={sty_BtmCtn.buttonBottom}
                   source={img_bSearch}

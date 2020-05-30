@@ -13,10 +13,6 @@ export default class HomePage extends Component {
   render() {
     const { navigate } = this.props.navigation;
 
-    menuPressed = () => {
-      //this.props.navigate('Info')
-      this.props.navigation.navigate("Info");
-    };
     return (
       // Menu Buttons { Search, Open, Quit }
       <View style={sty_HomePage.container}>
@@ -38,7 +34,7 @@ export default class HomePage extends Component {
           <View style={sty_HomePage.topSpaceBottom}></View>
           <View style={sty_HomePage.buttonBarCtn}>
             <View style={sty_HomePage.searchCtn}>
-              <TouchableOpacity onPress={() => navigate("Info")}>
+              <TouchableOpacity onPress={() => navigate("Search")}>
                 <Image style={sty_HomePage.search} source={img_btnSearch} />
               </TouchableOpacity>
             </View>

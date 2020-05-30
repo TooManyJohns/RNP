@@ -1,10 +1,10 @@
 
-import React, {Component, AppRegistry} from 'react'
-
 import { StackNavigator } from 'react-navigation'
 
 import PokemonList from 'components/PokemonList'
 import HomePage from 'components/HomePage'
+import SearchPage from 'components/SearchPage'
+
 
 export const RNProject =  StackNavigator({
   Home: { 
@@ -12,10 +12,14 @@ export const RNProject =  StackNavigator({
   },
   Info: { 
     screen: PokemonList,
-    navigationOptions:  {
+    navigationOptions:  
+    {
       headerLeft: null,
       gesturesEnabled: false,
-  }
+    },
+  },
+  Search: {
+    screen: SearchPage
   }
 }, 
 {
