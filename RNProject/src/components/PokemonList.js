@@ -2,13 +2,11 @@ import React, { Component } from "react";
 import { db } from "../../index.js";
 
 import img_gPokeball from "assets/grid/grid_Pokeball.png";
-import img_startSidebar from "assets/grid/gridSidebar.png";
 
 import img_bSearch from "assets/grid/buttons/gridSearch.png";
 import img_bCry from "assets/grid/buttons/gridCry.png";
 import img_bDetails from "assets/grid/buttons/gridDetails.png";
 import img_bQuit from "assets/grid/buttons/gridQuit.png";
-
 
 import sty_BtmCtn from "styles/PokemonListStyle";
 import sty_Search from "styles/SearchStyle";
@@ -23,7 +21,6 @@ import {
 } from "react-native";
 
 import GridHeader from "components/GridProfileHeader";
-import PokemonListStyle from "../styles/PokemonListStyle.js";
 
 //before we load the asset, just incase (will remove later)
 const beforeLoad = [
@@ -35,7 +32,7 @@ const beforeLoad = [
     desc: "",
     ht: "",
     wt: "",
-    category: ""
+    category: "",
   },
 ];
 const numColumns = 5;
@@ -43,10 +40,7 @@ const numColumns = 5;
 const formatGrid = (data, numColumns) => {
   const fullRows = Math.floor(data.length / numColumns);
   let elementsLastRow = data.length - fullRows * numColumns;
-  while (
-    elementsLastRow !== numColumns &&
-    elementsLastRow !== 0
-  ) {
+  while (elementsLastRow !== numColumns && elementsLastRow !== 0) {
     data.push({ key: `blank-${elementsLastRow}`, empty: true });
     elementsLastRow++;
   }
@@ -83,7 +77,16 @@ export default class App extends Component {
   getCollection = (querySnapshot) => {
     const testList = [];
     querySnapshot.forEach((res) => {
-      const { name, index, profSprite, indexSprite, desc, ht, wt, category} = res.data();
+      const {
+        name,
+        index,
+        profSprite,
+        indexSprite,
+        desc,
+        ht,
+        wt,
+        category,
+      } = res.data();
       testList.push({
         key: res.id,
         name,
@@ -93,7 +96,7 @@ export default class App extends Component {
         desc,
         ht,
         wt,
-        category
+        category,
       });
     });
     this.setState({
@@ -133,12 +136,9 @@ export default class App extends Component {
         ></TextInput>
         <View style={sty_BtmCtn.bottomContainer}>
           <View style={sty_BtmCtn.sideBarBottomCtn}>
-            <View style={{flex:10}}>
-            </View>
-            <View style={sty_BtmCtn.sBCp}>
-            </View>
-            <View style={sty_BtmCtn.sBCg}>
-            </View>
+            <View style={{ flex: 10 }}></View>
+            <View style={sty_BtmCtn.sBCp}></View>
+            <View style={sty_BtmCtn.sBCg}></View>
           </View>
           <View style={sty_BtmCtn.gridContainer}>
             <FlatList
@@ -187,38 +187,46 @@ export default class App extends Component {
             />
           </View>
           <View style={sty_BtmCtn.sideBarBottomCtn}>
-          <View style={sty_BtmCtn.sBCg}>
-            </View>
-          <View style={sty_BtmCtn.sBCp}>
-            </View>
-          <View style={{flex:10}}>
-            </View>
+            <View style={sty_BtmCtn.sBCg}></View>
+            <View style={sty_BtmCtn.sBCp}></View>
+            <View style={{ flex: 10 }}></View>
           </View>
         </View>
         <View style={sty_BtmCtn.buttonSetContainer}>
           <View style={sty_BtmCtn.buttonSet}>
-            <View style={{flex:1}}>
-              <TouchableOpacity style={{flex:1}}>
-                <Image style={sty_BtmCtn.buttonBottom} source={img_bSearch}>
-                </Image>
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity style={{ flex: 1 }}>
+                <Image
+                  style={sty_BtmCtn.buttonBottom}
+                  source={img_bSearch}
+                ></Image>
               </TouchableOpacity>
             </View>
-            <View style={{flex:1}}>
-              <TouchableOpacity style={{flex:1}}>
-                <Image style={sty_BtmCtn.buttonBottom} source={img_bCry}>
-                </Image>
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity style={{ flex: 1 }}>
+                <Image
+                  style={sty_BtmCtn.buttonBottom}
+                  source={img_bCry}
+                ></Image>
               </TouchableOpacity>
             </View>
-            <View style={{flex:1}}>
-              <TouchableOpacity style={{flex:1}}>
-                <Image style={sty_BtmCtn.buttonBottom} source={img_bDetails}>
-                </Image>
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity style={{ flex: 1 }}>
+                <Image
+                  style={sty_BtmCtn.buttonBottom}
+                  source={img_bDetails}
+                ></Image>
               </TouchableOpacity>
             </View>
-            <View style={{flex:1}}>
-              <TouchableOpacity style={{flex:1}} onPress={() => navigate("Home")}>
-                <Image style={sty_BtmCtn.buttonBottom} source={img_bQuit}>
-                </Image>
+            <View style={{ flex: 1 }}>
+              <TouchableOpacity
+                style={{ flex: 1 }}
+                onPress={() => navigate("Home")}
+              >
+                <Image
+                  style={sty_BtmCtn.buttonBottom}
+                  source={img_bQuit}
+                ></Image>
               </TouchableOpacity>
             </View>
           </View>
