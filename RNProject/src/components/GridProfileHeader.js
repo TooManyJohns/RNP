@@ -48,12 +48,25 @@ export default class GridProfileHeader extends Component {
               </View>
             </View>
 
+
             <View style={sty_GridProfileH.footerMidCard}>
-              <View style={sty_GridProfileH.lefthalfFooter}>
-                <View style={sty_GridProfileH.footprintContainer}>
-                  <View style={sty_GridProfileH.footprint}></View>
+              <View style={sty_GridProfileH.footprintMidCardCtn}>
+              <View style={sty_GridProfileH.footprintContainerTop}>
+                  
                 </View>
+                <View style={sty_GridProfileH.footprintContainer}>
+                  <View style={sty_GridProfileH.footprintContainerL}></View>
+                    <ImageBackground
+                    style={sty_GridProfileH.footprint}
+                     source={{uri: pkmn.ftPrint}}></ImageBackground>
+                     <View style={sty_GridProfileH.footprintContainerR}></View>
               </View>
+                  <View style={sty_GridProfileH.footprintContainerBtm}>
+                  </View>
+                </View>
+
+
+
               <View style={sty_GridProfileH.righthalfFooter}>
                 <View style={sty_GridProfileH.typeContainer}>
                   <View style={sty_GridProfileH.typeOne}>

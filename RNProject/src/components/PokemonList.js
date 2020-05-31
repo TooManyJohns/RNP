@@ -33,6 +33,7 @@ const beforeLoad = [
     ht: "",
     wt: "",
     category: "",
+    ftPrint: "",
   },
 ];
 const numColumns = 5;
@@ -86,6 +87,7 @@ export default class App extends Component {
         ht,
         wt,
         category,
+        ftPrint,
       } = res.data();
       testList.push({
         key: res.id,
@@ -97,6 +99,7 @@ export default class App extends Component {
         ht,
         wt,
         category,
+        ftPrint,
       });
     });
     this.setState({
@@ -118,6 +121,7 @@ export default class App extends Component {
 
     console.log("search: ", this.state.search);
     return isLoading ? (
+      //will add pokeball loading animation later
       <View></View>
     ) : (
       <View

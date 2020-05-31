@@ -86,17 +86,30 @@ export default StyleSheet.create({
     flexDirection: "row",
     flex: 1,
   },
-  lefthalfFooter: {
-    flex: 1,
+  footprintMidCardCtn:{
+    flex:1
   },
   footprintContainer: {
-    paddingTop: 8,
-    paddingRight: 7,
+    flex:1,
+    flexDirection:'row'
+  },
+  footprintContainerL: {
+    flex:0.55
+  },
+  footprintContainerR: {
+    flex:1
   },
   footprint: {
-    height: "70%",
+    flex:3,
     width: "100%",
-    backgroundColor: "darkorange",
+    height: undefined,
+    aspectRatio: 1 / 1,
+  },
+  footprintContainerTop:{
+    flex:0.3,
+  },
+  footprintContainerBtm:{
+    flex:1,
   },
   righthalfFooter: {
     flex: 3,
