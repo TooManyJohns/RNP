@@ -34,6 +34,8 @@ const beforeLoad = [
     wt: "",
     category: "",
     ftPrint: "",
+    type1: "",
+    type2: "",
   },
 ];
 const numColumns = 5;
@@ -88,6 +90,8 @@ export default class App extends Component {
         wt,
         category,
         ftPrint,
+        type1,
+        type2,
       } = res.data();
       testList.push({
         key: res.id,
@@ -100,6 +104,8 @@ export default class App extends Component {
         wt,
         category,
         ftPrint,
+        type1,
+        type2,
       });
     });
     this.setState({
@@ -199,7 +205,7 @@ export default class App extends Component {
         <View style={sty_BtmCtn.buttonSetContainer}>
           <View style={sty_BtmCtn.buttonSet}>
             <View style={{ flex: 1 }}>
-              <TouchableOpacity 
+              <TouchableOpacity
                 style={{ flex: 1 }}
                 onPress={() => navigate("Search")}
               >

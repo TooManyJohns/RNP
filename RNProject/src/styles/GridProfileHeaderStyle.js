@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   /* Pokemon profiler, when the pokemon is selected for initial view on the grid, this profile will be populated
@@ -79,37 +79,37 @@ export default StyleSheet.create({
   },
   infoPokemon: {
     flex: 1,
-    flexDirection:'row',
-    justifyContent:'flex-end',
+    flexDirection: "row",
+    justifyContent: "flex-end",
   },
   footerMidCard: {
     flexDirection: "row",
     flex: 1,
   },
-  footprintMidCardCtn:{
-    flex:1
+  footprintMidCardCtn: {
+    flex: 1,
   },
   footprintContainer: {
-    flex:1,
-    flexDirection:'row'
+    flex: 1,
+    flexDirection: "row",
   },
   footprintContainerL: {
-    flex:0.55
+    flex: 0.55,
   },
   footprintContainerR: {
-    flex:1
+    flex: 1,
   },
   footprint: {
-    flex:3,
+    flex: 3,
     width: "100%",
     height: undefined,
     aspectRatio: 1 / 1,
   },
-  footprintContainerTop:{
-    flex:0.3,
+  footprintContainerTop: {
+    flex: 0.3,
   },
-  footprintContainerBtm:{
-    flex:1,
+  footprintContainerBtm: {
+    flex: 1,
   },
   righthalfFooter: {
     flex: 3,
@@ -119,40 +119,66 @@ export default StyleSheet.create({
     justifyContent: "center",
     flexDirection: "row",
   },
+  typeCtnL: {
+    flex: 0.05,
+  },
   typeOne: {
     flex: 1,
-    flexDirection:"row"
+    flexDirection: "row",
+  },
+  typeOneImgCtn: {
+    flex: 9,
+  },
+  typeOneT: {
+    flex: 0.5,
+  },
+  typeOneR: {
+    flex: 0.5,
   },
   typeTwo: {
+    flex: 1.2,
+    //backgroundColor: "yellow",
+    flexDirection: "row",
+  },
+  typeTwoImgCtn: {
     flex: 1,
-    backgroundColor: "yellow",
-    flexDirection:'row'
+  },
+  typeTwoR: {
+    flex: 0.25,
+  },
+  typeTwoT: {
+    flex: 0.5,
+  },
+  typeImgCtn: {
+    width: "100%",
+    height: undefined,
+    aspectRatio: 117 / 39,
   },
   hgtwgtContainer: {
     flex: 2,
   },
-  tophgtwgtContainer:{
-    flex:0.2, 
+  tophgtwgtContainer: {
+    flex: 0.2,
   },
   bottomhgtwgtContainer: {
-    flex:0.8
+    flex: 0.8,
   },
   hgt: {
     flex: 1,
-    flexDirection:'row',
+    flexDirection: "row",
   },
   wgt: {
     flex: 1,
-    flexDirection:'row',
+    flexDirection: "row",
   },
   hwTxtSpaceFront: {
-    flex:0.15
+    flex: 0.15,
   },
   hwStaticTextCtn: {
-    flex:0.5
+    flex: 0.5,
   },
   hwDynamicTextCtn: {
-    flex:1
+    flex: 1,
   },
   //Bottom of the profile, only contains a description of the pokemon
   footerContainer: {
