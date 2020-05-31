@@ -14,9 +14,9 @@ For anyone curious about what the app currently looks like without wanting to do
 
 Picture of Progress of both Home Screen (bottom) and Pokemon List (top) images.
 
-iOS Here: https://imgur.com/a/p0H3LOO
+iOS Here: https://imgur.com/a/WL1Ffpb
 
-Android Here: https://imgur.com/a/QX10wVW
+Android Here: https://imgur.com/a/IWtJPni
 
 # To run the app:
 The current scope of the app is to run successfully on both Android, and iOS mobile devices. 
