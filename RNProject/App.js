@@ -1,12 +1,12 @@
 
-import { StackNavigator } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack'
 
 import PokemonList from 'components/PokemonList'
 import HomePage from 'components/HomePage'
 import SearchPage from 'components/SearchPage'
 
 
-export const RNProject =  StackNavigator({
+export const RNProject =  createStackNavigator({
   Home: { 
     screen: HomePage 
   },
