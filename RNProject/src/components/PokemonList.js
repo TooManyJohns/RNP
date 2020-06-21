@@ -36,6 +36,7 @@ const beforeLoad = [
     ftPrint: "",
     type1: "",
     type2: "",
+    cry: "",
   },
 ];
 const numColumns = 5;
@@ -66,6 +67,7 @@ export default class App extends Component {
       showInfo: false,
       pokeSelected: beforeLoad[0],
       isLoading: true,
+      cryURL: beforeLoad[0].cry,
     };
   }
 
@@ -92,6 +94,7 @@ export default class App extends Component {
         ftPrint,
         type1,
         type2,
+        cry,
       } = res.data();
       testList.push({
         key: res.id,
@@ -106,6 +109,7 @@ export default class App extends Component {
         ftPrint,
         type1,
         type2,
+        cry,
       });
     });
     this.setState({
@@ -119,6 +123,7 @@ export default class App extends Component {
   indexClicked = (pkmn) => {
     this.setState({ showInfo: !this.state.showInfo });
     this.setState({ pokeSelected: pkmn });
+    this.setState({ cryURL: pkmn.cry})
   };
 
   render() {
