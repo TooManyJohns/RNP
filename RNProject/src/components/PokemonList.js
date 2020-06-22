@@ -11,6 +11,8 @@ import img_bQuit from "assets/grid/buttons/gridQuit.png";
 import sty_BtmCtn from "styles/PokemonListStyle";
 import sty_Search from "styles/SearchStyle";
 
+import SoundPlayer from 'react-native-sound-player'
+
 import {
   View,
   TextInput,
@@ -221,7 +223,9 @@ export default class App extends Component {
               </TouchableOpacity>
             </View>
             <View style={{ flex: 1 }}>
-              <TouchableOpacity style={{ flex: 1 }}>
+              <TouchableOpacity style={{ flex: 1 }}
+                onPress={() => SoundPlayer.playUrl(this.state.cryURL)}
+              >
                 <Image
                   style={sty_BtmCtn.buttonBottom}
                   source={img_bCry}
