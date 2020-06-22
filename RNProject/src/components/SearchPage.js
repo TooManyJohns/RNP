@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 
-import { View, ImageBackground, TouchableOpacity } from "react-native";
+import { View, ImageBackground, TouchableOpacity, Image } from "react-native";
 
 import sty_SearchPage from "styles/SearchPageStyle";
 
 import img_topScrBackground from "assets/search/topScrSearch.png";
 import img_btmScrBackground from "assets/search/btmScrSearch.png";
+
+import img_cancelBtn from "assets/search/cancelBtn.png";
+import img_startBtn from "assets/search/startBtn.png";
+import img_resetBtn from "assets/search/resetBtn.png";
 
 import NumericalTxt from "assets/search/Numerical.png";
 
@@ -70,19 +74,46 @@ export default class SearchPage extends Component {
             <View style={sty_SearchPage.resetstartcancelCtn}>
               <View style={sty_SearchPage.btnCtn}>
                 <View style={sty_SearchPage.tbBtnSpacer}></View>
-                <View style={sty_SearchPage.btn}></View>
+                <View style={sty_SearchPage.btn}>
+                  <TouchableOpacity style={{ flex: 1 }}>
+                    <View style={{ flex: 1 }}></View>
+                    <Image
+                      source={img_resetBtn}
+                      style={sty_SearchPage.resetBtn}
+                    ></Image>
+                    <View style={{ flex: 1 }}></View>
+                  </TouchableOpacity>
+                </View>
                 <View style={sty_SearchPage.tbBtnSpacer}></View>
               </View>
               <View style={sty_SearchPage.btnCtnSpacer}></View>
               <View style={sty_SearchPage.btnCtn}>
                 <View style={sty_SearchPage.tbBtnSpacer}></View>
-                <View style={sty_SearchPage.btn}></View>
+                <View style={sty_SearchPage.btn}>
+                  <TouchableOpacity style={{ flex: 1 }}>
+                    <View style={{ flex: 1 }}></View>
+                    <Image
+                      source={img_startBtn}
+                      style={sty_SearchPage.startBtn}
+                    ></Image>
+                    <View style={{ flex: 1 }}></View>
+                  </TouchableOpacity>
+                </View>
                 <View style={sty_SearchPage.tbBtnSpacer}></View>
               </View>
               <View style={sty_SearchPage.btnCtnSpacer}></View>
               <View style={sty_SearchPage.btnCtn}>
                 <View style={sty_SearchPage.tbBtnSpacer}></View>
-                <View style={sty_SearchPage.btn}></View>
+                <View style={sty_SearchPage.btn}>
+                  <TouchableOpacity style={{ flex: 1 }}>
+                    <View style={{ flex: 1 }}></View>
+                    <Image
+                      source={img_cancelBtn}
+                      style={sty_SearchPage.cancelBtn}
+                    ></Image>
+                    <View style={{ flex: 1 }}></View>
+                  </TouchableOpacity>
+                </View>
                 <View style={sty_SearchPage.tbBtnSpacer}></View>
               </View>
             </View>

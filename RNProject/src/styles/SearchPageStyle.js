@@ -125,4 +125,25 @@ export default StyleSheet.create({
     aspectRatio: 57 / 11,
     flex: 1,
   },
+  resetBtn: {
+    alignSelf:'center',   
+    flex: 2,
+    height: undefined,
+    width: "100%",
+    aspectRatio: 35 / 11
+  },
+  startBtn: {
+    alignSelf:'center',   
+    flex: 2,
+    height: undefined,
+    width: "100%",
+    aspectRatio: 35 / 11,
+  },
+  cancelBtn: {
+    alignSelf:'center',   
+    flex: 2,
+    height: undefined,
+    width: "100%",
+    aspectRatio: 76 / 20,
+  },
 });
