@@ -4,7 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack'
 import PokemonList from 'components/PokemonList'
 import HomePage from 'components/HomePage'
 import SearchPage from 'components/SearchPage'
-
+import OrderSelect from 'components/OrderSelect'
 
 export const RNProject =  createStackNavigator({
   Home: { 
@@ -20,6 +20,9 @@ export const RNProject =  createStackNavigator({
   },
   Search: {
     screen: SearchPage
+  },
+  Order: {
+    screen: OrderSelect
   }
 }, 
 {

@@ -119,7 +119,7 @@ export default StyleSheet.create({
   borderSpacer: {
     flex: 4,
   },
-  sty_numericalTxt: {
+  sty_orderSelectTxt: {
     height: undefined,
     width: "100%",
     aspectRatio: 57 / 11,

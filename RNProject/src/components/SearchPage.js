@@ -10,11 +10,24 @@ import img_btmScrBackground from "assets/search/btmScrSearch.png";
 import img_cancelBtn from "assets/search/cancelBtn.png";
 import img_startBtn from "assets/search/startBtn.png";
 import img_resetBtn from "assets/search/resetBtn.png";
+import img_okBtn from "assets/search/okBtn.png";
 
 import NumericalTxt from "assets/search/Numerical.png";
+import AtoZTxt from "assets/search/AtoZ.png";
+import TallestTxt from "assets/search/Tallest.png";
+import SmallestTxt from "assets/search/Smallest.png";
+import HeaviestTxt from "assets/search/Heaviest.png";
+import LightestTxt from "assets/search/Lightest.png";
 
 export default class SearchPage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      orderSelect: NumericalTxt, //default selection for ORDER
+    };
+  }
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={sty_SearchPage.searchPageCtn}>
         <View style={sty_SearchPage.topScreenCtn}>
@@ -43,13 +56,16 @@ export default class SearchPage extends Component {
             <View style={sty_SearchPage.orderCtn}>
               <View style={sty_SearchPage.orderCtnSpL}></View>
               <View style={sty_SearchPage.orderBtn}>
-                <TouchableOpacity style={sty_SearchPage.orderClickableCtn}>
+                <TouchableOpacity 
+                  style={sty_SearchPage.orderClickableCtn}
+                  onPress={() => navigate("Order")}
+                >
                   <View style={sty_SearchPage.genericBtnTopBtm}></View>
                   <View style={sty_SearchPage.genericBtnMiddle}>
                     <View style={sty_SearchPage.genericBtnSide}></View>
                     <ImageBackground
-                      source={NumericalTxt}
-                      style={sty_SearchPage.sty_numericalTxt}
+                      source={this.state.orderSelect}
+                      style={sty_SearchPage.sty_orderSelectTxt}
                     ></ImageBackground>
                     <View style={sty_SearchPage.genericBtnSide}></View>
                   </View>
@@ -105,7 +121,10 @@ export default class SearchPage extends Component {
               <View style={sty_SearchPage.btnCtn}>
                 <View style={sty_SearchPage.tbBtnSpacer}></View>
                 <View style={sty_SearchPage.btn}>
-                  <TouchableOpacity style={{ flex: 1 }}>
+                  <TouchableOpacity 
+                    style={{ flex: 1 }}
+                    onPress={() => navigate("Info")}
+                  >
                     <View style={{ flex: 1 }}></View>
                     <Image
                       source={img_cancelBtn}
