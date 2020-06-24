@@ -11,7 +11,6 @@ import img_btmScrBackground from "assets/search/btmScrSearch.png";
 import img_cancelBtn from "assets/search/cancelBtn.png";
 import img_startBtn from "assets/search/startBtn.png";
 import img_resetBtn from "assets/search/resetBtn.png";
-import img_okBtn from "assets/search/okBtn.png";
 
 import NumericalTxt from "assets/search/Numerical.png";
 import AtoZTxt from "assets/search/AtoZ.png";

@@ -10,7 +10,6 @@ import TopSearchPage from "./TopSearchPage";
 import img_btmScrBackground from "assets/search/btmOrderSearch.png";
 
 import img_cancelBtn from "assets/search/cancelBtn.png";
-import img_startBtn from "assets/search/startBtn.png";
 import img_okBtn from "assets/search/okBtn.png";
 
 import NumericalTxt from "assets/search/Numerical.png";
