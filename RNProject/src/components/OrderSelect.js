@@ -5,7 +5,8 @@ import { View, ImageBackground, TouchableOpacity, Image } from "react-native";
 import sty_SearchPage from "styles/SearchPageStyle";
 import sty_OrderSelect from "styles/OrderSelectStyle";
 
-import img_topScrBackground from "assets/search/topScrSearch.png";
+import TopSearchPage from "./TopSearchPage";
+
 import img_btmScrBackground from "assets/search/btmOrderSearch.png";
 
 import img_cancelBtn from "assets/search/cancelBtn.png";
@@ -22,9 +23,7 @@ import LightestTxt from "assets/search/Lightest.png";
 export default class SearchPage extends Component {
   constructor() {
     super();
-    this.state = {
-        
-    };
+    this.state = {};
   }
 
   indexClicked = (Selection) => {
@@ -32,33 +31,16 @@ export default class SearchPage extends Component {
   };
 
   okClicked = () => {
-    this.props.navigation.navigate('Search', {  
-        orderSelect: this.state.orderSelect,  
-    }) 
-  }
+    this.props.navigation.navigate("Search", {
+      orderSelect: this.state.orderSelect,
+    });
+  };
 
   render() {
     const { navigate } = this.props.navigation;
     return (
       <View style={sty_SearchPage.searchPageCtn}>
-        <View style={sty_SearchPage.topScreenCtn}>
-          <View style={sty_SearchPage.dexBorderRed}>
-            <View style={sty_SearchPage.borderSpacer}></View>
-            <View style={sty_SearchPage.dexBorderGrey}></View>
-          </View>
-          <ImageBackground
-            style={sty_SearchPage.topBackgroundImg}
-            source={img_topScrBackground}
-          >
-            <View style={sty_SearchPage.topScrTopProf}></View>
-            <View style={sty_SearchPage.topScrMiddleCtn}>
-              <View style={sty_SearchPage.topScrSideProf}></View>
-              <View style={sty_SearchPage.topScrAnimationCtn}></View>
-              <View style={sty_SearchPage.topScrSideProf}></View>
-            </View>
-            <View style={sty_SearchPage.topScrDesc}></View>
-          </ImageBackground>
-        </View>
+        <TopSearchPage></TopSearchPage>
         <View style={sty_SearchPage.bottomScreenCtn}>
           <ImageBackground
             style={sty_SearchPage.topBackgroundImg}
