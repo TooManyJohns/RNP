@@ -27,7 +27,17 @@ export default class SearchPage extends Component {
   }
 
   resetClicked = () => {
-    this.props.navigation.getParam(paramName, defaultValue)   
+    console.log("Reset")
+  }
+
+  orderClicked = () => {
+    const { navigate } = this.props.navigation;
+    navigate("Order");
+  }
+
+  cancelClicked = () => {
+    const { navigate } = this.props.navigation;
+    navigate("Info");
   }
 
   render() {
@@ -47,7 +57,7 @@ export default class SearchPage extends Component {
               <View style={sty_SearchPage.orderBtn}>
                 <TouchableOpacity 
                   style={sty_SearchPage.orderClickableCtn}
-                  onPress={() => navigate("Order")}
+                  onPress={() => this.orderClicked()}
                 >
                   <View style={sty_SearchPage.genericBtnTopBtm}></View>
                   <View style={sty_SearchPage.genericBtnMiddle}>
@@ -114,7 +124,7 @@ export default class SearchPage extends Component {
                 <View style={sty_SearchPage.btn}>
                   <TouchableOpacity 
                     style={{ flex: 1 }}
-                    onPress={() => navigate("Info")}
+                    onPress={() => this.cancelClicked()}
                   >
                     <View style={{ flex: 1 }}></View>
                     <Image
