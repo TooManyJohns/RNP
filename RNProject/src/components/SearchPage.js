@@ -23,11 +23,17 @@ export default class SearchPage extends Component {
   constructor() {
     super();
     this.state = {
-      orderSelect: NumericalTxt, //default selection for ORDER
     };
   }
+
+  resetClicked = () => {
+    this.props.navigation.getParam(paramName, defaultValue)   
+  }
+
   render() {
     const { navigate } = this.props.navigation;
+    const { navigation } = this.props;  
+    var orderSelect = navigation.getParam('orderSelect', NumericalTxt);
     return (
       <View style={sty_SearchPage.searchPageCtn}>
         <View style={sty_SearchPage.topScreenCtn}>
@@ -64,7 +70,7 @@ export default class SearchPage extends Component {
                   <View style={sty_SearchPage.genericBtnMiddle}>
                     <View style={sty_SearchPage.genericBtnSide}></View>
                     <ImageBackground
-                      source={this.state.orderSelect}
+                      source={orderSelect}
                       style={sty_SearchPage.sty_orderSelectTxt}
                     ></ImageBackground>
                     <View style={sty_SearchPage.genericBtnSide}></View>
@@ -91,7 +97,9 @@ export default class SearchPage extends Component {
               <View style={sty_SearchPage.btnCtn}>
                 <View style={sty_SearchPage.tbBtnSpacer}></View>
                 <View style={sty_SearchPage.btn}>
-                  <TouchableOpacity style={{ flex: 1 }}>
+                  <TouchableOpacity style={{ flex: 1 }}
+                      onPress={() => orderSelect}
+                    >
                     <View style={{ flex: 1 }}></View>
                     <Image
                       source={img_resetBtn}

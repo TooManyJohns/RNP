@@ -23,13 +23,19 @@ export default class SearchPage extends Component {
   constructor() {
     super();
     this.state = {
-      orderSelect: NumericalTxt, //default selection for ORDER
+        
     };
   }
 
   indexClicked = (Selection) => {
     this.setState({ orderSelect: Selection });
   };
+
+  okClicked = () => {
+    this.props.navigation.navigate('Search', {  
+        orderSelect: this.state.orderSelect,  
+    }) 
+  }
 
   render() {
     const { navigate } = this.props.navigation;
@@ -222,7 +228,7 @@ export default class SearchPage extends Component {
                   <View style={sty_OrderSelect.orderSelectFooterHalfMidBtnCtn}>
                     <TouchableOpacity
                       style={sty_OrderSelect.orderSelectFooterHalfMidBtn}
-                      onPress={() => navigate('Search')}
+                      onPress={() => this.okClicked()}
                     >
                       <View style={{ flex: 1 }}></View>
                       <Image
