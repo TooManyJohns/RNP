@@ -35,6 +35,10 @@ export default class SearchPage extends Component {
     });
   };
 
+  cancelClicked = () => {
+    this.props.navigation.goBack(); // Exit the screen without calling okClicked
+  }
+
   render() {
     const { navigate } = this.props.navigation;
     return (
@@ -238,7 +242,7 @@ export default class SearchPage extends Component {
                   <View style={sty_OrderSelect.orderSelectFooterHalfMidBtnCtn}>
                     <TouchableOpacity
                       style={sty_OrderSelect.orderSelectFooterHalfMidBtn}
-                      onPress={() => navigate("Search")}
+                      onPress={() => this.cancelClicked()}
                     >
                       <View style={{ flex: 1 }}></View>
                       <Image

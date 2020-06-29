@@ -36,8 +36,7 @@ export default class SearchPage extends Component {
   }
 
   cancelClicked = () => {
-    const { navigate } = this.props.navigation;
-    navigate("Info");
+    this.props.navigation.goBack();
   }
 
   render() {

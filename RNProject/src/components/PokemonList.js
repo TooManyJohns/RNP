@@ -128,6 +128,10 @@ export default class App extends Component {
     this.setState({ cryURL: pkmn.cry})
   };
 
+  exitClicked = () => {
+    this.props.navigation.goBack();
+  }
+
   render() {
     const { isLoading } = this.state;
     const { navigate } = this.props.navigation;
@@ -243,7 +247,7 @@ export default class App extends Component {
             <View style={{ flex: 1 }}>
               <TouchableOpacity
                 style={{ flex: 1 }}
-                onPress={() => navigate("Home")}
+                onPress={() => this.exitClicked()}
               >
                 <Image
                   style={sty_BtmCtn.buttonBottom}
