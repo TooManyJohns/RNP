@@ -20,9 +20,12 @@ import HeaviestTxt from "assets/search/Heaviest.png";
 import LightestTxt from "assets/search/Lightest.png";
 
 export default class SearchPage extends Component {
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
+    const { navigation } = this.props;  
+    this.state = {
+      orderSelect: navigation.getParam('orderSelection')
+    };
   }
 
   indexClicked = (Selection) => {
@@ -40,7 +43,6 @@ export default class SearchPage extends Component {
   }
 
   render() {
-    const { navigate } = this.props.navigation;
     return (
       <View style={sty_SearchPage.searchPageCtn}>
         <TopSearchPage></TopSearchPage>

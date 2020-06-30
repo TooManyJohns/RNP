@@ -20,27 +20,27 @@ import HeaviestTxt from "assets/search/Heaviest.png";
 import LightestTxt from "assets/search/Lightest.png";
 
 export default class SearchPage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
     };
   }
 
   resetClicked = () => {
     console.log("Reset")
+
   }
 
-  orderClicked = () => {
-    const { navigate } = this.props.navigation;
-    navigate("Order");
-  }
+  orderClicked = (orderSelect) => {
+    this.props.navigation.navigate("Order", {
+      orderSelection: orderSelect,
+    });  }
 
   cancelClicked = () => {
     this.props.navigation.goBack();
   }
 
   render() {
-    const { navigate } = this.props.navigation;
     const { navigation } = this.props;  
     var orderSelect = navigation.getParam('orderSelect', NumericalTxt);
     return (
@@ -56,7 +56,7 @@ export default class SearchPage extends Component {
               <View style={sty_SearchPage.orderBtn}>
                 <TouchableOpacity 
                   style={sty_SearchPage.orderClickableCtn}
-                  onPress={() => this.orderClicked()}
+                  onPress={() => this.orderClicked(orderSelect)}
                 >
                   <View style={sty_SearchPage.genericBtnTopBtm}></View>
                   <View style={sty_SearchPage.genericBtnMiddle}>
