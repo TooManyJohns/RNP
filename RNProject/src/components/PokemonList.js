@@ -60,7 +60,7 @@ const displayPokeball = (item) => {
   return undefined;
 };
 
-export default class App extends Component {
+export default class PokemonList extends Component {
   constructor() {
     super();
     this.state = {

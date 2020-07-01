@@ -32,6 +32,9 @@ export default {
   firebase: firebase,
 };
 
+
+
+
 console.disableYellowBox = true; //disable yellow warnings appearing on app screen when making changes
 
 AppRegistry.registerComponent(appName, () => App); //component being loaded is App.js

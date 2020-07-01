@@ -1,37 +1,16 @@
 
-import { createStackNavigator } from 'react-navigation-stack'
+import React from 'react'; // Remember to import React
+import { Provider } from 'react-redux'; 
 
-import PokemonList from 'components/PokemonList'
-import HomePage from 'components/HomePage'
-import SearchPage from 'components/SearchPage'
-import OrderSelect from 'components/OrderSelect'
+import StackNavigator from './StackNavigator';
+import configStore from './src/store/config_store';
 
-export const RNProject =  createStackNavigator({
-  Home: { 
-    screen: HomePage 
-  },
-  Info: { 
-    screen: PokemonList,
-    navigationOptions:  
-    {
-      headerLeft: null,
-      gesturesEnabled: false,
-    },
-  },
-  Search: {
-    screen: SearchPage
-  },
-  Order: {
-    screen: OrderSelect
-  }
-}, 
-{
-  navigationOptions: 
-  {
-    headerStyle: {
-      backgroundColor: '#282828',
-    },
-  }
-})
+const store = configStore();
+
+const RNProject = () => (
+    <Provider store={ store }>
+        <StackNavigator/>
+    </Provider>
+);
 
 export default RNProject;

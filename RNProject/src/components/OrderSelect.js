@@ -19,25 +19,30 @@ import SmallestTxt from "assets/search/Smallest.png";
 import HeaviestTxt from "assets/search/Heaviest.png";
 import LightestTxt from "assets/search/Lightest.png";
 
-export default class SearchPage extends Component {
+import {
+  orderNumerical,
+  orderAtoZ,
+  orderTallest,
+  orderSmallest,
+  orderHeaviest,
+  orderLightest,
+} from "../store/actions/index";
+import { connect } from "react-redux";
+
+class OrderSelect extends Component {
   constructor() {
     super();
     this.state = {};
   }
 
-  indexClicked = (Selection) => {
-    this.setState({ orderSelect: Selection });
-  };
-
   okClicked = () => {
-    this.props.navigation.navigate("Search", {
-      orderSelect: this.state.orderSelect,
-    });
+    const { navigate } = this.props.navigation;
+    navigate("Search");
   };
 
   cancelClicked = () => {
     this.props.navigation.goBack(); // Exit the screen without calling okClicked
-  }
+  };
 
   render() {
     const { navigate } = this.props.navigation;
@@ -55,7 +60,7 @@ export default class SearchPage extends Component {
                 <View style={sty_OrderSelect.orderSelectedTxtBxCtn}>
                   <View style={{ flex: 3.5 }}></View>
                   <Image
-                    source={this.state.orderSelect}
+                    source={this.props.orderSelect}
                     style={sty_OrderSelect.orderSelectTxtImg}
                   ></Image>
                   <View style={{ flex: 3.5 }}></View>
@@ -73,7 +78,9 @@ export default class SearchPage extends Component {
                       <View style={{ flex: 3.5 }}>
                         <TouchableOpacity
                           style={sty_OrderSelect.orderSelectBtn}
-                          onPress={() => this.indexClicked(NumericalTxt)}
+                          onPress={() =>
+                            this.props.orderSelectNumericalFunction()
+                          }
                         >
                           <View style={{ flex: 1 }}></View>
                           <Image
@@ -91,7 +98,7 @@ export default class SearchPage extends Component {
                         <View style={{ flex: 3.5 }}>
                           <TouchableOpacity
                             style={sty_OrderSelect.orderSelectBtn}
-                            onPress={() => this.indexClicked(AtoZTxt)}
+                            onPress={() => this.props.orderSelectAtoZFunction()}
                           >
                             <View style={{ flex: 1 }}></View>
                             <Image
@@ -116,7 +123,9 @@ export default class SearchPage extends Component {
                         <View style={{ flex: 3.5 }}>
                           <TouchableOpacity
                             style={sty_OrderSelect.orderSelectBtn}
-                            onPress={() => this.indexClicked(HeaviestTxt)}
+                            onPress={() =>
+                              this.props.orderSelectHeaviestFunction()
+                            }
                           >
                             <View style={{ flex: 1 }}></View>
                             <Image
@@ -134,7 +143,9 @@ export default class SearchPage extends Component {
                           <View style={{ flex: 3.5 }}>
                             <TouchableOpacity
                               style={sty_OrderSelect.orderSelectBtn}
-                              onPress={() => this.indexClicked(LightestTxt)}
+                              onPress={() =>
+                                this.props.orderSelectLightestFunction()
+                              }
                             >
                               <View style={{ flex: 1 }}></View>
                               <Image
@@ -160,7 +171,9 @@ export default class SearchPage extends Component {
                         <View style={{ flex: 3.5 }}>
                           <TouchableOpacity
                             style={sty_OrderSelect.orderSelectBtn}
-                            onPress={() => this.indexClicked(TallestTxt)}
+                            onPress={() =>
+                              this.props.orderSelectTallestFunction()
+                            }
                           >
                             <View style={{ flex: 1 }}></View>
                             <Image
@@ -178,7 +191,9 @@ export default class SearchPage extends Component {
                           <View style={{ flex: 3.5 }}>
                             <TouchableOpacity
                               style={sty_OrderSelect.orderSelectBtn}
-                              onPress={() => this.indexClicked(SmallestTxt)}
+                              onPress={() =>
+                                this.props.orderSelectSmallestFunction()
+                              }
                             >
                               <View style={{ flex: 1 }}></View>
                               <Image
@@ -273,3 +288,23 @@ export default class SearchPage extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    orderSelect: state.order.orderSelect,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    orderSelectNumericalFunction: () => dispatch(orderNumerical()),
+    orderSelectAtoZFunction: () => dispatch(orderAtoZ()),
+    orderSelectAtoZFunction: () => dispatch(orderAtoZ()),
+    orderSelectTallestFunction: () => dispatch(orderTallest()),
+    orderSelectSmallestFunction: () => dispatch(orderSmallest()),
+    orderSelectHeaviestFunction: () => dispatch(orderHeaviest()),
+    orderSelectLightestFunction: () => dispatch(orderLightest()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(OrderSelect);
