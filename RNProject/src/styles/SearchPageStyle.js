@@ -68,8 +68,38 @@ export default StyleSheet.create({
   nametypehtCtn: {
     flex: 3,
   },
-  nameCtn: {
+  nameRow: {
     flex: 1,
+    flexDirection:'row',
+  },
+  nameCtnL: {
+    flex: 1.5
+  },
+  nameCtnR: {
+    flex: 1.7
+  },
+  nameCtn: {
+    flex:2
+  },
+  nameTouchableCtn:{
+    flex:2,
+    flexDirection:'row'
+  },
+  nameButtonCtnSide:{
+    flex: 6
+  },
+  nameTxtCtn: {
+    flex:1.2,
+    flexDirection:'column', 
+    alignSelf:'center',
+  },
+  nameTxtCtnTopSpacer: {
+    flex:0.3,
+  },
+  nameTxt: {
+    width: "100%",
+    height: undefined,
+    aspectRatio: 7 / 12,
   },
   typeCtn: {
     flex: 1,

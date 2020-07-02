@@ -4,13 +4,16 @@ import { View, ImageBackground, TouchableOpacity, Image } from "react-native";
 
 import sty_SearchPage from "styles/SearchPageStyle";
 
-import TopSearchPage from "../TopSearchPage";
+import TopSearchPage from "./TopSearchPage";
 
 import img_btmScrBackground from "assets/search/btmScrSearch.png";
 
 import img_cancelBtn from "assets/search/cancelBtn.png";
 import img_startBtn from "assets/search/startBtn.png";
 import img_resetBtn from "assets/search/resetBtn.png";
+
+//PLACEHOLDER
+import img_dash from "assets/search/nameFilter/letters/A.png"
 
 import { connect } from "react-redux";
 import { orderReset } from "../../store/actions";
@@ -69,7 +72,20 @@ class SearchPage extends Component {
             </View>
             <View style={sty_SearchPage.nametypehtformCtn}>
               <View style={sty_SearchPage.nametypehtCtn}>
-                <View style={sty_SearchPage.nameCtn}></View>
+                <View style={sty_SearchPage.nameRow}>
+                  <View style={sty_SearchPage.nameCtnL}></View>
+                  <View style={sty_SearchPage.nameCtn}>
+                    <TouchableOpacity style={sty_SearchPage.nameTouchableCtn}>
+                      <View style={sty_SearchPage.nameButtonCtnSide}></View>
+                      <View style={sty_SearchPage.nameTxtCtn}>
+                      <View style={sty_SearchPage.nameTxtCtnTopSpacer}></View>
+                      <Image source={img_dash} style={sty_SearchPage.nameTxt}></Image>
+                      </View>
+                      <View style={sty_SearchPage.nameButtonCtnSide}></View>
+                    </TouchableOpacity>
+                  </View>
+                  <View style={sty_SearchPage.nameCtnR}></View>
+                </View>
                 <View style={sty_SearchPage.typeCtn}></View>
                 <View style={sty_SearchPage.htCtn}></View>
               </View>

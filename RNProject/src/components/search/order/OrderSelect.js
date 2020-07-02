@@ -5,7 +5,7 @@ import { View, ImageBackground, Image } from "react-native";
 import sty_SearchPage from "styles/SearchPageStyle";
 import sty_OrderSelect from "styles/OrderSelectStyle";
 
-import TopSearchPage from "../../TopSearchPage";
+import TopSearchPage from "../TopSearchPage";
 
 import img_btmScrBackground from "assets/search/orderFilter/btmOrderSearch.png";
 
