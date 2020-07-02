@@ -2,8 +2,8 @@ import { createStackNavigator } from 'react-navigation-stack'
 
 import PokemonList from 'components/PokemonList'
 import HomePage from 'components/HomePage'
-import SearchPage from 'components/SearchPage'
-import OrderSelect from 'components/OrderSelect'
+import SearchPage from 'components/search/SearchPage'
+import OrderSelect from 'components/search/order/OrderSelect'
 
 export const StackNavigator =  createStackNavigator({
   Home: { 

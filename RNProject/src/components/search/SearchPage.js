@@ -4,7 +4,7 @@ import { View, ImageBackground, TouchableOpacity, Image } from "react-native";
 
 import sty_SearchPage from "styles/SearchPageStyle";
 
-import TopSearchPage from "./TopSearchPage";
+import TopSearchPage from "../TopSearchPage";
 
 import img_btmScrBackground from "assets/search/btmScrSearch.png";
 
@@ -13,7 +13,7 @@ import img_startBtn from "assets/search/startBtn.png";
 import img_resetBtn from "assets/search/resetBtn.png";
 
 import { connect } from "react-redux";
-import { orderReset } from "../store/actions";
+import { orderReset } from "../../store/actions";
 
 class SearchPage extends Component {
   constructor(props) {
