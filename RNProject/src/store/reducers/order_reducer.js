@@ -8,12 +8,12 @@ import {
   ORDER_SELECT_RESET
 } from "../actions/action_types";
 
-import NumericalTxt from "assets/search/Numerical.png";
-import AtoZTxt from "assets/search/AtoZ.png";
-import TallestTxt from "assets/search/Tallest.png";
-import SmallestTxt from "assets/search/Smallest.png";
-import HeaviestTxt from "assets/search/Heaviest.png";
-import LightestTxt from "assets/search/Lightest.png";
+import NumericalTxt from "assets/search/orderFilter/Numerical.png";
+import AtoZTxt from "assets/search/orderFilter/AtoZ.png";
+import TallestTxt from "assets/search/orderFilter/Tallest.png";
+import SmallestTxt from "assets/search/orderFilter/Smallest.png";
+import HeaviestTxt from "assets/search/orderFilter/Heaviest.png";
+import LightestTxt from "assets/search/orderFilter/Lightest.png";
 
 const initialState = {
   orderSelect: NumericalTxt,

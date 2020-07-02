@@ -7,17 +7,17 @@ import sty_OrderSelect from "styles/OrderSelectStyle";
 
 import TopSearchPage from "./TopSearchPage";
 
-import img_btmScrBackground from "assets/search/btmOrderSearch.png";
+import img_btmScrBackground from "assets/search/orderFilter/btmOrderSearch.png";
 
 import img_cancelBtn from "assets/search/cancelBtn.png";
-import img_okBtn from "assets/search/okBtn.png";
+import img_okBtn from "assets/search/orderFilter/okBtn.png";
 
-import NumericalTxt from "assets/search/Numerical.png";
-import AtoZTxt from "assets/search/AtoZ.png";
-import TallestTxt from "assets/search/Tallest.png";
-import SmallestTxt from "assets/search/Smallest.png";
-import HeaviestTxt from "assets/search/Heaviest.png";
-import LightestTxt from "assets/search/Lightest.png";
+import NumericalTxt from "assets/search/orderFilter/Numerical.png";
+import AtoZTxt from "assets/search/orderFilter/AtoZ.png";
+import TallestTxt from "assets/search/orderFilter/Tallest.png";
+import SmallestTxt from "assets/search/orderFilter/Smallest.png";
+import HeaviestTxt from "assets/search/orderFilter/Heaviest.png";
+import LightestTxt from "assets/search/orderFilter/Lightest.png";
 
 import {
   orderNumerical,
