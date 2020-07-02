@@ -41,3 +41,22 @@ export{
     nameReset,
   } from "./name_actions";
   
+  export{
+    //FORM SELECT ACTIONS
+    formHead,
+    formSerpentineBody,
+    formFins,
+    formHeadAndArms,
+    formHeadAndBase,
+    formBipedalTailedForm,
+    formHeadAndLegs,
+    formQuadrupedBody,
+    formSinglePairOfWings,
+    formTentaclesOrMultipedBody,
+    formMultipleBodies,
+    formBipedalTaillessForm,
+    formTwoOrMorePairsOfWings,
+    formInsectoidBody,
+    formBlankEntry,
+    formReset
+  } from "./form_actions";
