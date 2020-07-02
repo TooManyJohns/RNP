@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { View, ImageBackground, TouchableOpacity, Image } from "react-native";
 
 import sty_SearchPage from "styles/SearchPageStyle";
-import sty_NamePage from "styles/NamePageStyle";
 
 import TopSearchPage from "./TopSearchPage";
 
@@ -13,11 +12,8 @@ import img_cancelBtn from "assets/search/cancelBtn.png";
 import img_startBtn from "assets/search/startBtn.png";
 import img_resetBtn from "assets/search/resetBtn.png";
 
-//PLACEHOLDER
-import img_dash from "assets/search/nameFilter/letters/A.png"
-
 import { connect } from "react-redux";
-import { orderReset } from "../../store/actions";
+import { orderReset, nameReset } from "../../store/actions";
 
 class SearchPage extends Component {
   constructor(props) {
@@ -28,6 +24,7 @@ class SearchPage extends Component {
   resetClicked = () => {
     console.log("Reset");
     this.props.orderSelectResetFunction();
+    this.props.nameSelectResetFunction();
   };
 
   orderClicked = () => {
@@ -88,7 +85,7 @@ class SearchPage extends Component {
                       <View style={sty_SearchPage.nameButtonCtnSide}></View>
                       <View style={sty_SearchPage.nameTxtCtn}>
                       <View style={sty_SearchPage.nameTxtCtnTopSpacer}></View>
-                      <Image source={img_dash} style={sty_SearchPage.nameTxt}></Image>
+                      <Image source={this.props.nameSelect} style={sty_SearchPage.nameTxt}></Image>
                       </View>
                       <View style={sty_SearchPage.nameButtonCtnSide}></View>
                     </TouchableOpacity>
@@ -171,6 +168,7 @@ class SearchPage extends Component {
 const mapStateToProps = (state) => {
   return {
     orderSelect: state.order.orderSelect,
+    nameSelect: state.name.nameSelect,
   };
 };
 
@@ -178,6 +176,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     orderSelectResetFunction: () => dispatch(orderReset()),
+    nameSelectResetFunction: () => dispatch(nameReset()),
   };
 };
 

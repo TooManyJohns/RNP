@@ -7,6 +7,23 @@ export default StyleSheet.create({
     topBarCtn: {
         flex:1
     },
+    topBarCtnTpBtm: {
+        flex:1.3 //determines size
+    },
+    topBarCtnMid: {
+        flex:2,
+        flexDirection:'row'
+    },
+    topBarCtnMidL: {
+        flex:2.9
+    },
+    topBarCtnMidR: {
+        flex:1.8
+    },
+    topBarCtnMidM: {
+        flex:0.3,
+        alignItems:'center'
+    },
     alphabetViewCtn:{
         flex:4,
         flexDirection:'row'
