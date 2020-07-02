@@ -13,15 +13,17 @@ import img_startBtn from "assets/search/startBtn.png";
 import img_resetBtn from "assets/search/resetBtn.png";
 
 import { connect } from "react-redux";
+import { orderReset } from "../store/actions";
 
 class SearchPage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
   }
 
   resetClicked = () => {
     console.log("Reset");
+    this.props.orderSelectResetFunction();
   };
 
   orderClicked = () => {
@@ -147,4 +149,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(SearchPage);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    orderSelectResetFunction: () => dispatch(orderReset()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);

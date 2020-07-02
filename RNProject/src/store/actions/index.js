@@ -5,5 +5,6 @@ export {
     orderSmallest,
     orderHeaviest,
     orderLightest,
+    orderReset
   } from "./order_actions";
   

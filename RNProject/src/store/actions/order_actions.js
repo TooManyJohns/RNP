@@ -5,6 +5,7 @@ import {
     ORDER_SELECT_SMALLEST,
     ORDER_SELECT_HEAVIEST,
     ORDER_SELECT_LIGHTEST,
+    ORDER_SELECT_RESET
   } from "./action_types";
   
   export const orderNumerical = () => {
@@ -43,3 +44,8 @@ import {
     };
   };
   
+  export const orderReset = () => {
+    return {
+      type: ORDER_SELECT_RESET,
+    };
+  };

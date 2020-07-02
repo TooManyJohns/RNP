@@ -5,6 +5,7 @@ import {
   ORDER_SELECT_SMALLEST,
   ORDER_SELECT_HEAVIEST,
   ORDER_SELECT_LIGHTEST,
+  ORDER_SELECT_RESET
 } from "../actions/action_types";
 
 import NumericalTxt from "assets/search/Numerical.png";
@@ -54,6 +55,12 @@ const orderReducer = (state = initialState, action) => {
       return {
         ...state,
         orderSelect: LightestTxt,
+      };
+
+    case ORDER_SELECT_RESET:
+      return {
+        ...state,
+        orderSelect: initialState.orderSelect,
       };
 
     default:
