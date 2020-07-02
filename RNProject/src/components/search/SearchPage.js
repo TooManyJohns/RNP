@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { View, ImageBackground, TouchableOpacity, Image } from "react-native";
 
 import sty_SearchPage from "styles/SearchPageStyle";
+import sty_NamePage from "styles/NamePageStyle";
 
 import TopSearchPage from "./TopSearchPage";
 
@@ -32,6 +33,11 @@ class SearchPage extends Component {
   orderClicked = () => {
     const { navigate } = this.props.navigation;
     navigate("Order");
+  };
+
+  nameClicked = () => {
+    const { navigate } = this.props.navigation;
+    navigate("Name");
   };
 
   cancelClicked = () => {
@@ -75,7 +81,10 @@ class SearchPage extends Component {
                 <View style={sty_SearchPage.nameRow}>
                   <View style={sty_SearchPage.nameCtnL}></View>
                   <View style={sty_SearchPage.nameCtn}>
-                    <TouchableOpacity style={sty_SearchPage.nameTouchableCtn}>
+                    <TouchableOpacity
+                    style={sty_SearchPage.nameTouchableCtn}
+                    onPress={() => this.nameClicked()}
+                    >
                       <View style={sty_SearchPage.nameButtonCtnSide}></View>
                       <View style={sty_SearchPage.nameTxtCtn}>
                       <View style={sty_SearchPage.nameTxtCtnTopSpacer}></View>
