@@ -101,8 +101,43 @@ export default StyleSheet.create({
     height: undefined,
     aspectRatio: 7 / 12,
   },
-  typeCtn: {
+  typeBarCtn: {
     flex: 1,
+  },
+  typeBarCtnTopBtm: {
+    flex:1
+  },
+  typeBarCtnMid: {
+    flex:4,
+    flexDirection:'row'
+  },
+  typeBarCtnMidL: {
+    flex:2.7
+  },
+  typeBarCtnMidMid: {
+    flex:0.3
+  },
+  typeBarCtnMidR: {
+    flex:0.6
+  },
+  typeBtnCtn: {
+    flex:3
+  },
+  typeBtnCtnTopBtm: {
+    flex:2
+  },
+  typeCtn:{
+    flex:10,
+    flexDirection:'row'
+  },
+  typeCtnLR:{
+    flex:1.5
+  },
+  type:{
+    height: undefined,
+    width: "100%",
+    aspectRatio: 56 / 16,
+    flex:10,
   },
   htCtn: {
     flex: 1,

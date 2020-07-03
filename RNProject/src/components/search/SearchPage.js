@@ -8,15 +8,17 @@ import TopSearchPage from "./TopSearchPage";
 
 import img_btmScrBackground from "assets/search/btmScrSearch.png";
 
-//placeholder
-import placeholder from "assets/search/formFilter/forms/Head.png";
-
 import img_cancelBtn from "assets/search/cancelBtn.png";
 import img_startBtn from "assets/search/startBtn.png";
 import img_resetBtn from "assets/search/resetBtn.png";
 
 import { connect } from "react-redux";
-import { orderReset, nameReset, formReset } from "../../store/actions";
+import {
+  orderReset,
+  nameReset,
+  formReset,
+  typeReset,
+} from "../../store/actions";
 
 class SearchPage extends Component {
   constructor(props) {
@@ -29,6 +31,7 @@ class SearchPage extends Component {
     this.props.orderSelectResetFunction();
     this.props.nameSelectResetFunction();
     this.props.formSelectResetFunction();
+    this.props.typeSelectResetFunction();
   };
 
   orderClicked = () => {
@@ -44,6 +47,11 @@ class SearchPage extends Component {
   formClicked = () => {
     const { navigate } = this.props.navigation;
     navigate("Form");
+  };
+
+  typeClicked = () => {
+    const { navigate } = this.props.navigation;
+    navigate("Type");
   };
 
   cancelClicked = () => {
@@ -104,7 +112,45 @@ class SearchPage extends Component {
                   </View>
                   <View style={sty_SearchPage.nameCtnR}></View>
                 </View>
-                <View style={sty_SearchPage.typeCtn}></View>
+                <View style={sty_SearchPage.typeBarCtn}>
+                  <View style={sty_SearchPage.typeBarCtnTopBtm}></View>
+                  <View style={sty_SearchPage.typeBarCtnMid}>
+                    <View style={sty_SearchPage.typeBarCtnMidL}></View>
+                    <TouchableOpacity
+                      onPress={() => this.typeClicked()}
+                      style={sty_SearchPage.typeBtnCtn}
+                    >
+                      <View style={sty_SearchPage.typeBtnCtnTopBtm}></View>
+                      <View style={sty_SearchPage.typeCtn}>
+                        <View style={sty_SearchPage.typeCtnLR}></View>
+                        <Image
+                          style={sty_SearchPage.type}
+                          source={this.props.typeSelectOne}
+                        ></Image>
+                        <View style={sty_SearchPage.typeCtnLR}></View>
+                      </View>
+                      <View style={sty_SearchPage.typeBtnCtnTopBtm}></View>
+                    </TouchableOpacity>
+                    <View style={sty_SearchPage.typeBarCtnMidMid}></View>
+                    <TouchableOpacity
+                      onPress={() => this.typeClicked()}
+                      style={sty_SearchPage.typeBtnCtn}
+                    >
+                      <View style={sty_SearchPage.typeBtnCtnTopBtm}></View>
+                      <View style={sty_SearchPage.typeCtn}>
+                        <View style={sty_SearchPage.typeCtnLR}></View>
+                        <Image
+                          style={sty_SearchPage.type}
+                          source={this.props.typeSelectTwo}
+                        ></Image>
+                        <View style={sty_SearchPage.typeCtnLR}></View>
+                      </View>
+                      <View style={sty_SearchPage.typeBtnCtnTopBtm}></View>
+                    </TouchableOpacity>
+                    <View style={sty_SearchPage.typeBarCtnMidR}></View>
+                  </View>
+                  <View style={sty_SearchPage.typeBarCtnTopBtm}></View>
+                </View>
                 <View style={sty_SearchPage.htCtn}></View>
               </View>
               <View style={sty_SearchPage.formSectionCtn}>
@@ -198,6 +244,8 @@ const mapStateToProps = (state) => {
     orderSelect: state.order.orderSelect,
     nameSelect: state.name.nameSelect,
     formSelect: state.form.formSelect,
+    typeSelectOne: state.type.typeSelectOne,
+    typeSelectTwo: state.type.typeSelectTwo,
   };
 };
 
@@ -206,6 +254,7 @@ const mapDispatchToProps = (dispatch) => {
     orderSelectResetFunction: () => dispatch(orderReset()),
     nameSelectResetFunction: () => dispatch(nameReset()),
     formSelectResetFunction: () => dispatch(formReset()),
+    typeSelectResetFunction: () => dispatch(typeReset()),
   };
 };
 

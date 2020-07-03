@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { View, ImageBackground, Image } from "react-native";
 
 import sty_SearchPage from "styles/SearchPageStyle";
-import sty_NamePage from "styles/NamePageStyle";
+import sty_NamePage from "styles/NameSelectStyle";
 
 import TopSearchPage from "../TopSearchPage";
 

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { View, Image, TouchableOpacity } from "react-native";
 
-import sty_NamePage from "styles/NamePageStyle";
+import sty_NamePage from "styles/NameSelectStyle";
 
 import img_A from "assets/search/nameFilter/letters/A.png";
 import img_B from "assets/search/nameFilter/letters/B.png";
