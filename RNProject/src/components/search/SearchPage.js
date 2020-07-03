@@ -8,12 +8,15 @@ import TopSearchPage from "./TopSearchPage";
 
 import img_btmScrBackground from "assets/search/btmScrSearch.png";
 
+//placeholder
+import placeholder from "assets/search/formFilter/forms/Head.png";
+
 import img_cancelBtn from "assets/search/cancelBtn.png";
 import img_startBtn from "assets/search/startBtn.png";
 import img_resetBtn from "assets/search/resetBtn.png";
 
 import { connect } from "react-redux";
-import { orderReset, nameReset } from "../../store/actions";
+import { orderReset, nameReset, formReset } from "../../store/actions";
 
 class SearchPage extends Component {
   constructor(props) {
@@ -25,6 +28,7 @@ class SearchPage extends Component {
     console.log("Reset");
     this.props.orderSelectResetFunction();
     this.props.nameSelectResetFunction();
+    this.props.formSelectResetFunction();
   };
 
   orderClicked = () => {
@@ -35,6 +39,11 @@ class SearchPage extends Component {
   nameClicked = () => {
     const { navigate } = this.props.navigation;
     navigate("Name");
+  };
+
+  formClicked = () => {
+    const { navigate } = this.props.navigation;
+    navigate("Form");
   };
 
   cancelClicked = () => {
@@ -95,7 +104,17 @@ class SearchPage extends Component {
                 <View style={sty_SearchPage.typeCtn}></View>
                 <View style={sty_SearchPage.htCtn}></View>
               </View>
-              <View style={sty_SearchPage.formCtn}></View>
+              <View style={sty_SearchPage.formSectionCtn}>
+                <View style={sty_SearchPage.formSectionTop}></View>
+                <View style={sty_SearchPage.formSectionMid}>
+                  <View style={sty_SearchPage.formSectionMidL}></View>
+                  <TouchableOpacity onPress={() => this.formClicked()} style={sty_SearchPage.formBtnCtn}>
+                    <Image style={sty_SearchPage.form} source={this.props.formSelect}></Image>
+                  </TouchableOpacity>
+                  <View style={sty_SearchPage.formSectionMidR}></View>
+                </View>
+                <View style={sty_SearchPage.formSectionBtm}></View>
+              </View>
             </View>
             <View style={sty_SearchPage.wtareaCtn}>
               <View style={sty_SearchPage.wtCtn}></View>
@@ -169,6 +188,7 @@ const mapStateToProps = (state) => {
   return {
     orderSelect: state.order.orderSelect,
     nameSelect: state.name.nameSelect,
+    formSelect: state.form.formSelect,
   };
 };
 
@@ -177,6 +197,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     orderSelectResetFunction: () => dispatch(orderReset()),
     nameSelectResetFunction: () => dispatch(nameReset()),
+    formSelectResetFunction: () => dispatch(formReset()),
   };
 };
 

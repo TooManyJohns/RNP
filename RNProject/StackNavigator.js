@@ -5,6 +5,7 @@ import HomePage from 'components/HomePage'
 import SearchPage from 'components/search/SearchPage'
 import OrderSelect from 'components/search/order/OrderSelect'
 import NameSelect from 'components/search/name/NameSelect'
+import FormSelect from 'components/search/form/FormSelect'
 
 export const StackNavigator =  createStackNavigator({
   Home: { 
@@ -26,6 +27,9 @@ export const StackNavigator =  createStackNavigator({
   },
   Name: {
     screen: NameSelect
+  },
+  Form: {
+    screen: FormSelect
   }
 }, 
 {

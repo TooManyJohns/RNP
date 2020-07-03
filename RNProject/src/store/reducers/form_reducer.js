@@ -26,7 +26,7 @@ import {
   import img_HeadAndLegs from "assets/search/formFilter/forms/HeadAndLegs.png";
   import img_QuadrupedBody from "assets/search/formFilter/forms/QuadrupedBody.png";
   import img_SinglePairOfWings from "assets/search/formFilter/forms/SinglePairOfWings.png";
-  import img_TentaclesOrMultipedBody from "assets/search/formFilter/forms/TentaclesOrMultipledBody.png";
+  import img_TentaclesOrMultipedBody from "assets/search/formFilter/forms/TentaclesOrMultipedBody.png";
   import img_MultipleBodies from "assets/search/formFilter/forms/MultipleBodies.png";
   import img_BipedalTaillessForm from "assets/search/formFilter/forms/BipedalTaillessForm.png";
   import img_TwoOrMorePairsOfWings from "assets/search/formFilter/forms/TwoOrMorePairsOfWings.png";
@@ -37,7 +37,7 @@ import {
     formSelect: img_BlankEntry,
   };
   
-  const nameReducer = (state = initialState, action) => {
+  const formReducer = (state = initialState, action) => {
     switch (action.type) {
       case FORM_SELECT_HEAD:
         return {

@@ -107,7 +107,32 @@ export default StyleSheet.create({
   htCtn: {
     flex: 1,
   },
-  formCtn: {
+  formSectionCtn: {
+    flex: 1,
+  },
+  formSectionTop:{
+    flex:2
+  },
+  formSectionMid: {
+    flex:2,
+    flexDirection:'row'
+  },
+  formSectionMidL: {
+    flex:1.35,
+  },
+  formSectionMidR: {
+    flex:1,
+  },
+  formSectionBtm: {
+    flex:0.8
+  },
+  formBtnCtn:{
+    flex:2.3
+  },
+  form: {
+    height: undefined,
+    width: "100%",
+    aspectRatio: 1,
     flex: 1,
   },
   wtareaCtn: {

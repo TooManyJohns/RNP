@@ -9,9 +9,7 @@ import img_topScrBackground from "assets/search/topScrSearch.png";
 export default class TopSearchPage extends Component {
   constructor() {
     super();
-    this.state = {
-        
-    };
+    this.state = {};
   }
 
   render() {
