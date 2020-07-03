@@ -60,3 +60,26 @@ export{
     formBlankEntry,
     formReset
   } from "./form_actions";
+
+  export{
+    //FORM SELECT ACTIONS
+    typeNormal,
+    typeGround,
+    typeSteel,
+    typeElectric,
+    typeDark,
+    typeFight,
+    typeRock,
+    typeFire,
+    typePsychic,
+    typeDashes,
+    typeFlying,
+    typeBug,
+    typeWater,
+    typeIce,
+    typePoison,
+    typeGhost,
+    typeGrass,
+    typeDragon,
+    typeReset,
+  } from "./type_actions";
