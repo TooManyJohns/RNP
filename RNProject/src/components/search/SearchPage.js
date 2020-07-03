@@ -88,13 +88,16 @@ class SearchPage extends Component {
                   <View style={sty_SearchPage.nameCtnL}></View>
                   <View style={sty_SearchPage.nameCtn}>
                     <TouchableOpacity
-                    style={sty_SearchPage.nameTouchableCtn}
-                    onPress={() => this.nameClicked()}
+                      style={sty_SearchPage.nameTouchableCtn}
+                      onPress={() => this.nameClicked()}
                     >
                       <View style={sty_SearchPage.nameButtonCtnSide}></View>
                       <View style={sty_SearchPage.nameTxtCtn}>
-                      <View style={sty_SearchPage.nameTxtCtnTopSpacer}></View>
-                      <Image source={this.props.nameSelect} style={sty_SearchPage.nameTxt}></Image>
+                        <View style={sty_SearchPage.nameTxtCtnTopSpacer}></View>
+                        <Image
+                          source={this.props.nameSelect}
+                          style={sty_SearchPage.nameTxt}
+                        ></Image>
                       </View>
                       <View style={sty_SearchPage.nameButtonCtnSide}></View>
                     </TouchableOpacity>
@@ -108,8 +111,14 @@ class SearchPage extends Component {
                 <View style={sty_SearchPage.formSectionTop}></View>
                 <View style={sty_SearchPage.formSectionMid}>
                   <View style={sty_SearchPage.formSectionMidL}></View>
-                  <TouchableOpacity onPress={() => this.formClicked()} style={sty_SearchPage.formBtnCtn}>
-                    <Image style={sty_SearchPage.form} source={this.props.formSelect}></Image>
+                  <TouchableOpacity
+                    onPress={() => this.formClicked()}
+                    style={sty_SearchPage.formBtnCtn}
+                  >
+                    <Image
+                      style={sty_SearchPage.form}
+                      source={this.props.formSelect}
+                    ></Image>
                   </TouchableOpacity>
                   <View style={sty_SearchPage.formSectionMidR}></View>
                 </View>
@@ -191,7 +200,6 @@ const mapStateToProps = (state) => {
     formSelect: state.form.formSelect,
   };
 };
-
 
 const mapDispatchToProps = (dispatch) => {
   return {

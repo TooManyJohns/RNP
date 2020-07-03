@@ -20,7 +20,23 @@ import img_TwoOrMorePairsOfWings from "assets/search/formFilter/forms/TwoOrMoreP
 import img_InsectoidBody from "assets/search/formFilter/forms/InsectoidBody.png";
 import img_BlankEntry from "assets/search/formFilter/forms/BlankEntry.png";
 
-import { formHead, formSerpentineBody, formFins, formHeadAndArms, formHeadAndBase, formBipedalTailedForm, formHeadAndLegs, formQuadrupedBody, formSinglePairOfWings, formTentaclesOrMultipedBody, formMultipleBodies, formBipedalTaillessForm, formTwoOrMorePairsOfWings, formInsectoidBody, formBlankEntry} from "../../../../store/actions/index";
+import {
+  formHead,
+  formSerpentineBody,
+  formFins,
+  formHeadAndArms,
+  formHeadAndBase,
+  formBipedalTailedForm,
+  formHeadAndLegs,
+  formQuadrupedBody,
+  formSinglePairOfWings,
+  formTentaclesOrMultipedBody,
+  formMultipleBodies,
+  formBipedalTaillessForm,
+  formTwoOrMorePairsOfWings,
+  formInsectoidBody,
+  formBlankEntry,
+} from "../../../../store/actions/index";
 
 import { connect } from "react-redux";
 
@@ -101,16 +117,20 @@ class FormSelectButton extends Component {
   };
 
   render() {
-    const {
-      formIndexInput, 
-    } = this.props;
+    const { formIndexInput } = this.props;
     return (
-        <View style={sty_FormPage.formBtnCtn}>
-        <TouchableOpacity onPress={this.formClicked(formIndexInput)} style={sty_FormPage.formBtn}>
-          <Image source={this.formSourceImg(formIndexInput)} style={sty_FormPage.form}></Image>
+      <View style={sty_FormPage.formBtnCtn}>
+        <TouchableOpacity
+          onPress={this.formClicked(formIndexInput)}
+          style={sty_FormPage.formBtn}
+        >
+          <Image
+            source={this.formSourceImg(formIndexInput)}
+            style={sty_FormPage.form}
+          ></Image>
         </TouchableOpacity>
         <View style={sty_FormPage.formBtnCtnBtm}></View>
-        </View>
+      </View>
     );
   }
 }
