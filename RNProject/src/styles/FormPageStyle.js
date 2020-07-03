@@ -29,11 +29,9 @@ export default StyleSheet.create({
     },
     formViewCtnSideColumn: {
         flex:0.44
-        ,backgroundColor:'blue'
     },
     formViewCtnMidColumn: {
         flex:0.4
-        ,backgroundColor:'red'
     },
     formColumn: {
         flex:1
