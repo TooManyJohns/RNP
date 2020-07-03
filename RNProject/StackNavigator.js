@@ -7,6 +7,7 @@ import OrderSelect from 'components/search/order/OrderSelect'
 import NameSelect from 'components/search/name/NameSelect'
 import FormSelect from 'components/search/form/FormSelect'
 import TypeSelect from 'components/search/type/TypeSelect'
+import AreaSelect from 'components/search/area/AreaSelect'
 
 export const StackNavigator =  createStackNavigator({
   Home: { 
@@ -34,6 +35,9 @@ export const StackNavigator =  createStackNavigator({
   },
   Type: {
     screen: TypeSelect
+  },
+  Area: {
+    screen: AreaSelect
   }
 }, 
 {

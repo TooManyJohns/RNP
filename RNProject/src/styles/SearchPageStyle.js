@@ -176,8 +176,34 @@ export default StyleSheet.create({
   wtCtn: {
     flex: 2,
   },
-  areaCtn: {
+  areaRowCtn: {
     flex: 2,
+  },
+  areaRowCtnTopBtm: {
+    flex: 1,
+  },
+  areaRowCtnMid: {
+    flex: 4,
+    flexDirection:'row'
+  },
+  areaRowCtnMidL: {
+    flex: 1.35
+  },
+  areaRowCtnMidR: {
+    flex: 3.65
+  },
+  areaBtn: {
+    flex: 1.5
+  },
+  areaBtnTopBtm: {
+    flex: 0.15
+  },
+  area:{
+    height: "100%",
+    width: undefined,
+    aspectRatio: 56 / 16,
+    flex: 1,
+    alignSelf:'center'
   },
   wtareaFooter: {
     flex: 1,

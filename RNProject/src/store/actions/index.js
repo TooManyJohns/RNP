@@ -62,7 +62,7 @@ export{
   } from "./form_actions";
 
   export{
-    //FORM SELECT ACTIONS
+    //TYPE SELECT ACTIONS
     typeNormal,
     typeGround,
     typeSteel,
@@ -83,3 +83,12 @@ export{
     typeDragon,
     typeReset,
   } from "./type_actions";
+
+  export{
+    //AREA SELECT ACTIONS
+    areaJohto,
+    areaUnknown,
+    areaKanto,
+    areaDASHES,
+    areaReset,
+  } from "./area_actions";

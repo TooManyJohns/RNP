@@ -18,6 +18,7 @@ import {
   nameReset,
   formReset,
   typeReset,
+  areaReset,
 } from "../../store/actions";
 
 class SearchPage extends Component {
@@ -32,6 +33,7 @@ class SearchPage extends Component {
     this.props.nameSelectResetFunction();
     this.props.formSelectResetFunction();
     this.props.typeSelectResetFunction();
+    this.props.areaSelectResetFunction();
   };
 
   orderClicked = () => {
@@ -52,6 +54,11 @@ class SearchPage extends Component {
   typeClicked = () => {
     const { navigate } = this.props.navigation;
     navigate("Type");
+  };
+
+  areaClicked = () => {
+    const { navigate } = this.props.navigation;
+    navigate("Area");
   };
 
   cancelClicked = () => {
@@ -173,7 +180,25 @@ class SearchPage extends Component {
             </View>
             <View style={sty_SearchPage.wtareaCtn}>
               <View style={sty_SearchPage.wtCtn}></View>
-              <View style={sty_SearchPage.areaCtn}></View>
+              <View style={sty_SearchPage.areaRowCtn}>
+                <View style={sty_SearchPage.areaRowCtnTopBtm}></View>
+                <View style={sty_SearchPage.areaRowCtnMid}>
+                  <View style={sty_SearchPage.areaRowCtnMidL}></View>
+                  <TouchableOpacity
+                    onPress={() => this.areaClicked()}
+                    style={sty_SearchPage.areaBtn}
+                  >
+                    <View style={sty_SearchPage.areaBtnTopBtm}></View>
+                    <Image
+                      source={this.props.areaSelect}
+                      style={sty_SearchPage.area}
+                    ></Image>
+                    <View style={sty_SearchPage.areaBtnTopBtm}></View>
+                  </TouchableOpacity>
+                  <View style={sty_SearchPage.areaRowCtnMidR}></View>
+                </View>
+                <View style={sty_SearchPage.areaRowCtnTopBtm}></View>
+              </View>
               <View style={sty_SearchPage.wtareaFooter}></View>
             </View>
             <View style={sty_SearchPage.resetstartcancelCtn}>
@@ -246,6 +271,7 @@ const mapStateToProps = (state) => {
     formSelect: state.form.formSelect,
     typeSelectOne: state.type.typeSelectOne,
     typeSelectTwo: state.type.typeSelectTwo,
+    areaSelect: state.area.areaSelect,
   };
 };
 
@@ -255,6 +281,7 @@ const mapDispatchToProps = (dispatch) => {
     nameSelectResetFunction: () => dispatch(nameReset()),
     formSelectResetFunction: () => dispatch(formReset()),
     typeSelectResetFunction: () => dispatch(typeReset()),
+    areaSelectResetFunction: () => dispatch(areaReset()),
   };
 };
 
