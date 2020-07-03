@@ -47,13 +47,11 @@ import {
     };
   };
 
-
   export const formBipedalTailedForm = () => {
     return {
       type: FORM_SELECT_BIPEDALTAILEDFORM,
     };
   };
-
 
   export const formHeadAndLegs = () => {
     return {
@@ -61,13 +59,11 @@ import {
     };
   };
 
-
   export const formQuadrupedBody = () => {
     return {
       type: FORM_SELECT_QUADRUPEDBODY,
     };
   };
-
 
   export const formSinglePairOfWings = () => {
     return {
@@ -75,13 +71,11 @@ import {
     };
   };
 
-
   export const formTentaclesOrMultipedBody = () => {
     return {
       type: FORM_SELECT_TENTACLESORMULTIPEDBODY,
     };
   };
-
 
   export const formMultipleBodies = () => {
     return {
@@ -89,20 +83,17 @@ import {
     };
   };
 
-
   export const formBipedalTaillessForm = () => {
     return {
       type: FORM_SELECT_BIPEDALTAILLESSFORM,
     };
   };
 
-
   export const formTwoOrMorePairsOfWings = () => {
     return {
       type: FORM_SELECT_TWOORMOREPAIRSOFWINGS,
     };
   };
-
 
   export const formInsectoidBody = () => {
     return {
