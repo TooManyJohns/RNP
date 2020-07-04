@@ -92,3 +92,8 @@ export{
     areaDASHES,
     areaReset,
   } from "./area_actions";
+
+  export{
+    //AREA SELECT ACTIONS
+    fetchPokemonlist
+  } from "./pokemonlist_actions";

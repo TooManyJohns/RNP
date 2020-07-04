@@ -8,13 +8,15 @@ import NameSelect from 'components/search/name/NameSelect'
 import FormSelect from 'components/search/form/FormSelect'
 import TypeSelect from 'components/search/type/TypeSelect'
 import AreaSelect from 'components/search/area/AreaSelect'
+import PokemonListTEST from 'components/PokemonListTEST'
+
 
 export const StackNavigator =  createStackNavigator({
   Home: { 
     screen: HomePage 
   },
   Info: { 
-    screen: PokemonList,
+    screen: PokemonListTEST,
     navigationOptions:  
     {
       headerLeft: null,
