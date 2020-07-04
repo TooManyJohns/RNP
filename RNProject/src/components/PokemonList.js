@@ -118,6 +118,7 @@ export default class PokemonList extends Component {
       pokemon: testList,
       pokeSelected: testList[0],
       isLoading: false,
+      cryURL: testList[0].cry,
     });
     console.log("Just took data from Firestore!");
   };
