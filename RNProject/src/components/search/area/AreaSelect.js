@@ -22,6 +22,8 @@ class AreaSelect extends Component {
   }
   render() {
     const { navigate } = this.props.navigation;
+    const { navigation } = this.props;
+    const areaId = navigation.getParam('areaId');  
     return (
       <View style={sty_SearchPage.searchPageCtn}>
         <TopSearchPage></TopSearchPage>
@@ -67,7 +69,7 @@ class AreaSelect extends Component {
                 <View style={sty_AreaSelect.areaViewCtnSideBars}></View>
               </View>
             </View>
-            <OkCancelButtonCtn navigation={this.props.navigation} />
+            <OkCancelButtonCtn navigation={this.props.navigation} areaId={areaId} />
           </ImageBackground>
           <View style={sty_SearchPage.dexBorderRed}>
             <View style={sty_SearchPage.dexBorderGrey}></View>

@@ -56,9 +56,9 @@ class SearchPage extends Component {
     navigate("Type");
   };
 
-  areaClicked = () => {
-    const { navigate } = this.props.navigation;
-    navigate("Area");
+  areaClicked = (areaSelectInput) => {
+    console.log(areaSelectInput);
+    this.props.navigation.navigate('Area', {areaId: areaSelectInput})   
   };
 
   cancelClicked = () => {
@@ -185,7 +185,7 @@ class SearchPage extends Component {
                 <View style={sty_SearchPage.areaRowCtnMid}>
                   <View style={sty_SearchPage.areaRowCtnMidL}></View>
                   <TouchableOpacity
-                    onPress={() => this.areaClicked()}
+                    onPress={() => this.areaClicked(this.props.areaSelect)}
                     style={sty_SearchPage.areaBtn}
                   >
                     <View style={sty_SearchPage.areaBtnTopBtm}></View>

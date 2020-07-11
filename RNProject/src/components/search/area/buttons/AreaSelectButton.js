@@ -25,15 +25,16 @@ class AreaSelectButton extends Component {
   }
 
   areaClicked = (areaNumber) => {
+    console.log(areaNumber);
     switch (areaNumber) {
       case 1:
-        return () => this.props.areaSelectJohtoFunction();
+        return this.props.areaSelectJohtoFunction();
       case 2:
-        return () => this.props.areaSelectUnknownFunction();
+        return this.props.areaSelectUnknownFunction();
       case 3:
-        return () => this.props.areaSelectKantoFunction();
+        return this.props.areaSelectKantoFunction();
       case 4:
-        return () => this.props.areaSelectDASHESFunction();
+        return this.props.areaSelectDASHESFunction();
     }
   };
 
@@ -54,7 +55,7 @@ class AreaSelectButton extends Component {
     const { areaIndexInput } = this.props;
     return (
       <TouchableOpacity
-        onPress={this.areaClicked(areaIndexInput)}
+        onPress={this.areaClicked.bind(this, areaIndexInput)}
         style={sty_AreaSelect.areaBtn}
       >
         <View style={sty_AreaSelect.areaBtnTopBtm}></View>
