@@ -47,55 +47,55 @@ class LetterSelectButton extends Component {
       case 1:
         return () => this.props.nameSelectAFunction();
       case 2:
-        return () => this.props.nameSelectBFunction();
-      case 3:
-        return () => this.props.nameSelectCFunction();
-      case 4:
-        return () => this.props.nameSelectDFunction();
-      case 5:
-        return () => this.props.nameSelectEFunction();
-      case 6:
-        return () => this.props.nameSelectFFunction();
-      case 7:
-        return () => this.props.nameSelectGFunction();
-      case 8:
         return () => this.props.nameSelectHFunction();
-      case 9:
+      case 3:
+        return () => this.props.nameSelectOFunction();
+      case 4:
+        return () => this.props.nameSelectVFunction();
+      case 5:
+        return () => this.props.nameSelectBFunction();
+      case 6:
         return () => this.props.nameSelectIFunction();
+      case 7:
+        return () => this.props.nameSelectPFunction();
+      case 8:
+        return () => this.props.nameSelectWFunction();
+      case 9:
+        return () => this.props.nameSelectCFunction();
       case 10:
         return () => this.props.nameSelectJFunction();
       case 11:
-        return () => this.props.nameSelectKFunction();
-      case 12:
-        return () => this.props.nameSelectLFunction();
-      case 13:
-        return () => this.props.nameSelectMFunction();
-      case 14:
-        return () => this.props.nameSelectNFunction();
-      case 15:
-        return () => this.props.nameSelectOFunction();
-      case 16:
-        return () => this.props.nameSelectPFunction();
-      case 17:
         return () => this.props.nameSelectQFunction();
-      case 18:
+      case 12:
+        return () => this.props.nameSelectXFunction();
+      case 13:
+        return () => this.props.nameSelectDFunction();
+      case 14:
+        return () => this.props.nameSelectKFunction();
+      case 15:
         return () => this.props.nameSelectRFunction();
+      case 16:
+        return () => this.props.nameSelectYFunction();
+      case 17:
+        return () => this.props.nameSelectEFunction();
+      case 18:
+        return () => this.props.nameSelectLFunction();
       case 19:
         return () => this.props.nameSelectSFunction();
       case 20:
-        return () => this.props.nameSelectTFunction();
-      case 21:
-        return () => this.props.nameSelectUFunction();
-      case 22:
-        return () => this.props.nameSelectVFunction();
-      case 23:
-        return () => this.props.nameSelectWFunction();
-      case 24:
-        return () => this.props.nameSelectXFunction();
-      case 25:
-        return () => this.props.nameSelectYFunction();
-      case 26:
         return () => this.props.nameSelectZFunction();
+      case 21:
+        return () => this.props.nameSelectFFunction();
+      case 22:
+        return () => this.props.nameSelectMFunction();
+      case 23:
+        return () => this.props.nameSelectTFunction();
+      case 24:
+        return () => this.props.nameSelectGFunction();
+      case 25:
+        return () => this.props.nameSelectNFunction();
+      case 26:
+        return () => this.props.nameSelectUFunction();
       case 27:
         return () => this.props.nameSelectDASHFunction();
     }
@@ -106,55 +106,55 @@ class LetterSelectButton extends Component {
       case 1:
         return img_A;
       case 2:
-        return img_B;
-      case 3:
-        return img_C;
-      case 4:
-        return img_D;
-      case 5:
-        return img_E;
-      case 6:
-        return img_F;
-      case 7:
-        return img_G;
-      case 8:
         return img_H;
-      case 9:
-        return img_I;
-      case 10:
-        return img_J;
-      case 11:
-        return img_K;
-      case 12:
-        return img_L;
-      case 13:
-        return img_M;
-      case 14:
-        return img_N;
-      case 15:
+      case 3:
         return img_O;
-      case 16:
+      case 4:
+        return img_V;
+      case 5:
+        return img_B;
+      case 6:
+        return img_I;
+      case 7:
         return img_P;
-      case 17:
+      case 8:
+        return img_W;
+      case 9:
+        return img_C;
+      case 10:
+        return img_J
+      case 11:
         return img_Q;
-      case 18:
+      case 12:
+        return img_X;
+      case 13:
+        return img_D;
+      case 14:
+        return img_K;
+      case 15:
         return img_R;
+      case 16:
+        return img_Y;
+      case 17:
+        return img_E;
+      case 18:
+        return img_L;
       case 19:
         return img_S;
       case 20:
-        return img_T;
-      case 21:
-        return img_U;
-      case 22:
-        return img_V;
-      case 23:
-        return img_W;
-      case 24:
-        return img_X;
-      case 25:
-        return img_Y;
-      case 26:
         return img_Z;
+      case 21:
+        return img_F;
+      case 22:
+        return img_M;
+      case 23:
+        return img_T;
+      case 24:
+        return img_G;
+      case 25:
+        return img_N;
+      case 26:
+        return img_U;
       case 27:
         return img_DASH;
     }
