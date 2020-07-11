@@ -45,7 +45,7 @@ import {
   import img_N from "assets/search/nameFilter/letters/N.png";
   import img_O from "assets/search/nameFilter/letters/O.png";
   import img_P from "assets/search/nameFilter/letters/P.png";
-  import img_Q from "assets/search/nameFilter/letters/O.png";
+  import img_Q from "assets/search/nameFilter/letters/Q.png";
   import img_R from "assets/search/nameFilter/letters/R.png";
   import img_S from "assets/search/nameFilter/letters/S.png";
   import img_T from "assets/search/nameFilter/letters/T.png";

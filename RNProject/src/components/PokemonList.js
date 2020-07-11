@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { db } from "../../index.js";
+import { db } from "../firebase-src/firebaseindex";
 
 import img_gPokeball from "assets/grid/grid_Pokeball.png";
 
