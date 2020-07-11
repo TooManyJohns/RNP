@@ -9,7 +9,7 @@ import TopSearchPage from "../TopSearchPage";
 
 import img_btmScrBackground from "assets/search/formFilter/btmFormSearch.png";
 
-import OkCancelButtonCtn from "components/search/order/buttons/OkCancelButtonCtn";
+import OkCancelButtonCtn from "components/search/form/buttons/OkCancelButtonCtn";
 
 import FormSelectButton from "./buttons/FormSelectButton";
 

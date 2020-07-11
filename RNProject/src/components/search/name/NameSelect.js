@@ -9,7 +9,7 @@ import TopSearchPage from "../TopSearchPage";
 
 import img_btmScrBackground from "assets/search/nameFilter/btmNameSearch.png";
 
-import OkCancelButtonCtn from "components/search/order/buttons/OkCancelButtonCtn";
+import OkCancelButtonCtn from "components/search/name/buttons/OkCancelButtonCtn";
 
 import { connect } from "react-redux";
 
