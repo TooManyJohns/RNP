@@ -56,6 +56,10 @@ class SearchPage extends Component {
     this.props.navigation.navigate('Area', {areaId: areaSelectInput})   
   };
 
+  startClicked = (filterSelection) => {
+    this.props.navigation.navigate('Info', {filterSelection: filterSelection})   
+  };
+
   cancelClicked = () => {
     this.props.navigation.goBack();
   };
@@ -218,7 +222,10 @@ class SearchPage extends Component {
               <View style={sty_SearchPage.btnCtn}>
                 <View style={sty_SearchPage.tbBtnSpacer}></View>
                 <View style={sty_SearchPage.btn}>
-                  <TouchableOpacity style={{ flex: 1 }}>
+                  <TouchableOpacity 
+                  style={{ flex: 1 }}
+                  onPress={() => this.startClicked()}
+                  >
                     <View style={{ flex: 1 }}></View>
                     <Image
                       source={img_startBtn}
