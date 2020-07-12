@@ -51,9 +51,9 @@ class SearchPage extends Component {
     navigate("Form");
   };
 
-  typeClicked = () => {
+  typeClicked = (typeSelectInputOne, typeSelectInputTwo) => {
     const { navigate } = this.props.navigation;
-    navigate("Type");
+    this.props.navigation.navigate('Type', {typeIdOne: typeSelectInputOne, typeIdTwo: typeSelectInputTwo})   
   };
 
   areaClicked = (areaSelectInput) => {
@@ -124,7 +124,7 @@ class SearchPage extends Component {
                   <View style={sty_SearchPage.typeBarCtnMid}>
                     <View style={sty_SearchPage.typeBarCtnMidL}></View>
                     <TouchableOpacity
-                      onPress={() => this.typeClicked()}
+                      onPress={() => this.typeClicked(this.props.typeSelectOne, this.props.typeSelectTwo)}
                       style={sty_SearchPage.typeBtnCtn}
                     >
                       <View style={sty_SearchPage.typeBtnCtnTopBtm}></View>
@@ -140,7 +140,7 @@ class SearchPage extends Component {
                     </TouchableOpacity>
                     <View style={sty_SearchPage.typeBarCtnMidMid}></View>
                     <TouchableOpacity
-                      onPress={() => this.typeClicked()}
+                      onPress={() => this.typeClicked(this.props.typeSelectOne, this.props.typeSelectTwo)}
                       style={sty_SearchPage.typeBtnCtn}
                     >
                       <View style={sty_SearchPage.typeBtnCtnTopBtm}></View>

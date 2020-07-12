@@ -22,6 +22,9 @@ class TypeSelect extends Component {
   }
   render() {
     const { navigate } = this.props.navigation;
+    const { navigation } = this.props;
+    const typeIdOne = navigation.getParam('typeIdOne'); 
+    const typeIdTwo = navigation.getParam('typeIdTwo'); 
     return (
       <View style={sty_SearchPage.searchPageCtn}>
         <TopSearchPage></TopSearchPage>
@@ -106,7 +109,7 @@ class TypeSelect extends Component {
                 <View style={sty_TypePage.typeViewCtnSideColumn}></View>
               </View>
             </View>
-            <OkCancelButtonCtn navigation={this.props.navigation} />
+            <OkCancelButtonCtn navigation={this.props.navigation} typeIdOne={typeIdOne} typeIdTwo={typeIdTwo} />          
           </ImageBackground>
           <View style={sty_SearchPage.dexBorderRed}>
             <View style={sty_SearchPage.dexBorderGrey}></View>

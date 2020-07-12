@@ -55,41 +55,41 @@ class TypeSelectButton extends Component {
   typeClicked = (typeNumber) => {
     switch (typeNumber) {
       case 1:
-        return () => this.props.typeSelectNormalFunction();
+        return this.props.typeSelectNormalFunction();
       case 2:
-        return () => this.props.typeSelectGroundFunction();
+        return this.props.typeSelectGroundFunction();
       case 3:
-        return () => this.props.typeSelectSteelFunction();
+        return this.props.typeSelectSteelFunction();
       case 4:
-        return () => this.props.typeSelectElectricFunction();
+        return this.props.typeSelectElectricFunction();
       case 5:
-        return () => this.props.typeSelectDarkFunction();
+        return this.props.typeSelectDarkFunction();
       case 6:
-        return () => this.props.typeSelectFightFunction();
+        return this.props.typeSelectFightFunction();
       case 7:
-        return () => this.props.typeSelectRockFunction();
+        return this.props.typeSelectRockFunction();
       case 8:
-        return () => this.props.typeSelectFireFunction();
+        return this.props.typeSelectFireFunction();
       case 9:
-        return () => this.props.typeSelectPsychicFunction();
+        return this.props.typeSelectPsychicFunction();
       case 10:
-        return () => this.props.typeSelectDashesFunction();
+        return this.props.typeSelectDashesFunction();
       case 11:
-        return () => this.props.typeSelectFlyingFunction();
+        return this.props.typeSelectFlyingFunction();
       case 12:
-        return () => this.props.typeSelectBugFunction();
+        return this.props.typeSelectBugFunction();
       case 13:
-        return () => this.props.typeSelectWaterFunction();
+        return this.props.typeSelectWaterFunction();
       case 14:
-        return () => this.props.typeSelectIceFunction();
+        return this.props.typeSelectIceFunction();
       case 15:
-        return () => this.props.typeSelectPoisonFunction();
+        return this.props.typeSelectPoisonFunction();
       case 16:
-        return () => this.props.typeSelectGhostFunction();
+        return this.props.typeSelectGhostFunction();
       case 17:
-        return () => this.props.typeSelectGrassFunction();
+        return this.props.typeSelectGrassFunction();
       case 18:
-        return () => this.props.typeSelectDragonFunction();
+        return this.props.typeSelectDragonFunction();
     }
   };
 
@@ -140,7 +140,7 @@ class TypeSelectButton extends Component {
       <View style={sty_TypePage.typeBtnCtn}>
         <View style={sty_TypePage.typeBtnCtnTopSpacer}></View>
         <TouchableOpacity
-          onPress={this.typeClicked(typeIndexInput)}
+          onPress={this.typeClicked.bind(this, typeIndexInput)}
           style={sty_TypePage.typeBtn}
         >
           <View style={sty_TypePage.typeBtnTopSpacer}></View>
