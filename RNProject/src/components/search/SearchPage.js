@@ -41,9 +41,8 @@ class SearchPage extends Component {
     navigate("Order");
   };
 
-  nameClicked = () => {
-    const { navigate } = this.props.navigation;
-    navigate("Name");
+  nameClicked = (nameSelectInput) => {
+    this.props.navigation.navigate('Name', {nameId: nameSelectInput})   
   };
 
   formClicked = (formSelectInput) => {
@@ -101,7 +100,7 @@ class SearchPage extends Component {
                   <View style={sty_SearchPage.nameCtn}>
                     <TouchableOpacity
                       style={sty_SearchPage.nameTouchableCtn}
-                      onPress={() => this.nameClicked()}
+                      onPress={() => this.nameClicked(this.props.nameSelect)}
                     >
                       <View style={sty_SearchPage.nameButtonCtnSide}></View>
                       <View style={sty_SearchPage.nameTxtCtn}>

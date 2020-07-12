@@ -45,59 +45,59 @@ class LetterSelectButton extends Component {
   letterClicked = (letterNumber) => {
     switch (letterNumber) {
       case 1:
-        return () => this.props.nameSelectAFunction();
+        return this.props.nameSelectAFunction();
       case 2:
-        return () => this.props.nameSelectHFunction();
+        return this.props.nameSelectHFunction();
       case 3:
-        return () => this.props.nameSelectOFunction();
+        return this.props.nameSelectOFunction();
       case 4:
-        return () => this.props.nameSelectVFunction();
+        return this.props.nameSelectVFunction();
       case 5:
-        return () => this.props.nameSelectBFunction();
+        return this.props.nameSelectBFunction();
       case 6:
-        return () => this.props.nameSelectIFunction();
+        return this.props.nameSelectIFunction();
       case 7:
-        return () => this.props.nameSelectPFunction();
+        return this.props.nameSelectPFunction();
       case 8:
-        return () => this.props.nameSelectWFunction();
+        return this.props.nameSelectWFunction();
       case 9:
-        return () => this.props.nameSelectCFunction();
+        return this.props.nameSelectCFunction();
       case 10:
-        return () => this.props.nameSelectJFunction();
+        return this.props.nameSelectJFunction();
       case 11:
-        return () => this.props.nameSelectQFunction();
+        return this.props.nameSelectQFunction();
       case 12:
-        return () => this.props.nameSelectXFunction();
+        return this.props.nameSelectXFunction();
       case 13:
-        return () => this.props.nameSelectDFunction();
+        return this.props.nameSelectDFunction();
       case 14:
-        return () => this.props.nameSelectKFunction();
+        return this.props.nameSelectKFunction();
       case 15:
-        return () => this.props.nameSelectRFunction();
+        return this.props.nameSelectRFunction();
       case 16:
-        return () => this.props.nameSelectYFunction();
+        return this.props.nameSelectYFunction();
       case 17:
-        return () => this.props.nameSelectEFunction();
+        return this.props.nameSelectEFunction();
       case 18:
-        return () => this.props.nameSelectLFunction();
+        return this.props.nameSelectLFunction();
       case 19:
-        return () => this.props.nameSelectSFunction();
+        return this.props.nameSelectSFunction();
       case 20:
-        return () => this.props.nameSelectZFunction();
+        return this.props.nameSelectZFunction();
       case 21:
-        return () => this.props.nameSelectFFunction();
+        return this.props.nameSelectFFunction();
       case 22:
-        return () => this.props.nameSelectMFunction();
+        return this.props.nameSelectMFunction();
       case 23:
-        return () => this.props.nameSelectTFunction();
+        return this.props.nameSelectTFunction();
       case 24:
-        return () => this.props.nameSelectGFunction();
+        return this.props.nameSelectGFunction();
       case 25:
-        return () => this.props.nameSelectNFunction();
+        return this.props.nameSelectNFunction();
       case 26:
-        return () => this.props.nameSelectUFunction();
+        return this.props.nameSelectUFunction();
       case 27:
-        return () => this.props.nameSelectDASHFunction();
+        return this.props.nameSelectDASHFunction();
     }
   };
 
@@ -166,7 +166,7 @@ class LetterSelectButton extends Component {
     } = this.props;
     return (
       <TouchableOpacity
-        onPress={this.letterClicked(letterIndexInput)}
+        onPress={this.letterClicked.bind(this, letterIndexInput)}
         style={sty_NamePage.letterBlockCtn}
       >
         <View style={sty_NamePage.letterBlockCtnTopBtm}></View>

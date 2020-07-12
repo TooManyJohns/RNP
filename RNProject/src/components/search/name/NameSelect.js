@@ -22,6 +22,8 @@ class NameSelect extends Component {
   }
   render() {
     const { navigate } = this.props.navigation;
+    const { navigation } = this.props;
+    const nameId = navigation.getParam('nameId'); 
     return (
       <View style={sty_SearchPage.searchPageCtn}>
         <TopSearchPage></TopSearchPage>
@@ -90,7 +92,7 @@ class NameSelect extends Component {
                   <View style={sty_NamePage.alphabetViewCtnSideColumn}></View>
               </View>
             </View>
-            <OkCancelButtonCtn navigation={this.props.navigation} />
+            <OkCancelButtonCtn navigation={this.props.navigation} nameId={nameId} />
           </ImageBackground>
           <View style={sty_SearchPage.dexBorderRed}>
             <View style={sty_SearchPage.dexBorderGrey}></View>
