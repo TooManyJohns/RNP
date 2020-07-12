@@ -36,9 +36,8 @@ class SearchPage extends Component {
     this.props.areaSelectResetFunction();
   };
 
-  orderClicked = () => {
-    const { navigate } = this.props.navigation;
-    navigate("Order");
+  orderClicked = (orderSelectInput) => {
+    this.props.navigation.navigate('Order', {orderId: orderSelectInput})   
   };
 
   nameClicked = (nameSelectInput) => {
@@ -77,7 +76,7 @@ class SearchPage extends Component {
               <View style={sty_SearchPage.orderBtn}>
                 <TouchableOpacity
                   style={sty_SearchPage.orderClickableCtn}
-                  onPress={() => this.orderClicked()}
+                  onPress={() => this.orderClicked(this.props.orderSelect)}
                 >
                   <View style={sty_SearchPage.genericBtnTopBtm}></View>
                   <View style={sty_SearchPage.genericBtnMiddle}>

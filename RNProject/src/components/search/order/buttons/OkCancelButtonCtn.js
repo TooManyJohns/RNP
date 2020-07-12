@@ -7,7 +7,10 @@ import sty_OrderSelect from "styles/OrderSelectStyle";
 import img_cancelBtn from "assets/search/cancelBtn.png";
 import img_okBtn from "assets/search/orderFilter/okBtn.png";
 
-export default class OkCancelButtonCtn extends Component {
+import { orderAtoZ, orderHeaviest, orderLightest, orderNumerical, orderSmallest, orderTallest } from "../../../../store/actions/index";
+import { connect } from "react-redux";
+
+class OkCancelButtonCtn extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -18,12 +21,26 @@ export default class OkCancelButtonCtn extends Component {
     navigate("Search");
   };
 
-  cancelClicked = () => {
-    this.props.navigation.goBack(); // Exit the screen without calling okClicked
+  cancelClicked = (orderIdInput) => {
+    switch (orderIdInput) {
+      case 34:
+        return this.props.orderSelectNumericalFunction() && this.props.navigation.goBack();
+      case 35:
+        return this.props.orderSelectAtoZFunction() && this.props.navigation.goBack();
+      case 36:
+        return this.props.orderSelectHeaviestFunction() && this.props.navigation.goBack();
+      case 37:
+        return this.props.orderSelectLightestFunction() && this.props.navigation.goBack();
+      case 38:
+        return this.props.orderSelectTallestFunction() && this.props.navigation.goBack();
+      case 39:
+        return this.props.orderSelectSmallestFunction() && this.props.navigation.goBack();
+    }
   };
 
   render() {
     const { navigate } = this.props.navigation;
+    const { orderId } = this.props;
     return (
       <View style={sty_OrderSelect.orderSelectFooter}>
         <View style={sty_OrderSelect.orderSelectFooterHalf}>
@@ -60,7 +77,7 @@ export default class OkCancelButtonCtn extends Component {
             <View style={sty_OrderSelect.orderSelectFooterHalfMidBtnCtn}>
               <TouchableOpacity
                 style={sty_OrderSelect.orderSelectFooterHalfMidBtn}
-                onPress={() => this.cancelClicked()}
+                onPress={() => this.cancelClicked(orderId)}
               >
                 <View style={{ flex: 1 }}></View>
                 <Image
@@ -80,3 +97,20 @@ export default class OkCancelButtonCtn extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {};
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    orderSelectNumericalFunction: () => dispatch(orderNumerical()),
+    orderSelectHeaviestFunction: () => dispatch(orderHeaviest()),
+    orderSelectTallestFunction: () => dispatch(orderTallest()),
+    orderSelectAtoZFunction: () => dispatch(orderAtoZ()),
+    orderSelectLightestFunction: () => dispatch(orderLightest()),
+    orderSelectSmallestFunction: () => dispatch(orderSmallest()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(OkCancelButtonCtn);

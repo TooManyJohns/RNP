@@ -26,6 +26,8 @@ class OrderSelect extends Component {
   }
   render() {
     const { navigate } = this.props.navigation;
+    const { navigation } = this.props;
+    const orderId = navigation.getParam('orderId');  
     return (
       <View style={sty_SearchPage.searchPageCtn}>
         <TopSearchPage></TopSearchPage>
@@ -82,7 +84,7 @@ class OrderSelect extends Component {
               </View>
             </View>
 
-            <OkCancelButtonCtn navigation={this.props.navigation} />
+            <OkCancelButtonCtn navigation={this.props.navigation} orderId={orderId} />
           </ImageBackground>
           <View style={sty_SearchPage.dexBorderRed}>
             <View style={sty_SearchPage.dexBorderGrey}></View>
