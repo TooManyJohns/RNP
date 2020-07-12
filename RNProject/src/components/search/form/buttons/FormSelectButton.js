@@ -49,35 +49,35 @@ class FormSelectButton extends Component {
   formClicked = (formNumber) => {
     switch (formNumber) {
       case 1:
-        return () => this.props.formSelectHeadFunction();
+        return this.props.formSelectHeadFunction();
       case 2:
-        return () => this.props.formSelectSerpentineBodyFunction();
+        return this.props.formSelectSerpentineBodyFunction();
       case 3:
-        return () => this.props.formSelectFinsFunction();
+        return this.props.formSelectFinsFunction();
       case 4:
-        return () => this.props.formSelectHeadAndArmsFunction();
+        return this.props.formSelectHeadAndArmsFunction();
       case 5:
-        return () => this.props.formSelectHeadAndBaseFunction();
+        return this.props.formSelectHeadAndBaseFunction();
       case 6:
-        return () => this.props.formSelectBipedalTailedFormFunction();
+        return this.props.formSelectBipedalTailedFormFunction();
       case 7:
-        return () => this.props.formSelectHeadAndLegsFunction();
+        return this.props.formSelectHeadAndLegsFunction();
       case 8:
-        return () => this.props.formSelectQuadrupedBodyFunction();
+        return this.props.formSelectQuadrupedBodyFunction();
       case 9:
-        return () => this.props.formSelectSinglePairOfWingsFunction();
+        return this.props.formSelectSinglePairOfWingsFunction();
       case 10:
-        return () => this.props.formSelectTentaclesOrMultipedBodyFunction();
+        return this.props.formSelectTentaclesOrMultipedBodyFunction();
       case 11:
-        return () => this.props.formSelectMultipleBodiesFunction();
+        return this.props.formSelectMultipleBodiesFunction();
       case 12:
-        return () => this.props.formSelectBipedalTaillessFormFunction();
+        return this.props.formSelectBipedalTaillessFormFunction();
       case 13:
-        return () => this.props.formSelectTwoOrMorePairsOfWingsFunction();
+        return this.props.formSelectTwoOrMorePairsOfWingsFunction();
       case 14:
-        return () => this.props.formSelectInsectoidBodyFunction();
+        return this.props.formSelectInsectoidBodyFunction();
       case 15:
-        return () => this.props.formSelectBlankEntryFunction();
+        return this.props.formSelectBlankEntryFunction();
     }
   };
 
@@ -121,7 +121,7 @@ class FormSelectButton extends Component {
     return (
       <View style={sty_FormPage.formBtnCtn}>
         <TouchableOpacity
-          onPress={this.formClicked(formIndexInput)}
+          onPress={this.formClicked.bind(this, formIndexInput)}
           style={sty_FormPage.formBtn}
         >
           <Image

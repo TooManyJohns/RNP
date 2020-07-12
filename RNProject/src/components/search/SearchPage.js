@@ -46,18 +46,15 @@ class SearchPage extends Component {
     navigate("Name");
   };
 
-  formClicked = () => {
-    const { navigate } = this.props.navigation;
-    navigate("Form");
+  formClicked = (formSelectInput) => {
+    this.props.navigation.navigate('Form', {formId: formSelectInput})   
   };
 
   typeClicked = (typeSelectInputOne, typeSelectInputTwo) => {
-    const { navigate } = this.props.navigation;
     this.props.navigation.navigate('Type', {typeIdOne: typeSelectInputOne, typeIdTwo: typeSelectInputTwo})   
   };
 
   areaClicked = (areaSelectInput) => {
-    console.log(areaSelectInput);
     this.props.navigation.navigate('Area', {areaId: areaSelectInput})   
   };
 
@@ -165,7 +162,7 @@ class SearchPage extends Component {
                 <View style={sty_SearchPage.formSectionMid}>
                   <View style={sty_SearchPage.formSectionMidL}></View>
                   <TouchableOpacity
-                    onPress={() => this.formClicked()}
+                    onPress={() => this.formClicked(this.props.formSelect)}
                     style={sty_SearchPage.formBtnCtn}
                   >
                     <Image

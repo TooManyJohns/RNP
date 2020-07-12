@@ -22,6 +22,8 @@ class FormSelect extends Component {
   }
   render() {
     const { navigate } = this.props.navigation;
+    const { navigation } = this.props;
+    const formId = navigation.getParam('formId');  
     return (
       <View style={sty_SearchPage.searchPageCtn}>
         <TopSearchPage></TopSearchPage>
@@ -77,7 +79,7 @@ class FormSelect extends Component {
                 <View style={sty_FormPage.formViewCtnSideColumn}></View>
               </View>
             </View>
-            <OkCancelButtonCtn navigation={this.props.navigation} />
+            <OkCancelButtonCtn navigation={this.props.navigation} formId={formId} />
           </ImageBackground>
           <View style={sty_SearchPage.dexBorderRed}>
             <View style={sty_SearchPage.dexBorderGrey}></View>
