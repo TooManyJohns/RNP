@@ -95,6 +95,15 @@ export default class PokemonList extends Component {
     this.setState({ cryURL: pkmn.cry });
   };
 
+  selectionPokeBar = (selectedPokemonInput) => {
+    if (selectedPokemonInput.name === undefined) {
+      return ""
+    }
+    else {
+      return selectedPokemonInput.name.toUpperCase()
+    }
+  };
+
   render() {
     const { isLoading } = this.state;
     const { navigation } = this.props;
@@ -123,11 +132,13 @@ export default class PokemonList extends Component {
           style={sty_BtmCtn.bottomContainer}
         >
           <View style={sty_BtmCtn.bottomCtnFlexDir}>
+            <View style={{flex:1}}></View>
             <PokemonListFilter
               pokemonList={this.state.pokemon}
               filterSelection={filterSelection}
               indexClicked={this.indexClicked}
             ></PokemonListFilter>
+            <View style={{flex:1}}></View>
           </View>
           <View //FRONT OF SCREEN OVERLAPPING THE GRID USING ZINDEX
             style={{ flex: 1, zIndex: 1, position: "relative" }}
@@ -136,7 +147,7 @@ export default class PokemonList extends Component {
             <View style={{ flex: 1 }} pointerEvents={"none"}>
               <View style={{ flex: 5 }}></View>
               <SelectedPokemonBar
-                selectedPokemon={this.state.pokeSelected.name.toUpperCase()}
+                selectedPokemon={this.selectionPokeBar(this.state.pokeSelected)}
               ></SelectedPokemonBar>
               <View style={{ flex: 0.25, backgroundColor: "" }}></View>
             </View>
