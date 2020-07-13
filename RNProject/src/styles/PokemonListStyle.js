@@ -8,7 +8,9 @@ export default StyleSheet.create({
     //backgroundColor: 'blue'
   },
   bottomCtnFlexDir: {
-    flexDirection: "row"
+    flexDirection: "row",
+    zIndex:0,
+    position:'absolute'
   },
   sideBarBottomCtn: {
     flex: 1,
@@ -85,10 +87,9 @@ export default StyleSheet.create({
   },
   buttonSetContainer: {
     backgroundColor: "blue", 
-    marginBottom: 30, 
     height: undefined,
     width: "100%",
-    aspectRatio: 256 / 37
+    aspectRatio: 256 / 37,
   },
   buttonSet: {
     flexDirection: "row", 
@@ -100,5 +101,12 @@ export default StyleSheet.create({
     height: undefined,
     width: "100%",
     aspectRatio: 64 / 37,
-  }
+  },
+  descText: {
+    color: "white", //placeholder
+    paddingLeft: 10,
+    paddingRight: 10,
+    fontSize: 26,
+    fontFamily: "Pokmon-DS-Font",
+  },
 });

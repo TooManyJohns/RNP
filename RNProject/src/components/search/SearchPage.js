@@ -68,12 +68,12 @@ class SearchPage extends Component {
   getFilterSelect = () => {
     const filterSelection = [
       {
-        orderFilter: this.props.orderSelect,
-        nameFilter: this.props.nameSelect,
-        formFilter: this.props.formSelect,
-        typeOneFilter: this.props.typeSelectOne,
-        typeTwoFilter: this.props.typeSelectTwo,
-        areaFilter: this.props.areaSelect,
+        orderFilter: this.props.orderSelect-1,
+        nameFilter: this.props.nameSelect-1,
+        formFilter: this.props.formSelect-1,
+        typeOneFilter: this.props.typeSelectOne-1,
+        typeTwoFilter: this.props.typeSelectTwo-1,
+        areaFilter: this.props.areaSelect-1,
       },
     ];
   return filterSelection
