@@ -535,12 +535,6 @@ export default class PokemonListFilter extends Component {
     return inputList;
   };
 
-  indexClicked = (pkmn) => {
-    this.setState({ showInfo: !this.state.showInfo });
-    this.setState({ pokeSelected: pkmn });
-    this.setState({ cryURL: pkmn.cry });
-  };
-
   render() {
     const { navigation } = this.props;
     const {
@@ -562,7 +556,7 @@ export default class PokemonListFilter extends Component {
           renderItem={({ item }) => (
             <View key={item.name} style={sty_BtmCtn.indexContainer}>
               <TouchableOpacity
-                onPress={() => this.indexClicked(item)}
+                onPress={() => this.props.indexClicked(item)}
                 style={sty_BtmCtn.buttonContainer}
               >
                 <View style={sty_BtmCtn.topIndex}>

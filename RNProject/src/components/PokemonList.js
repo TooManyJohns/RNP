@@ -89,6 +89,12 @@ export default class PokemonList extends Component {
     console.log("Just took data from Firestore!");
   };
 
+  indexClicked = (pkmn) => {
+    this.setState({ showInfo: !this.state.showInfo });
+    this.setState({ pokeSelected: pkmn });
+    this.setState({ cryURL: pkmn.cry });
+  };
+
   render() {
     const { isLoading } = this.state;
     const { navigation } = this.props;
@@ -120,6 +126,7 @@ export default class PokemonList extends Component {
             <PokemonListFilter
               pokemonList={this.state.pokemon}
               filterSelection={filterSelection}
+              indexClicked={this.indexClicked}
             ></PokemonListFilter>
           </View>
           <View //FRONT OF SCREEN OVERLAPPING THE GRID USING ZINDEX
