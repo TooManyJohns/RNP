@@ -68,7 +68,7 @@ export default StyleSheet.create({
     alignContent: "center",
     height: undefined,
     width: "100%",
-    aspectRatio: 102 / 116,
+    aspectRatio: 8 / 8,
     alignItems: "center",
     justifyContent: "center",
   },
