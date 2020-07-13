@@ -9,7 +9,6 @@ import img_bDetails from "assets/grid/buttons/gridDetails.png";
 import img_bQuit from "assets/grid/buttons/gridQuit.png";
 
 import sty_BtmCtn from "styles/PokemonListStyle";
-import sty_Search from "styles/SearchStyle";
 
 import SoundPlayer from "react-native-sound-player";
 
@@ -679,14 +678,6 @@ export default class PokemonList extends Component {
         }}
       >
         <GridHeader pkmn={this.state.pokeSelected} />
-        <TextInput
-          style={sty_Search.input}
-          placeholder="Pokemon Name"
-          onChangeText={(text) => {
-            this.setState({ search: text });
-          }}
-          value={this.state.search}
-        ></TextInput>
         <View style={sty_BtmCtn.bottomContainer}>
           <View style={sty_BtmCtn.sideBarBottomCtn}>
             <View style={{ flex: 10 }}></View>
