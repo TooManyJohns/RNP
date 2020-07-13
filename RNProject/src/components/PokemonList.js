@@ -22,6 +22,8 @@ import {
 } from "react-native";
 
 import GridHeader from "components/GridProfileHeader";
+import TopBorder from "components/borders/PokedexTopBorder";
+import BottomBorder from "components/borders/PokedexBottomBorder";
 
 //before we load the asset, just incase (will remove later)
 const beforeLoad = [
@@ -677,108 +679,102 @@ export default class PokemonList extends Component {
           flex: 1,
         }}
       >
+        <TopBorder></TopBorder>
         <GridHeader pkmn={this.state.pokeSelected} />
         <View style={sty_BtmCtn.bottomContainer}>
-          <View style={sty_BtmCtn.sideBarBottomCtn}>
-            <View style={{ flex: 10 }}></View>
-            <View style={sty_BtmCtn.sBCp}></View>
-            <View style={sty_BtmCtn.sBCg}></View>
-          </View>
-          <View style={sty_BtmCtn.gridContainer}>
-            <FlatList
-              data={formatGrid(
-                this.filterPokemonList(
-                  this.state.pokemon,
-                  filterSelection
-                ).filter((pokeIndex) => {
-                  return pokeIndex;
-                }),
-                numColumns
-              )}
-              renderItem={({ item }) => (
-                <View key={item.name} style={sty_BtmCtn.indexContainer}>
-                  <TouchableOpacity
-                    onPress={() => this.indexClicked(item)}
-                    style={sty_BtmCtn.buttonContainer}
-                  >
-                    <View style={sty_BtmCtn.topIndex}>
-                      <View style={sty_BtmCtn.topLeftIndexContainer}>
-                        <Image
-                          source={displayPokeball(item)}
-                          style={sty_BtmCtn.pkbSpr}
-                        ></Image>
+          <View style={sty_BtmCtn.bottomCtnFlexDir}>
+            <View style={sty_BtmCtn.gridContainer}>
+              <FlatList
+                data={formatGrid(
+                  this.filterPokemonList(
+                    this.state.pokemon,
+                    filterSelection
+                  ).filter((pokeIndex) => {
+                    return pokeIndex;
+                  }),
+                  numColumns
+                )}
+                renderItem={({ item }) => (
+                  <View key={item.name} style={sty_BtmCtn.indexContainer}>
+                    <TouchableOpacity
+                      onPress={() => this.indexClicked(item)}
+                      style={sty_BtmCtn.buttonContainer}
+                    >
+                      <View style={sty_BtmCtn.topIndex}>
+                        <View style={sty_BtmCtn.topLeftIndexContainer}>
+                          <Image
+                            source={displayPokeball(item)}
+                            style={sty_BtmCtn.pkbSpr}
+                          ></Image>
+                        </View>
+                        <View style={sty_BtmCtn.topRightIndexContainer}>
+                          <Text> {item.index}</Text>
+                        </View>
                       </View>
-                      <View style={sty_BtmCtn.topRightIndexContainer}>
-                        <Text> {item.index}</Text>
+                      <View style={sty_BtmCtn.bottomIndex}>
+                        <View style={sty_BtmCtn.sprIndexContainer}>
+                          <Image
+                            style={sty_BtmCtn.sprIndex}
+                            source={{ uri: item.indexSprite }}
+                          ></Image>
+                        </View>
                       </View>
-                    </View>
-                    <View style={sty_BtmCtn.bottomIndex}>
-                      <View style={sty_BtmCtn.sprIndexContainer}>
-                        <Image
-                          style={sty_BtmCtn.sprIndex}
-                          source={{ uri: item.indexSprite }}
-                        ></Image>
-                      </View>
-                    </View>
-                  </TouchableOpacity>
-                </View>
-              )}
-              keyExtractor={(item) => item.name}
-              initialNumToRender={30} //amount of items to render at a time
-              numColumns={5}
-            />
+                    </TouchableOpacity>
+                  </View>
+                )}
+                keyExtractor={(item) => item.name}
+                initialNumToRender={30} //amount of items to render at a time
+                numColumns={5}
+              />
+            </View>
           </View>
-          <View style={sty_BtmCtn.sideBarBottomCtn}>
-            <View style={sty_BtmCtn.sBCg}></View>
-            <View style={sty_BtmCtn.sBCp}></View>
-            <View style={{ flex: 10 }}></View>
-          </View>
-        </View>
-        <View style={sty_BtmCtn.buttonSetContainer}>
-          <View style={sty_BtmCtn.buttonSet}>
-            <View style={{ flex: 1 }}>
-              <TouchableOpacity
-                style={{ flex: 1 }}
-                onPress={() => navigate("Search")}
-              >
-                <Image
-                  style={sty_BtmCtn.buttonBottom}
-                  source={img_bSearch}
-                ></Image>
-              </TouchableOpacity>
-            </View>
-            <View style={{ flex: 1 }}>
-              <TouchableOpacity
-                style={{ flex: 1 }}
-                onPress={() => SoundPlayer.playUrl(this.state.cryURL)}
-              >
-                <Image
-                  style={sty_BtmCtn.buttonBottom}
-                  source={img_bCry}
-                ></Image>
-              </TouchableOpacity>
-            </View>
-            <View style={{ flex: 1 }}>
-              <TouchableOpacity style={{ flex: 1 }}>
-                <Image
-                  style={sty_BtmCtn.buttonBottom}
-                  source={img_bDetails}
-                ></Image>
-              </TouchableOpacity>
-            </View>
-            <View style={{ flex: 1 }}>
-              <TouchableOpacity
-                style={{ flex: 1 }}
-                onPress={() => this.exitClicked()}
-              >
-                <Image
-                  style={sty_BtmCtn.buttonBottom}
-                  source={img_bQuit}
-                ></Image>
-              </TouchableOpacity>
+          <View style={sty_BtmCtn.buttonSetContainer}>
+            <View style={sty_BtmCtn.buttonSet}>
+              <View style={{ flex: 1 }}>
+                <TouchableOpacity
+                  style={{ flex: 1 }}
+                  onPress={() => navigate("Search")}
+                >
+                  <Image
+                    style={sty_BtmCtn.buttonBottom}
+                    source={img_bSearch}
+                  ></Image>
+                </TouchableOpacity>
+              </View>
+              <View style={{ flex: 1 }}>
+                <TouchableOpacity
+                  style={{ flex: 1 }}
+                  onPress={() => SoundPlayer.playUrl(this.state.cryURL)}
+                >
+                  <Image
+                    style={sty_BtmCtn.buttonBottom}
+                    source={img_bCry}
+                  ></Image>
+                </TouchableOpacity>
+              </View>
+              <View style={{ flex: 1 }}>
+                <TouchableOpacity style={{ flex: 1 }}>
+                  <Image
+                    style={sty_BtmCtn.buttonBottom}
+                    source={img_bDetails}
+                  ></Image>
+                </TouchableOpacity>
+              </View>
+              <View style={{ flex: 1 }}>
+                <TouchableOpacity
+                  style={{ flex: 1 }}
+                  onPress={() => this.exitClicked()}
+                >
+                  <Image
+                    style={sty_BtmCtn.buttonBottom}
+                    source={img_bQuit}
+                  ></Image>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
         </View>
+        <BottomBorder></BottomBorder>
       </View>
     );
   }

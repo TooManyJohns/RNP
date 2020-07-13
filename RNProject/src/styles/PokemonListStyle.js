@@ -2,9 +2,13 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   bottomContainer: {
-    flex: 1,
-    flexDirection: "row",
+    width: "100%",
+    height: undefined,
+    aspectRatio: 254 / 190,
     //backgroundColor: 'blue'
+  },
+  bottomCtnFlexDir: {
+    flexDirection: "row"
   },
   sideBarBottomCtn: {
     flex: 1,
