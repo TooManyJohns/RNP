@@ -57,11 +57,26 @@ class SearchPage extends Component {
   };
 
   startClicked = (filterSelection) => {
+    console.log(filterSelection.order)
     this.props.navigation.navigate('Info', {filterSelection: filterSelection})   
   };
 
   cancelClicked = () => {
     this.props.navigation.goBack();
+  };
+
+  getFilterSelect = () => {
+    const filterSelection = [
+      {
+        orderFilter: this.props.orderSelect,
+        nameFilter: this.props.nameSelect,
+        formFilter: this.props.formSelect,
+        typeOneFilter: this.props.typeSelectOne,
+        typeTwoFilter: this.props.typeSelectTwo,
+        areaFilter: this.props.areaSelect,
+      },
+    ];
+  return filterSelection
   };
 
   render() {
@@ -224,7 +239,7 @@ class SearchPage extends Component {
                 <View style={sty_SearchPage.btn}>
                   <TouchableOpacity 
                   style={{ flex: 1 }}
-                  onPress={() => this.startClicked()}
+                  onPress={() => this.startClicked(this.getFilterSelect())}
                   >
                     <View style={{ flex: 1 }}></View>
                     <Image
