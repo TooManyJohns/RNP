@@ -40,28 +40,28 @@ const orderReducer = (state = initialState, action) => {
       return {
         ...state,
         orderSelect: TallestTxt,
-        filter:3
+        filter:5
       };
 
     case ORDER_SELECT_SMALLEST:
       return {
         ...state,
         orderSelect: SmallestTxt,
-        filter:4
+        filter:6
       };
 
     case ORDER_SELECT_HEAVIEST:
       return {
         ...state,
         orderSelect: HeaviestTxt,
-        filter:5
+        filter:3
       };
 
     case ORDER_SELECT_LIGHTEST:
       return {
         ...state,
         orderSelect: LightestTxt,
-        filter:6
+        filter:4
       };
 
     case ORDER_SELECT_RESET:
