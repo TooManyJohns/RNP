@@ -10,11 +10,16 @@ const numColumns = 5;
 
 const formatGrid = (data, numColumns) => {
   const fullRows = Math.floor(data.length / numColumns);
-  let elementsLastRow = data.length - fullRows * numColumns;
+  let elementsLastRow = ((data.length - fullRows * numColumns));
   while (elementsLastRow !== numColumns && elementsLastRow !== 0) {
     data.push({ key: `blank-${elementsLastRow}`, empty: true });
     elementsLastRow++;
+    //add a couple extra empty rows on VV
+    for (i=0; i<6; i++) {
+      data.push({ key: `blank-${elementsLastRow}`, empty: true });
+    }
   }
+  data.push({key: `blank-${elementsLastRow}`, empty: true })
   return data;
 };
 

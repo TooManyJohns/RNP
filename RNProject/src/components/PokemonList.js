@@ -3,7 +3,7 @@ import { db } from "../firebase-src/firebaseindex";
 
 import sty_BtmCtn from "styles/PokemonListStyle";
 
-import { View } from "react-native";
+import { View, ImageBackground, Image } from "react-native";
 
 import GridHeader from "./pokemongrid/GridProfileHeader";
 import TopBorder from "components/borders/PokedexTopBorder";
@@ -11,6 +11,7 @@ import BottomBorder from "components/borders/PokedexBottomBorder";
 import SelectedPokemonBar from "./pokemongrid/SelectedPokemonBar";
 import ButtonSet from "./pokemongrid/ButtonSet";
 import PokemonListFilter from "./pokemongrid/PokemonListFilter";
+import BottomLeftSideBar from "./pokemongrid/BottomLeftSideBar";
 
 //Filter that will load in as default without using search feature, just uses default search options
 const defaultFilter = [
@@ -132,13 +133,15 @@ export default class PokemonList extends Component {
           style={sty_BtmCtn.bottomContainer}
         >
           <View style={sty_BtmCtn.bottomCtnFlexDir}>
-            <View style={{flex:1}}></View>
+            <BottomLeftSideBar
+              navigation={this.props.navigation}
+            ></BottomLeftSideBar>
             <PokemonListFilter
               pokemonList={this.state.pokemon}
               filterSelection={filterSelection}
               indexClicked={this.indexClicked}
             ></PokemonListFilter>
-            <View style={{flex:1}}></View>
+            <View style={{flex:1.05}}></View>
           </View>
           <View //FRONT OF SCREEN OVERLAPPING THE GRID USING ZINDEX
             style={{ flex: 1, zIndex: 1, position: "relative" }}
