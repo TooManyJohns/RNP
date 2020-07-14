@@ -59,6 +59,7 @@ import {
   
   const initialState = {
     nameSelect: img_DASH,
+    filter:27
   };
   
   const nameReducer = (state = initialState, action) => {
@@ -67,168 +68,196 @@ import {
         return {
           ...state,
           nameSelect: img_A,
+          filter:1
         };
   
       case NAME_SELECT_B:
         return {
           ...state,
           nameSelect: img_B,
+          filter:2
         };
   
       case NAME_SELECT_C:
         return {
           ...state,
           nameSelect: img_C,
+          filter:3
         };
   
       case NAME_SELECT_D:
         return {
           ...state,
           nameSelect: img_D,
+          filter:4
         };
   
       case NAME_SELECT_E:
         return {
           ...state,
           nameSelect: img_E,
+          filter:5
         };
   
       case NAME_SELECT_F:
         return {
           ...state,
           nameSelect: img_F,
+          filter:6
         };
   
       case NAME_SELECT_G:
         return {
           ...state,
           nameSelect: img_G,
+          filter:7
         };
   
       case NAME_SELECT_H:
         return {
           ...state,
           nameSelect: img_H,
+          filter:8
         };
   
       case NAME_SELECT_I:
         return {
           ...state,
           nameSelect: img_I,
+          filter:9
         };
   
       case NAME_SELECT_J:
         return {
           ...state,
           nameSelect: img_J,
+          filter:10
         };
   
       case NAME_SELECT_K:
         return {
           ...state,
           nameSelect: img_K,
+          filter:11
         };
   
       case NAME_SELECT_L:
         return {
           ...state,
           nameSelect: img_L,
+          filter:12
         };
   
       case NAME_SELECT_M:
         return {
           ...state,
           nameSelect: img_M,
+          filter:13
         };
   
       case NAME_SELECT_N:
         return {
           ...state,
           nameSelect: img_N,
+          filter:14
         };
   
       case NAME_SELECT_O:
         return {
           ...state,
           nameSelect: img_O,
+          filter:15
         };
   
       case NAME_SELECT_P:
         return {
           ...state,
           nameSelect: img_P,
+          filter:16
         };
   
       case NAME_SELECT_Q:
         return {
           ...state,
           nameSelect: img_Q,
+          filter:17
         };
   
       case NAME_SELECT_R:
         return {
           ...state,
           nameSelect: img_R,
+          filter:18
         };
   
       case NAME_SELECT_S:
         return {
           ...state,
           nameSelect: img_S,
+          filter:19
         };
   
       case NAME_SELECT_T:
         return {
           ...state,
           nameSelect: img_T,
+          filter:20
         };
   
       case NAME_SELECT_U:
         return {
           ...state,
           nameSelect: img_U,
+          filter:21
         };
   
       case NAME_SELECT_V:
         return {
           ...state,
           nameSelect: img_V,
+          filter:22
         };
   
       case NAME_SELECT_W:
         return {
           ...state,
           nameSelect: img_W,
+          filter:23
         };
   
       case NAME_SELECT_X:
         return {
           ...state,
           nameSelect: img_X,
+          filter:24
         };
   
       case NAME_SELECT_Y:
         return {
           ...state,
           nameSelect: img_Y,
+          filter:25
         };
   
       case NAME_SELECT_Z:
         return {
           ...state,
           nameSelect: img_Z,
+          filter:26
         };
   
       case NAME_SELECT_DASH:
         return {
           ...state,
           nameSelect: img_DASH,
+          filter:27
         };
   
       case NAME_SELECT_RESET:
         return {
           ...state,
           nameSelect: initialState.nameSelect,
+          filter: initialState.filter
         };
       default:
         return state;

@@ -14,10 +14,6 @@ const formatGrid = (data, numColumns) => {
   while (elementsLastRow !== numColumns && elementsLastRow !== 0) {
     data.push({ key: `blank-${elementsLastRow}`, empty: true });
     elementsLastRow++;
-    //add a couple extra empty rows on VV
-    for (i=0; i<6; i++) {
-      data.push({ key: `blank-${elementsLastRow}`, empty: true });
-    }
   }
   data.push({key: `blank-${elementsLastRow}`, empty: true })
   return data;
@@ -40,7 +36,7 @@ export default class PokemonListFilter extends Component {
     //ORDER FILTER (SORTING)\\
     switch (inputFilter[0].orderFilter) {
       //Numerical
-      case 34:
+      case 1:
         inputList.sort(function (a, b) {
           var indexA = parseInt(a.index, 10);
           var indexB = parseInt(b.index, 10);
@@ -48,7 +44,7 @@ export default class PokemonListFilter extends Component {
         });
         break;
       //AtoZ
-      case 35:
+      case 2:
         inputList.sort(function (a, b) {
           var textA = a.name.toUpperCase();
           var textB = b.name.toUpperCase();
@@ -56,7 +52,7 @@ export default class PokemonListFilter extends Component {
         });
         break;
       //Heaviest
-      case 36:
+      case 3:
         inputList.sort(function (a, b) {
           var wtA = parseFloat(a.wt.slice(0, -4), 10);
           var wtB = parseFloat(b.wt.slice(0, -4), 10);
@@ -64,7 +60,7 @@ export default class PokemonListFilter extends Component {
         });
         break;
       //Lightest
-      case 37:
+      case 4:
         inputList.sort(function (a, b) {
           var wtA = parseFloat(a.wt.slice(0, -4), 10);
           var wtB = parseFloat(b.wt.slice(0, -4), 10);
@@ -72,7 +68,7 @@ export default class PokemonListFilter extends Component {
         });
         break;
       //Tallest
-      case 38:
+      case 5:
         inputList.sort(function (a, b) {
           var htA = parseFloat(a.ht.replace("'", "."), 10);
           var htB = parseFloat(b.ht.replace("'", "."), 10);
@@ -80,7 +76,7 @@ export default class PokemonListFilter extends Component {
         });
         break;
       //Smallest
-      case 39:
+      case 6:
         inputList.sort(function (a, b) {
           var htA = parseFloat(a.ht.replace("'", "."), 10);
           var htB = parseFloat(b.ht.replace("'", "."), 10);
@@ -91,338 +87,338 @@ export default class PokemonListFilter extends Component {
 
     //NAME FILTER\\
     switch (inputFilter[0].nameFilter) {
-      case 42:
+      case 1:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("A")
         );
         break;
-      case 43:
+      case 2:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("B")
         );
         break;
-      case 44:
+      case 3:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("C")
         );
         break;
-      case 45:
+      case 4:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("D")
         );
         break;
-      case 46:
+      case 5:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("E")
         );
         break;
-      case 47:
+      case 6:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("F")
         );
         break;
-      case 48:
+      case 7:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("G")
         );
         break;
-      case 49:
+      case 8:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("H")
         );
         break;
-      case 50:
+      case 9:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("I")
         );
         break;
-      case 51:
+      case 10:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("J")
         );
         break;
-      case 52:
+      case 11:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("K")
         );
         break;
-      case 53:
+      case 12:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("L")
         );
         break;
-      case 54:
+      case 13:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("M")
         );
         break;
-      case 55:
+      case 14:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("N")
         );
         break;
-      case 56:
+      case 15:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("O")
         );
         break;
-      case 57:
+      case 16:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("P")
         );
         break;
-      case 58:
+      case 17:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("Q")
         );
         break;
-      case 59:
+      case 18:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("R")
         );
         break;
-      case 60:
+      case 19:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("S")
         );
         break;
-      case 61:
+      case 20:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("T")
         );
         break;
-      case 62:
+      case 21:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("U")
         );
         break;
-      case 63:
+      case 22:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("V")
         );
         break;
-      case 64:
+      case 23:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("W")
         );
         break;
-      case 65:
+      case 24:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("X")
         );
         break;
-      case 66:
+      case 25:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("Y")
         );
         break;
-      case 67:
+      case 26:
         inputList = inputList.filter((pokeIndex) =>
           pokeIndex.name.startsWith("Z")
         );
         break;
-      case 68:
+      case 27:
         //When dashes is here as default, do nothin'!
         break;
     }
 
     //FORM FILTER\\
     switch (inputFilter[0].formFilter) {
-      case 70:
+      case 1:
         inputList = inputList.filter((pokeIndex) => pokeIndex.form === "Head");
         break;
-      case 71:
+      case 2:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.form === "SerpentineBody"
         );
         break;
-      case 72:
+      case 3:
         inputList = inputList.filter((pokeIndex) => pokeIndex.form === "Fins");
         break;
-      case 73:
+      case 4:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.form === "HeadAndArms"
         );
         break;
-      case 74:
+      case 5:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.form === "HeadAndBase"
         );
         break;
-      case 75:
+      case 6:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.form === "BipedalTailedForm"
         );
         break;
-      case 76:
+      case 7:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.form === "HeadAndLegs"
         );
         break;
-      case 77:
+      case 8:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.form === "QuadrupedBody"
         );
         break;
-      case 78:
+      case 9:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.form === "SinglePairOfWings"
         );
         break;
-      case 79:
+      case 10:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.form === "TentaclesOrMultipedBody"
         );
         break;
-      case 80:
+      case 11:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.form === "MultipleBodies"
         );
         break;
-      case 81:
+      case 12:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.form === "BipedalTaillessForm"
         );
         break;
-      case 82:
+      case 13:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.form === "TwoOrMorePairsOfWings"
         );
         break;
-      case 83:
+      case 14:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.form === "InsectoidBody"
         );
         break;
-      case 84:
+      case 15:
         // Blank entry slot
         break;
     }
 
     //AREA FILTER\\
     switch (inputFilter[0].areaFilter) {
-      case 105:
+      case 1:
         console.log("Johto");
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.area === "Johto" || pokeIndex.area === "Both"
         );
         break;
-      case 106:
+      case 2:
         console.log("Unknown");
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.area === "Unknown"
         );
         break;
-      case 107:
+      case 3:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.area === "Kanto" || pokeIndex.area === "Both"
         );
         break;
-      case 108: //DASHES (Default, initialState)
+      case 4: //DASHES (Default, initialState)
         //Dashes
         break;
     }
 
     //TYPE ONE FILTER\\
     switch (inputFilter[0].typeOneFilter) {
-      case 86:
+      case 1:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Normal" || pokeIndex.type2 === "Normal"
         );
         break;
-      case 87:
+      case 2:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Ground" || pokeIndex.type2 === "Ground"
         );
         break;
-      case 88:
+      case 3:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Steel" || pokeIndex.type2 === "Steel"
         );
         break;
-      case 89:
+      case 4:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Electric" || pokeIndex.type2 === "Electric"
         );
         break;
-      case 90:
+      case 5:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Dark" || pokeIndex.type2 === "Dark"
         );
         break;
-      case 91:
+      case 6:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Fight" || pokeIndex.type2 === "Fight"
         );
         break;
-      case 92:
+      case 7:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Rock" || pokeIndex.type2 === "Rock"
         );
         break;
-      case 93:
+      case 8:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Fire" || pokeIndex.type2 === "Fire"
         );
         break;
-      case 94:
+      case 9:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Psychic" || pokeIndex.type2 === "Psychic"
         );
         break;
-      case 95:
+      case 10:
         //DASHES
         break;
-      case 96:
+      case 11:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Flying" || pokeIndex.type2 === "Flying"
         );
         break;
-      case 97:
+      case 12:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.type1 === "Bug" || pokeIndex.type2 === "Bug"
         );
         break;
-      case 98:
+      case 13:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Water" || pokeIndex.type2 === "Water"
         );
         break;
-      case 99:
+      case 14:
         inputList = inputList.filter(
           (pokeIndex) => pokeIndex.type1 === "Ice" || pokeIndex.type2 === "Ice"
         );
         break;
-      case 100:
+      case 15:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Poison" || pokeIndex.type2 === "Poison"
         );
         break;
-      case 101:
+      case 16:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Ghost" || pokeIndex.type2 === "Ghost"
         );
         break;
-      case 102:
+      case 17:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Grass" || pokeIndex.type2 === "Grass"
         );
         break;
-      case 103:
+      case 18:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Dragon" || pokeIndex.type2 === "Dragon"
@@ -432,7 +428,7 @@ export default class PokemonListFilter extends Component {
 
     //TYPE TWO FILTER\\
     switch (inputFilter[0].typeTwoFilter) {
-      case 86:
+      case 1:
         inputList = inputList.filter(
           (pokeIndex) =>
             pokeIndex.type1 === "Normal" || pokeIndex.type2 === "Normal"

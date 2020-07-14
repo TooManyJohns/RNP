@@ -16,12 +16,12 @@ import BottomLeftSideBar from "./pokemongrid/BottomLeftSideBar";
 //Filter that will load in as default without using search feature, just uses default search options
 const defaultFilter = [
   {
-    orderFilter: 34, // Numerical
-    nameFilter: 68, // None (Dashes)
-    formFilter: 84, // None (Blank entry)
-    typeOneFilter: 95, // None (Dashes)
-    typeTwoFilter: 95, // None (Dashes)
-    areaFilter: 108, // None (Dashes)
+    orderFilter: 1, // Numerical
+    nameFilter: 27, // None (Dashes)
+    formFilter: 15, // None (Blank entry)
+    typeOneFilter: 10, // None (Dashes)
+    typeTwoFilter: 10, // None (Dashes)
+    areaFilter: 4, // None (Dashes)
   },
 ];
 

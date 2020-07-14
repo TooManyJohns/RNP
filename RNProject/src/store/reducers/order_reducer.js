@@ -17,6 +17,7 @@ import LightestTxt from "assets/search/orderFilter/Lightest.png";
 
 const initialState = {
   orderSelect: NumericalTxt,
+  filter:1
 };
 
 const orderReducer = (state = initialState, action) => {
@@ -25,42 +26,49 @@ const orderReducer = (state = initialState, action) => {
       return {
         ...state,
         orderSelect: NumericalTxt,
+        filter:1
       };
 
     case ORDER_SELECT_ATOZ:
       return {
         ...state,
         orderSelect: AtoZTxt,
+        filter:2
       };
 
     case ORDER_SELECT_TALLEST:
       return {
         ...state,
         orderSelect: TallestTxt,
+        filter:3
       };
 
     case ORDER_SELECT_SMALLEST:
       return {
         ...state,
         orderSelect: SmallestTxt,
+        filter:4
       };
 
     case ORDER_SELECT_HEAVIEST:
       return {
         ...state,
         orderSelect: HeaviestTxt,
+        filter:5
       };
 
     case ORDER_SELECT_LIGHTEST:
       return {
         ...state,
         orderSelect: LightestTxt,
+        filter:6
       };
 
     case ORDER_SELECT_RESET:
       return {
         ...state,
         orderSelect: initialState.orderSelect,
+        filter:initialState.filter
       };
 
     default:

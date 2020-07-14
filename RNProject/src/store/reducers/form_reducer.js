@@ -35,6 +35,7 @@ import {
   
   const initialState = {
     formSelect: img_BlankEntry,
+    filter: 15
   };
   
   const formReducer = (state = initialState, action) => {
@@ -43,96 +44,112 @@ import {
         return {
           ...state,
           formSelect: img_Head,
+          filter:1
         };
   
       case FORM_SELECT_SERPENTINEBODY:
         return {
           ...state,
           formSelect: img_SerpentineBody,
+          filter:2
         };
   
       case FORM_SELECT_FINS:
         return {
           ...state,
           formSelect: img_Fins,
+          filter:3
         };
   
       case FORM_SELECT_HEADANDARMS:
         return {
           ...state,
           formSelect: img_HeadAndArms,
+          filter:4
         };
   
       case FORM_SELECT_HEADANDBASE:
         return {
           ...state,
           formSelect: img_HeadAndBase,
+          filter:5
         };
   
       case FORM_SELECT_BIPEDALTAILEDFORM:
         return {
           ...state,
           formSelect: img_BipedalTailedForm,
+          filter:6
         };
   
       case FORM_SELECT_HEADANDLEGS:
         return {
           ...state,
           formSelect: img_HeadAndLegs,
+          filter:7
         };
   
       case FORM_SELECT_QUADRUPEDBODY:
         return {
           ...state,
           formSelect: img_QuadrupedBody,
+          filter:8
         };
   
       case FORM_SELECT_SINGLEPAIROFWINGS:
         return {
           ...state,
           formSelect: img_SinglePairOfWings,
+          filter:9
         };
   
       case FORM_SELECT_TENTACLESORMULTIPEDBODY:
         return {
           ...state,
           formSelect: img_TentaclesOrMultipedBody,
+          filter: 10
         };
   
       case FORM_SELECT_MULTIPLEBODIES:
         return {
           ...state,
           formSelect: img_MultipleBodies,
+          filter: 11
         };
   
       case FORM_SELECT_BIPEDALTAILLESSFORM:
         return {
           ...state,
           formSelect: img_BipedalTaillessForm,
+          filter:12
         };
   
       case FORM_SELECT_TWOORMOREPAIRSOFWINGS:
         return {
           ...state,
           formSelect: img_TwoOrMorePairsOfWings,
+          filter:13
         };
   
       case FORM_SELECT_INSECTOIDBODY:
         return {
           ...state,
           formSelect: img_InsectoidBody,
+          filter:14
         };
   
       case FORM_SELECT_BLANKENTRY:
         return {
           ...state,
           formSelect: img_BlankEntry,
+          filter:15
         };
   
       case FORM_SELECT_RESET:
         return {
           ...state,
           formSelect: initialState.formSelect,
+          filter: initialState.filter
         };
       default:
         return state;

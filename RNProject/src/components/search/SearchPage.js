@@ -45,6 +45,7 @@ class SearchPage extends Component {
   };
 
   formClicked = (formSelectInput) => {
+    console.log(formSelectInput)
     this.props.navigation.navigate('Form', {formId: formSelectInput})   
   };
 
@@ -57,7 +58,6 @@ class SearchPage extends Component {
   };
 
   startClicked = (filterSelection) => {
-    console.log(filterSelection.order)
     this.props.navigation.navigate('Info', {filterSelection: filterSelection})   
   };
 
@@ -68,12 +68,12 @@ class SearchPage extends Component {
   getFilterSelect = () => {
     const filterSelection = [
       {
-        orderFilter: this.props.orderSelect-1,
-        nameFilter: this.props.nameSelect-1,
-        formFilter: this.props.formSelect-1,
-        typeOneFilter: this.props.typeSelectOne-1,
-        typeTwoFilter: this.props.typeSelectTwo-1,
-        areaFilter: this.props.areaSelect-1,
+        orderFilter: this.props.orderFilter,
+        nameFilter: this.props.nameSelect,
+        formFilter: this.props.formFilter,
+        typeOneFilter: this.props.typeFilterOne,
+        typeTwoFilter: this.props.typeFilterTwo,
+        areaFilter: this.props.areaFilter,
       },
     ];
   return filterSelection
@@ -283,12 +283,20 @@ class SearchPage extends Component {
 
 const mapStateToProps = (state) => {
   return {
+    //Select options (imgs)
     orderSelect: state.order.orderSelect,
     nameSelect: state.name.nameSelect,
     formSelect: state.form.formSelect,
     typeSelectOne: state.type.typeSelectOne,
     typeSelectTwo: state.type.typeSelectTwo,
     areaSelect: state.area.areaSelect,
+    //Filters
+    orderFilter: state.order.filter,
+    nameFilter: state.name.filter,
+    formFilter: state.form.filter,
+    typeFilterOne: state.type.filterOne,
+    typeFilterTwo: state.type.filterTwo,
+    areaFilter: state.area.filter,
   };
 };
 

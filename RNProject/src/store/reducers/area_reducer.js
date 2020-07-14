@@ -13,6 +13,7 @@ import {
   
   const initialState = {
     areaSelect: DASHES,
+    filter: 4,
   };
   
   const areaReducer = (state = initialState, action) => {
@@ -21,30 +22,35 @@ import {
         return {
           ...state,
           areaSelect: Johto,
+          filter: 1,
         };
   
      case AREA_SELECT_UNKNOWN:
         return {
           ...state,
           areaSelect: Unknown,
+          filter: 2,
         };
 
       case AREA_SELECT_KANTO:
         return {
           ...state,
           areaSelect: Kanto,
+          filter: 3,
         };
   
       case AREA_SELECT_DASHES:
         return {
           ...state,
           areaSelect: DASHES,
+          filter: 4,
         };
   
       case AREA_SELECT_RESET:
         return {
           ...state,
           areaSelect: initialState.areaSelect,
+          filter: initialState.filter,
         };
   
       default:

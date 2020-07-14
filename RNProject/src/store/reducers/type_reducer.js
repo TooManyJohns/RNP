@@ -42,6 +42,8 @@ import Dragon from "assets/search/typeFilter/types/Dragon.png";
 const initialState = {
   typeSelectOne: Dashes,
   typeSelectTwo: Dashes,
+  filterOne: 10,
+  filterTwo: 10,
 };
 
 const typeReducer = (state = initialState, action) => {
@@ -51,6 +53,8 @@ const typeReducer = (state = initialState, action) => {
         ...state,
         typeSelectOne: Normal,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 1,
+        filerTwo: state.filterOne
       };
 
     case TYPE_SELECT_GROUND:
@@ -58,6 +62,8 @@ const typeReducer = (state = initialState, action) => {
         ...state,
         typeSelectOne: Ground,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 2,
+        filerTwo: state.filterOne
       };
 
     case TYPE_SELECT_STEEL:
@@ -65,6 +71,8 @@ const typeReducer = (state = initialState, action) => {
         ...state,
         typeSelectOne: Steel,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 3,
+        filerTwo: state.filterOne
       };
 
     case TYPE_SELECT_ELECTRIC:
@@ -72,6 +80,8 @@ const typeReducer = (state = initialState, action) => {
         ...state,
         typeSelectOne: Electric,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 4,
+        filerTwo: state.filterOne
       };
 
     case TYPE_SELECT_DARK:
@@ -79,6 +89,8 @@ const typeReducer = (state = initialState, action) => {
         ...state,
         typeSelectOne: Dark,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 5,
+        filerTwo: state.filterOne
       };
 
     case TYPE_SELECT_FIGHT:
@@ -86,6 +98,8 @@ const typeReducer = (state = initialState, action) => {
         ...state,
         typeSelectOne: Fight,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 6,
+        filerTwo: state.filterOne
       };
 
     case TYPE_SELECT_ROCK:
@@ -93,6 +107,8 @@ const typeReducer = (state = initialState, action) => {
         ...state,
         typeSelectOne: Rock,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 7,
+        filerTwo: state.filterOne
       };
 
     case TYPE_SELECT_FIRE:
@@ -100,6 +116,8 @@ const typeReducer = (state = initialState, action) => {
         ...state,
         typeSelectOne: Fire,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 8,
+        filerTwo: state.filterOne
       };
 
     case TYPE_SELECT_PSYCHIC:
@@ -107,6 +125,8 @@ const typeReducer = (state = initialState, action) => {
         ...state,
         typeSelectOne: Psychic,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 9,
+        filerTwo: state.filterOne
       };
 
     case TYPE_SELECT_DASHES:
@@ -114,6 +134,8 @@ const typeReducer = (state = initialState, action) => {
         ...state,
         typeSelectOne: Dashes,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 10,
+        filerTwo: state.filterOne
       };
 
     case TYPE_SELECT_FLYING:
@@ -121,54 +143,72 @@ const typeReducer = (state = initialState, action) => {
         ...state,
         typeSelectOne: Flying,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 11,
+        filerTwo: state.filterOne
       };
     case TYPE_SELECT_BUG:
       return {
         ...state,
         typeSelectOne: Bug,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 12,
+        filerTwo: state.filterOne
       };
     case TYPE_SELECT_WATER:
       return {
         ...state,
         typeSelectOne: Water,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 13,
+        filerTwo: state.filterOne
       };
     case TYPE_SELECT_ICE:
       return {
         ...state,
         typeSelectOne: Ice,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 14,
+        filerTwo: state.filterOne
       };
     case TYPE_SELECT_POISON:
       return {
         ...state,
         typeSelectOne: Poison,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 15,
+        filerTwo: state.filterOne
       };
     case TYPE_SELECT_GHOST:
       return {
         ...state,
         typeSelectOne: Ghost,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 16,
+        filerTwo: state.filterOne
       };
     case TYPE_SELECT_GRASS:
       return {
         ...state,
         typeSelectOne: Grass,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 17,
+        filerTwo: state.filterOne
       };
     case TYPE_SELECT_DRAGON:
       return {
         ...state,
         typeSelectOne: Dragon,
         typeSelectTwo: state.typeSelectOne,
+        filterOne: 18,
+        filerTwo: state.filterOne
       };
     case TYPE_SELECT_RESET:
       return {
         ...state,
         typeSelectOne: initialState.typeSelectOne,
         typeSelectTwo: initialState.typeSelectTwo,
+        filterOne: initialState.filterOne,
+        filerTwo: initialState.filterTwo
       };
 
     default:
