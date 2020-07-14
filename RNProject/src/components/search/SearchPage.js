@@ -69,7 +69,7 @@ class SearchPage extends Component {
     const filterSelection = [
       {
         orderFilter: this.props.orderFilter,
-        nameFilter: this.props.nameSelect,
+        nameFilter: this.props.nameFilter,
         formFilter: this.props.formFilter,
         typeOneFilter: this.props.typeFilterOne,
         typeTwoFilter: this.props.typeFilterTwo,
