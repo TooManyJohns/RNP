@@ -95,7 +95,7 @@ class SearchPage extends Component {
               <View style={sty_SearchPage.orderBtn}>
                 <TouchableOpacity
                   style={sty_SearchPage.orderClickableCtn}
-                  onPress={() => this.orderClicked(this.props.orderSelect)}
+                  onPress={() => this.orderClicked(this.props.orderFilter)}
                 >
                   <View style={sty_SearchPage.genericBtnTopBtm}></View>
                   <View style={sty_SearchPage.genericBtnMiddle}>
@@ -118,7 +118,7 @@ class SearchPage extends Component {
                   <View style={sty_SearchPage.nameCtn}>
                     <TouchableOpacity
                       style={sty_SearchPage.nameTouchableCtn}
-                      onPress={() => this.nameClicked(this.props.nameSelect)}
+                      onPress={() => this.nameClicked(this.props.nameFilter)}
                     >
                       <View style={sty_SearchPage.nameButtonCtnSide}></View>
                       <View style={sty_SearchPage.nameTxtCtn}>
@@ -138,7 +138,7 @@ class SearchPage extends Component {
                   <View style={sty_SearchPage.typeBarCtnMid}>
                     <View style={sty_SearchPage.typeBarCtnMidL}></View>
                     <TouchableOpacity
-                      onPress={() => this.typeClicked(this.props.typeSelectOne, this.props.typeSelectTwo)}
+                      onPress={() => this.typeClicked(this.props.typeFilterOne, this.props.typeFilterTwo)}
                       style={sty_SearchPage.typeBtnCtn}
                     >
                       <View style={sty_SearchPage.typeBtnCtnTopBtm}></View>
@@ -154,7 +154,7 @@ class SearchPage extends Component {
                     </TouchableOpacity>
                     <View style={sty_SearchPage.typeBarCtnMidMid}></View>
                     <TouchableOpacity
-                      onPress={() => this.typeClicked(this.props.typeSelectOne, this.props.typeSelectTwo)}
+                      onPress={() => this.typeClicked(this.props.typeFilterOne, this.props.typeFilterTwo)}
                       style={sty_SearchPage.typeBtnCtn}
                     >
                       <View style={sty_SearchPage.typeBtnCtnTopBtm}></View>
@@ -179,7 +179,7 @@ class SearchPage extends Component {
                 <View style={sty_SearchPage.formSectionMid}>
                   <View style={sty_SearchPage.formSectionMidL}></View>
                   <TouchableOpacity
-                    onPress={() => this.formClicked(this.props.formSelect)}
+                    onPress={() => this.formClicked(this.props.formFilter)}
                     style={sty_SearchPage.formBtnCtn}
                   >
                     <Image
@@ -199,7 +199,7 @@ class SearchPage extends Component {
                 <View style={sty_SearchPage.areaRowCtnMid}>
                   <View style={sty_SearchPage.areaRowCtnMidL}></View>
                   <TouchableOpacity
-                    onPress={() => this.areaClicked(this.props.areaSelect)}
+                    onPress={() => this.areaClicked(this.props.areaFilter)}
                     style={sty_SearchPage.areaBtn}
                   >
                     <View style={sty_SearchPage.areaBtnTopBtm}></View>

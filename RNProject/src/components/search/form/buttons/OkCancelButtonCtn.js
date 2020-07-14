@@ -41,71 +41,71 @@ class OkCancelButtonCtn extends Component {
   cancelClicked = (formIdInput) => {
     console.log(formIdInput);
     switch (formIdInput) {
-      case 70:
+      case 1:
         return (
           this.props.formSelectHeadFunction() && this.props.navigation.goBack()
         );
-      case 71:
+      case 2:
         return (
           this.props.formSelectSerpentineBodyFunction() &&
             this.props.navigation.goBack()
         );
-      case 72:
+      case 3:
         return (
           this.props.formSelectFinsFunction() && this.props.navigation.goBack()
         );
-      case 73:
+      case 4:
         return (
           this.props.formSelectHeadAndArmsFunction() && this.props.navigation.goBack()
         );
-      case 74:
+      case 5:
         return (
           this.props.formSelectHeadAndBaseFunction() && this.props.navigation.goBack()
         );
-      case 75:
+      case 6:
         return (
           this.props.formSelectBipedalTailedFormFunction() &&
             this.props.navigation.goBack()
         );
-      case 76:
+      case 7:
         return (
           this.props.formSelectHeadAndLegsFunction() && this.props.navigation.goBack()
         );
-      case 77:
+      case 8:
         return (
           this.props.formSelectQuadrupedBodyFunction() && this.props.navigation.goBack()
         );
-      case 78:
+      case 9:
         return (
           this.props.formSelectSinglePairOfWingsFunction() &&
             this.props.navigation.goBack()
         );
-      case 79:
+      case 10:
         return (
           this.props.formSelectTentaclesOrMultipedBodyFunction() &&
             this.props.navigation.goBack()
         );
-      case 80:
+      case 11:
         return (
           this.props.formSelectMultipleBodiesFunction() &&
             this.props.navigation.goBack()
         );
-      case 81:
+      case 12:
         return (
           this.props.formSelectBipedalTaillessFormFunction() &&
             this.props.navigation.goBack()
         );
-      case 82:
+      case 13:
         return (
           this.props.formSelectTwoOrMorePairsOfWingsFunction() &&
             this.props.navigation.goBack()
         );
-      case 83:
+      case 14:
         return (
           this.props.formSelectInsectoidBodyFunction() &&
             this.props.navigation.goBack()
         );
-      case 84:
+      case 15:
         return (
           this.props.formSelectBlankEntryFunction() &&
             this.props.navigation.goBack()

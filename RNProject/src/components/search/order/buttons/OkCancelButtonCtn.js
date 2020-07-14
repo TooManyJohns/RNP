@@ -23,17 +23,17 @@ class OkCancelButtonCtn extends Component {
 
   cancelClicked = (orderIdInput) => {
     switch (orderIdInput) {
-      case 34:
+      case 1:
         return this.props.orderSelectNumericalFunction() && this.props.navigation.goBack();
-      case 35:
+      case 2:
         return this.props.orderSelectAtoZFunction() && this.props.navigation.goBack();
-      case 36:
+      case 3:
         return this.props.orderSelectHeaviestFunction() && this.props.navigation.goBack();
-      case 37:
+      case 4:
         return this.props.orderSelectLightestFunction() && this.props.navigation.goBack();
-      case 38:
+      case 5:
         return this.props.orderSelectTallestFunction() && this.props.navigation.goBack();
-      case 39:
+      case 6:
         return this.props.orderSelectSmallestFunction() && this.props.navigation.goBack();
     }
   };

@@ -52,111 +52,111 @@ class OkCancelButtonCtn extends Component {
 
   cancelClicked = (nameIdInput) => {
     switch (nameIdInput) {
-      case 42:
+      case 1:
         return (
           this.props.nameSelectAFunction() && this.props.navigation.goBack()
         );
-      case 43:
+      case 2:
         return (
           this.props.nameSelectBFunction() && this.props.navigation.goBack()
         );
-      case 44:
+      case 3:
         return (
           this.props.nameSelectCFunction() && this.props.navigation.goBack()
         );
-      case 45:
+      case 4:
         return (
           this.props.nameSelectDFunction() && this.props.navigation.goBack()
         );
-      case 46:
+      case 5:
         return (
           this.props.nameSelectEFunction() && this.props.navigation.goBack()
         );
-      case 47:
+      case 6:
         return (
           this.props.nameSelectFFunction() && this.props.navigation.goBack()
         );
-      case 48:
+      case 7:
         return (
           this.props.nameSelectGFunction() && this.props.navigation.goBack()
         );
-      case 49:
+      case 8:
         return (
           this.props.nameSelectHFunction() && this.props.navigation.goBack()
         );
-      case 50:
+      case 9:
         return (
           this.props.nameSelectIFunction() && this.props.navigation.goBack()
         );
-      case 51:
+      case 10:
         return (
           this.props.nameSelectJFunction() && this.props.navigation.goBack()
         );
-      case 52:
+      case 11:
         return (
           this.props.nameSelectKFunction() && this.props.navigation.goBack()
         );
-      case 53:
+      case 12:
         return (
           this.props.nameSelectLFunction() && this.props.navigation.goBack()
         );
-      case 54:
+      case 13:
         return (
           this.props.nameSelectMFunction() && this.props.navigation.goBack()
         );
-      case 55:
+      case 14:
         return (
           this.props.nameSelectNFunction() && this.props.navigation.goBack()
         );
-      case 56:
+      case 15:
         return (
           this.props.nameSelectOFunction() && this.props.navigation.goBack()
         );
-      case 57:
+      case 16:
         return (
           this.props.nameSelectPFunction() && this.props.navigation.goBack()
         );
-      case 58:
+      case 17:
         return (
           this.props.nameSelectQFunction() && this.props.navigation.goBack()
         );
-      case 59:
+      case 18:
         return (
           this.props.nameSelectRFunction() && this.props.navigation.goBack()
         );
-      case 60:
+      case 19:
         return (
           this.props.nameSelectSFunction() && this.props.navigation.goBack()
         );
-      case 61:
+      case 20:
         return (
           this.props.nameSelectTFunction() && this.props.navigation.goBack()
         );
-      case 62:
+      case 21:
         return (
           this.props.nameSelectUFunction() && this.props.navigation.goBack()
         );
-      case 63:
+      case 22:
         return (
           this.props.nameSelectVFunction() && this.props.navigation.goBack()
         );
-      case 64:
+      case 23:
         return (
           this.props.nameSelectWFunction() && this.props.navigation.goBack()
         );
-      case 65:
+      case 24:
         return (
           this.props.nameSelectXFunction() && this.props.navigation.goBack()
         );
-      case 66:
+      case 25:
         return (
           this.props.nameSelectYFunction() && this.props.navigation.goBack()
         );
-      case 67:
+      case 26:
         return (
           this.props.nameSelectZFunction() && this.props.navigation.goBack()
         );
-      case 68:
+      case 27:
         return (
           this.props.nameSelectDASHFunction() && this.props.navigation.goBack()
         );

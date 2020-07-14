@@ -45,157 +45,157 @@ class OkCancelButtonCtn extends Component {
     //console.log(typeIdOne, typeIdTwo);
     let isTwoDone = false;
     switch (typeIdTwo) {
-      case 86:
+      case 1:
         this.props.typeSelectNormalFunction();
         isTwoDone = true;
         break;
-      case 87:
+      case 2:
         this.props.typeSelectGroundFunction();
         isTwoDone = true;
         break;
-      case 88:
+      case 3:
         this.props.typeSelectSteelFunction();
         isTwoDone = true;
         break;
-      case 89:
+      case 4:
         this.props.typeSelectElectricFunction();
         isTwoDone = true;
         break;
-      case 90:
+      case 5:
         this.props.typeSelectDarkFunction();
         isTwoDone = true;
         break;
-      case 91:
+      case 6:
         this.props.typeSelectFightFunction();
         isTwoDone = true;
         break;
-      case 92:
+      case 7:
         this.props.typeSelectRockFunction();
         isTwoDone = true;
         break;
-      case 93:
+      case 8:
         this.props.typeSelectFireFunction();
         isTwoDone = true;
         break;
-      case 94:
+      case 9:
         this.props.typeSelectPsychicFunction();
         isTwoDone = true;
         break;
-      case 95:
+      case 10:
         this.props.typeSelectDashesFunction();
         isTwoDone = true;
         break;
-      case 96:
+      case 11:
         this.props.typeSelectFlyingFunction();
         isTwoDone = true;
         break;
-      case 97:
+      case 12:
         this.props.typeSelectBugFunction();
         isTwoDone = true;
         break;
-      case 98:
+      case 13:
         this.props.typeSelectWaterFunction();
         isTwoDone = true;
         break;
-      case 99:
+      case 14:
         this.props.typeSelectIceFunction();
         isTwoDone = true;
         break;
-      case 100:
+      case 15:
         this.props.typeSelectPoisonFunction();
         isTwoDone = true;
         break;
-      case 101:
+      case 16:
         this.props.typeSelectGhostFunction();
         isTwoDone = true;
         break;
-      case 102:
+      case 17:
         this.props.typeSelectGrassFunction();
         isTwoDone = true;
         break;
-      case 103:
+      case 18:
         this.props.typeSelectDragonFunction();
         isTwoDone = true;
         break;
     }
     if (isTwoDone === true) {
     switch (typeIdOne) {
-      case 86:
+      case 1:
         return (
           this.props.typeSelectNormalFunction() &&
           this.props.navigation.goBack()
         );
-      case 87:
+      case 2:
         return (
           this.props.typeSelectGroundFunction() &&
           this.props.navigation.goBack()
         );
-      case 88:
+      case 3:
         return (
           this.props.typeSelectSteelFunction() && this.props.navigation.goBack()
         );
-      case 89:
+      case 4:
         return (
           this.props.typeSelectElectricFunction() &&
           this.props.navigation.goBack()
         );
-      case 90:
+      case 5:
         return (
           this.props.typeSelectDarkFunction() && this.props.navigation.goBack()
         );
-      case 91:
+      case 6:
         return (
           this.props.typeSelectFightFunction() && this.props.navigation.goBack()
         );
-      case 92:
+      case 7:
         return (
           this.props.typeSelectRockFunction() && this.props.navigation.goBack()
         );
-      case 93:
+      case 8:
         return (
           this.props.typeSelectFireFunction() && this.props.navigation.goBack()
         );
-      case 94:
+      case 9:
         return (
           this.props.typeSelectPsychicFunction() &&
           this.props.navigation.goBack()
         );
-      case 95:
+      case 10:
         return (
           this.props.typeSelectDashesFunction() &&
           this.props.navigation.goBack()
         );
-      case 96:
+      case 11:
         return (
           this.props.typeSelectFlyingFunction() &&
           this.props.navigation.goBack()
         );
-      case 97:
+      case 12:
         return (
           this.props.typeSelectBugFunction() && this.props.navigation.goBack()
         );
-      case 98:
+      case 13:
         return (
           this.props.typeSelectWaterFunction() && this.props.navigation.goBack()
         );
-      case 99:
+      case 14:
         return (
           this.props.typeSelectIceFunction() && this.props.navigation.goBack()
         );
-      case 100:
+      case 15:
         return (
           this.props.typeSelectPoisonFunction() &&
           this.props.navigation.goBack()
         );
-      case 101:
+      case 16:
         return (
           this.props.typeSelectGhostFunction() && this.props.navigation.goBack()
         );
-      case 102:
+      case 17:
         return (
           this.props.typeSelectGrassFunction() && this.props.navigation.goBack()
         );
-      case 103:
+      case 18:
         return (
           this.props.typeSelectDragonFunction() &&
           this.props.navigation.goBack()

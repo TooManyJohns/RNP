@@ -32,16 +32,16 @@ class OkCancelButtonCtn extends Component {
     const { navigate } = this.props.navigation;
     console.log(areaIdInput)
     switch (areaIdInput) {
-      case 105:
+      case 1:
         console.log("Cancelled, reset to Johto");
         return this.props.areaSelectJohtoFunction() && this.props.navigation.goBack();
-      case 106:
+      case 2:
         console.log("Cancelled, reset to Unknown");
         return this.props.areaSelectUnknownFunction() && this.props.navigation.goBack();
-      case 107:
+      case 3:
         console.log("Cancelled, reset to Kanto");
         return this.props.areaSelectKantoFunction() && this.props.navigation.goBack();
-      case 108: //DASHES (Default, initialState)
+      case 4: //DASHES (Default, initialState)
         console.log("Cancelled, reset to dashes");
         return this.props.areaSelectDASHESFunction() && this.props.navigation.goBack();
       }
