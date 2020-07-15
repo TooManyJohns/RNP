@@ -3,11 +3,16 @@ import { createStackNavigator } from 'react-navigation-stack'
 import PokemonList from 'components/PokemonList'
 import HomePage from 'components/HomePage'
 import SearchPage from 'components/search/SearchPage'
+
+//Select Screens
 import OrderSelect from 'components/search/order/OrderSelect'
 import NameSelect from 'components/search/name/NameSelect'
 import FormSelect from 'components/search/form/FormSelect'
 import TypeSelect from 'components/search/type/TypeSelect'
 import AreaSelect from 'components/search/area/AreaSelect'
+
+//Details Screens
+import AreaDetails from 'components/details/area/AreaDetails'
 
 export const StackNavigator =  createStackNavigator({
   Home: { 
@@ -38,6 +43,9 @@ export const StackNavigator =  createStackNavigator({
   },
   Area: {
     screen: AreaSelect
+  },
+  AreaDetailScreen: {
+    screen: AreaDetails
   }
 }, 
 {
