@@ -6,6 +6,8 @@ import BottomBorder from "components/borders/PokedexBottomBorder";
 import img_topScr from "assets/details/area/topDetailsArea.png";
 import img_btmScr from "assets/details/area/btmDetailsArea.png";
 
+import sty_AreaDetails from "styles/AreaDetailsStyle"
+
 import { View, ImageBackground } from "react-native";
 
 export default class HomePage extends Component {
@@ -19,9 +21,24 @@ export default class HomePage extends Component {
                 height: undefined,
                 width: "100%",
                 aspectRatio: 256 / 192,
+                flexDirection:'row'
             }} 
             source={img_topScr}
-            ></ImageBackground>
+            >
+              <View //LEFT SIDE TOP CTN
+              style={{flex:2, backgroundColor:''}}>
+                <View style={sty_AreaDetails.areaTopLeftCtn}></View>
+                <View style={{flex:0.3, backgroundColor:'red'}}></View>
+                <View style={{flex:0.6, backgroundColor:''}}></View>
+                <View style={{flex:1.1, backgroundColor:'yellow'}}></View>
+              </View>
+
+              <View  //RIGHT SIDE TOP CTN
+              style={{flex:5.4, backgroundColor:'blue'}}></View>
+            </ImageBackground>
+
+
+
             <ImageBackground 
             style=
             {{        
