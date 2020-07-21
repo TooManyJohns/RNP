@@ -87,7 +87,10 @@ export default StyleSheet.create({
     },
     routeSelectionCtn: {
         flex:5,
-        flexDirection:'row'
+        flexDirection:'row',
+        alignItems:'center',
+        alignContent:'center',
+        alignSelf:'center',
     },
     routeSelectionCtn: {
         flex:5,
@@ -99,7 +102,13 @@ export default StyleSheet.create({
     routeSelectionCtnScroller: {
         flex:2
     },
-
+    routeText: {
+        color: "grey", //placeholder
+        paddingLeft: 10,
+        paddingRight: 10,
+        fontSize: 30,
+        fontFamily: "Pokmon-DS-Font",
+      },
 
     //front of bottom screen
     

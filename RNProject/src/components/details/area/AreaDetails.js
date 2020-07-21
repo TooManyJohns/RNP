@@ -16,9 +16,29 @@ import {
   Text,
   Image,
   TouchableOpacity,
+  FlatList,
 } from "react-native";
 
+const testRoutes = [
+  {
+    name: "SHOW ALL",
+    id:0,
+  },
+  {
+    name: "ROUTE 27",
+    id:1,
+  },
+];
+
 export default class HomePage extends Component {
+  constructor() {
+    super();
+    this.state = {
+      routePressed: 0, //initially will always be SHOW ALL
+
+    };
+  }
+
   timeOfDayClicked = (timeOfDay) => {
     switch (timeOfDay) {
       case 1:
@@ -33,7 +53,14 @@ export default class HomePage extends Component {
     }
   };
 
+  routeSelected(id) {
+    this.setState({
+        routePressed: id
+    });
+  }
+
   render() {
+
     return (
       <View style={{ flex: 1 }}>
         <TopBorder></TopBorder>
@@ -97,7 +124,23 @@ export default class HomePage extends Component {
               <View style={sty_AreaDetails.timeOfDaySwitcherCtnBtm}></View>
             </View>
             <View style={sty_AreaDetails.routeSelectionCtn}>
-              <View style={sty_AreaDetails.routeSelection}></View>
+              <View style={sty_AreaDetails.routeSelection}>
+                <View style={{flex:0.6}}></View>
+                    <FlatList
+                data={testRoutes}
+                renderItem={({ item }) => (
+                  <View key={item.name} style={{flex:1,alignItems:'center',borderColor: this.state.routePressed  === item.id ? 'red' : 'transparent', borderWidth:1}}>
+                    <TouchableOpacity
+                      onPress={() => this.routeSelected(item.id)}
+                      style={{flex:1}}
+                    >
+                      <Text style={sty_AreaDetails.routeText}>{item.name}</Text>
+                    </TouchableOpacity>
+                  </View>
+                )}
+                keyExtractor={(item) => item.name}
+              />
+              </View>
               <View style={sty_AreaDetails.routeSelectionCtnScroller}></View>
             </View>
           </View>

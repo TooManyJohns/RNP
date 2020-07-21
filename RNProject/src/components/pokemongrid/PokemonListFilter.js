@@ -10,12 +10,12 @@ const numColumns = 5;
 
 const formatGrid = (data, numColumns) => {
   const fullRows = Math.floor(data.length / numColumns);
-  let elementsLastRow = ((data.length - fullRows * numColumns));
+  let elementsLastRow = data.length - fullRows * numColumns;
   while (elementsLastRow !== numColumns && elementsLastRow !== 0) {
     data.push({ key: `blank-${elementsLastRow}`, empty: true });
     elementsLastRow++;
   }
-  data.push({key: `blank-${elementsLastRow}`, empty: true })
+  data.push({ key: `blank-${elementsLastRow}`, empty: true });
   return data;
 };
 
@@ -555,7 +555,21 @@ export default class PokemonListFilter extends Component {
             numColumns
           )}
           renderItem={({ item }) => (
-            <View key={item.name} style={sty_BtmCtn.indexContainer}>
+            <View
+              key={item.name}
+              style={{
+                flexDirection: "row",
+                alignContent: "flex-start",
+                backgroundColor: "#F7FFFF",
+                borderWidth: 1,
+                borderColor:
+                  this.props.pokePressed === item.index ? "red" : "#B0B1B1",
+                width: 50,
+                height: undefined,
+                aspectRatio: 1 / 1,
+                flex: 1,
+              }}
+            >
               <TouchableOpacity
                 onPress={() => this.props.indexClicked(item)}
                 style={sty_BtmCtn.buttonContainer}

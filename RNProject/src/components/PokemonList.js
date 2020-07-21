@@ -33,6 +33,7 @@ export default class PokemonList extends Component {
       search: null,
       showInfo: false,
       isLoading: true,
+      pokePressed: "001",
     };
   }
 
@@ -86,6 +87,7 @@ export default class PokemonList extends Component {
       pokeSelected: testList[0],
       isLoading: false,
       cryURL: testList[0].cry,
+      buttonClicked: testList[0].index,
     });
     console.log("Just took data from Firestore!");
   };
@@ -94,14 +96,14 @@ export default class PokemonList extends Component {
     this.setState({ showInfo: !this.state.showInfo });
     this.setState({ pokeSelected: pkmn });
     this.setState({ cryURL: pkmn.cry });
+    this.setState({ pokePressed: pkmn.index });
   };
 
   selectionPokeBar = (selectedPokemonInput) => {
     if (selectedPokemonInput.name === undefined) {
-      return ""
-    }
-    else {
-      return selectedPokemonInput.name.toUpperCase()
+      return "";
+    } else {
+      return selectedPokemonInput.name.toUpperCase();
     }
   };
 
@@ -138,10 +140,11 @@ export default class PokemonList extends Component {
             ></BottomLeftSideBar>
             <PokemonListFilter
               pokemonList={this.state.pokemon}
+              pokePressed={this.state.pokePressed}
               filterSelection={filterSelection}
               indexClicked={this.indexClicked}
             ></PokemonListFilter>
-            <View style={{flex:1.05}}></View>
+            <View style={{ flex: 1.05 }}></View>
           </View>
           <View //FRONT OF SCREEN OVERLAPPING THE GRID USING ZINDEX
             style={{ flex: 1, zIndex: 1, position: "relative" }}
