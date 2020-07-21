@@ -70,7 +70,8 @@ export default StyleSheet.create({
         aspectRatio: 256 / 192,
     },
     regionBtnCtn: {
-        flex:1
+        flex:1,
+        flexDirection:'row'
     },
     timeOfDaySwitcherNRouteSelectionCtn:{
         flex:6,

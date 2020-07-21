@@ -10,6 +10,8 @@ import img_TESTSPRITE from "assets/details/area/TESTSPRITE.png";
 
 import sty_AreaDetails from "styles/AreaDetailsStyle";
 
+import RegionButtons from "./components/RegionButtons"
+
 import {
   View,
   ImageBackground,
@@ -22,11 +24,11 @@ import {
 const testRoutes = [
   {
     name: "SHOW ALL",
-    id:0,
+    id: 0,
   },
   {
     name: "ROUTE 27",
-    id:1,
+    id: 1,
   },
 ];
 
@@ -35,32 +37,27 @@ export default class HomePage extends Component {
     super();
     this.state = {
       routePressed: 0, //initially will always be SHOW ALL
-
+      weatherDisplay: "Morning"
     };
   }
 
-  timeOfDayClicked = (timeOfDay) => {
-    switch (timeOfDay) {
-      case 1:
-        console.log("Morning");
-        break;
-      case 2:
-        console.log("Day");
-        break;
-      case 3:
-        console.log("Night");
-        break;
-    }
-  };
-
   routeSelected(id) {
     this.setState({
-        routePressed: id
+      routePressed: id,
     });
   }
 
-  render() {
+  weatherSelected(timeOfDay) {
+    this.setState({
+      weatherDisplay: timeOfDay
+    })
+  }
 
+  regionSelected(region){
+    console.log(region)
+  }
+
+  render() {
     return (
       <View style={{ flex: 1 }}>
         <TopBorder></TopBorder>
@@ -71,7 +68,7 @@ export default class HomePage extends Component {
             <View style={sty_AreaDetails.areaLogoTopLeftCtn}></View>
             <View style={sty_AreaDetails.timeOfDayCtn}>
               <View style={sty_AreaDetails.timeOfDayCtnBtmTop}></View>
-              <Text style={sty_AreaDetails.timeOfDayFnt}>Morning</Text>
+              <Text style={sty_AreaDetails.timeOfDayFnt}>{this.state.weatherDisplay}</Text>
               <View style={sty_AreaDetails.timeOfDayCtnBtmTop}></View>
             </View>
             <View style={sty_AreaDetails.topLeftCtnSpacer}></View>
@@ -105,41 +102,59 @@ export default class HomePage extends Component {
           style={sty_AreaDetails.bottomScrCtn}
           source={img_btmScr}
         >
-          <View style={sty_AreaDetails.regionBtnCtn}></View>
+          <RegionButtons
+            regionSelected={this.regionSelected}
+          ></RegionButtons>
           <View style={sty_AreaDetails.timeOfDaySwitcherNRouteSelectionCtn}>
             <View style={sty_AreaDetails.timeOfDaySwitcherCtn}>
               <View style={sty_AreaDetails.timeOfDaySwitcherCtnTop}></View>
               <TouchableOpacity
-                onPress={() => this.timeOfDayClicked(1)}
+                onPress={() => this.weatherSelected("Morning")}
                 style={{ flex: 1, backgroundColor: "yellow" }}
               ></TouchableOpacity>
               <TouchableOpacity
-                onPress={() => this.timeOfDayClicked(2)}
+                onPress={() => this.weatherSelected("Day")}
                 style={{ flex: 1, backgroundColor: "orange" }}
               ></TouchableOpacity>
               <TouchableOpacity
-                onPress={() => this.timeOfDayClicked(3)}
+                onPress={() => this.weatherSelected("Night")}
                 style={{ flex: 1, backgroundColor: "darkblue" }}
               ></TouchableOpacity>
               <View style={sty_AreaDetails.timeOfDaySwitcherCtnBtm}></View>
             </View>
             <View style={sty_AreaDetails.routeSelectionCtn}>
               <View style={sty_AreaDetails.routeSelection}>
-                <View style={{flex:0.6}}></View>
-                    <FlatList
-                data={testRoutes}
-                renderItem={({ item }) => (
-                  <View key={item.name} style={{flex:1,alignItems:'center',borderColor: this.state.routePressed  === item.id ? 'red' : 'transparent', borderWidth:1}}>
-                    <TouchableOpacity
-                      onPress={() => this.routeSelected(item.id)}
-                      style={{flex:1}}
-                    >
-                      <Text style={sty_AreaDetails.routeText}>{item.name}</Text>
-                    </TouchableOpacity>
-                  </View>
-                )}
-                keyExtractor={(item) => item.name}
-              />
+                <View style={{ flex: 0.4 }}></View>
+                <View style={{ flex: 1, flexDirection: "row" }}>
+                  <View style={{ flex: 0.06 }}></View>
+                  <FlatList
+                    data={testRoutes}
+                    renderItem={({ item }) => (
+                      <View
+                        key={item.name}
+                        style={{
+                          flex: 1,
+                          alignItems: "center",
+                          borderColor:
+                            this.state.routePressed === item.id
+                              ? "red"
+                              : "transparent",
+                          borderWidth: 3,
+                        }}
+                      >
+                        <TouchableOpacity
+                          onPress={() => this.routeSelected(item.id)}
+                          style={{ flex: 1 }}
+                        >
+                          <Text style={sty_AreaDetails.routeText}>
+                            {item.name}
+                          </Text>
+                        </TouchableOpacity>
+                      </View>
+                    )}
+                    keyExtractor={(item) => item.name}
+                  />
+                </View>
               </View>
               <View style={sty_AreaDetails.routeSelectionCtnScroller}></View>
             </View>
