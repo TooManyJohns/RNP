@@ -13,6 +13,8 @@ import AreaSelect from 'components/search/area/AreaSelect'
 
 //Details Screens
 import AreaDetails from 'components/details/area/AreaDetails'
+import SizeDetails from 'components/details/size/SizeDetails'
+import FormsDetails from './src/components/details/forms/FormsDetails'
 
 export const StackNavigator =  createStackNavigator({
   Home: { 
@@ -44,8 +46,14 @@ export const StackNavigator =  createStackNavigator({
   Area: {
     screen: AreaSelect
   },
-  AreaDetailScreen: {
+  AreaDetailsScreen: {
     screen: AreaDetails
+  },
+  SizeDetailsScreen: {
+    screen: SizeDetails
+  },
+  FormsDetailsScreen: {
+    screen: FormsDetails
   }
 }, 
 {

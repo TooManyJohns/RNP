@@ -17,20 +17,20 @@ export default class ButtonSet extends Component {
     this.state = {};
   }
 
-  areaClicked = () => {
-    console.log("Area");
+  areaClicked = (pkmn) => {
+    this.props.navigation.navigate('AreaDetailsScreen', {pkmn: pkmn})   
   };
 
-  sizeClicked = () => {
-    console.log("Size");
+  sizeClicked = (pkmn) => {
+    this.props.navigation.navigate('SizeDetailsScreen', {pkmn: pkmn})   
   };
 
-  formsClicked = () => {
-    console.log("Forms");
+  formsClicked = (pkmn) => {
+    this.props.navigation.navigate('FormsDetailsScreen', {pkmn: pkmn})   
   };
 
-  backClicked = (navigation) => {
-    navigation.goBack();
+  backClicked = () => {
+    this.props.navigation.navigate('Info')   
   };
 
   btnSource = (btnName) => {
@@ -74,7 +74,7 @@ export default class ButtonSet extends Component {
                   backgroundColor:
                     this.props.detailsIndex === 1 ? "grey" : "transparent",
                 }}
-                onPress={() => this.areaClicked()}
+                onPress={() => this.areaClicked(this.props.pkmn)}
               >
                 <Image
                   style={{
@@ -101,7 +101,7 @@ export default class ButtonSet extends Component {
                   backgroundColor:
                     this.props.detailsIndex === 2 ? "grey" : "transparent",
                 }}
-                onPress={() => this.sizeClicked()}
+                onPress={() => this.sizeClicked(this.props.pkmn)}
               >
                 <Image
                   style={{
@@ -128,7 +128,7 @@ export default class ButtonSet extends Component {
                   backgroundColor:
                     this.props.detailsIndex === 3 ? "grey" : "transparent",
                 }}
-                onPress={() => this.formsClicked()}
+                onPress={() => this.formsClicked(this.props.pkmn)}
               >
                 <Image
                   style={{

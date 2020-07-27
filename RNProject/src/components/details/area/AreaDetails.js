@@ -34,7 +34,7 @@ const testRoutes = [
   },
 ];
 
-export default class HomePage extends Component {
+export default class AreaDetails extends Component {
   constructor() {
     super();
     this.state = {
@@ -189,7 +189,7 @@ export default class HomePage extends Component {
             </View>
           </ImageBackground>
 
-          <ButtonSet navigation={navigation} detailsIndex={1}></ButtonSet>
+          <ButtonSet navigation={navigation} detailsIndex={1} pkmn={pkmn}></ButtonSet>
         </View>
         <BottomBorder></BottomBorder>
       </View>

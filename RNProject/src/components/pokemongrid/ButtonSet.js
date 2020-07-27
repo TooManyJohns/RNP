@@ -48,7 +48,7 @@ export default class ButtonSet extends Component {
           </View>
           <View style={{ flex: 1 }}>
             <TouchableOpacity style={{ flex: 1 }}
-              onPress={() => navigate("AreaDetailScreen", {pkmn: pkmn})}   
+              onPress={() => navigate("AreaDetailsScreen", {pkmn: pkmn})}   
               >
               <Image
                 style={sty_BtmCtn.buttonBottom}
