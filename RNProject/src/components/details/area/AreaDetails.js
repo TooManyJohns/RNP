@@ -189,7 +189,7 @@ export default class HomePage extends Component {
             </View>
           </ImageBackground>
 
-          <ButtonSet navigation={navigation}></ButtonSet>
+          <ButtonSet navigation={navigation} detailsIndex={1}></ButtonSet>
         </View>
         <BottomBorder></BottomBorder>
       </View>
