@@ -113,7 +113,12 @@ export default StyleSheet.create({
         fontSize: 30,
         fontFamily: "Pokmon-DS-Font",
       },
-
+      timeOfDayIMGCtn: {
+        flex:1,
+        width: undefined,
+        height: "100%",
+        aspectRatio: 163 / 82,
+      }
     //front of bottom screen
     
 

@@ -6,7 +6,7 @@ import BottomBorder from "components/borders/PokedexBottomBorder";
 import img_topScr from "assets/details/area/topDetailsArea.png";
 import img_btmScr from "assets/details/area/btmDetailsArea.png";
 
-import img_TESTSPRITE from "assets/details/area/TESTSPRITE.png";
+import img_TESTSPRITE from "assets/details/area/SelectTimeOfDay.png";
 
 import sty_AreaDetails from "styles/AreaDetailsStyle";
 
@@ -51,6 +51,12 @@ export default class HomePage extends Component {
     this.setState({
       weatherDisplay: timeOfDay
     })
+  }
+
+  weatherSource(timeOfDay) {
+    if (timeOfDay===this.state.weatherDisplay) {
+      return img_TESTSPRITE
+    }
   }
 
   regionSelected(region){
@@ -115,16 +121,22 @@ export default class HomePage extends Component {
               <View style={sty_AreaDetails.timeOfDaySwitcherCtnTop}></View>
               <TouchableOpacity
                 onPress={() => this.weatherSelected("Morning")}
-                style={{ flex: 1, backgroundColor: "yellow" }}
-              ></TouchableOpacity>
+                style={{ flex: 1}}
+              >
+                <Image style={sty_AreaDetails.timeOfDayIMGCtn} source={this.weatherSource("Morning")}></Image>
+              </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => this.weatherSelected("Day")}
-                style={{ flex: 1, backgroundColor: "orange" }}
-              ></TouchableOpacity>
+                style={{ flex: 1 }}
+              >
+                <Image style={sty_AreaDetails.timeOfDayIMGCtn} source={this.weatherSource("Day")}></Image>
+              </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => this.weatherSelected("Night")}
-                style={{ flex: 1, backgroundColor: "darkblue" }}
-              ></TouchableOpacity>
+                style={{ flex: 1 }}
+              >
+                <Image style={sty_AreaDetails.timeOfDayIMGCtn} source={this.weatherSource("Night")}></Image>
+              </TouchableOpacity>
               <View style={sty_AreaDetails.timeOfDaySwitcherCtnBtm}></View>
             </View>
             <View style={sty_AreaDetails.routeSelectionCtn}>
