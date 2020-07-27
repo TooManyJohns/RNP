@@ -17,6 +17,18 @@ export default class ButtonSet extends Component {
     this.state = {};
   }
 
+  areaClicked = () => {
+    console.log("Area")
+  };
+
+  sizeClicked = () => {
+    console.log("Size")
+  };
+
+  formsClicked = () => {
+    console.log("Forms")
+  };
+
   backClicked = (navigation) => {
     navigation.goBack();
   };
@@ -35,7 +47,6 @@ export default class ButtonSet extends Component {
   };
 
   render() {
-    //const { navigation, pkmn } = this.props;
     //const { navigate } = this.props.navigation;
     return (
       <View //FRONT OF SCREEN OVERLAPPING THE GRID USING ZINDEX
@@ -56,7 +67,9 @@ export default class ButtonSet extends Component {
             <View style={{ flex: 1 }}></View>
             <View style={{ flex: 4, flexDirection: "row" }}>
               <View style={{ flex: 1 }}></View>
-              <TouchableOpacity style={{ flex: 8, alignItems: "center" }}>
+              <TouchableOpacity style={{ flex: 8, alignItems: "center" }}
+                onPress={() => this.areaClicked()}
+              >
                 <Image
                   style={{
                     height: undefined,
@@ -75,7 +88,9 @@ export default class ButtonSet extends Component {
             <View style={{ flex: 1 }}></View>
             <View style={{ flex: 4, flexDirection: "row" }}>
               <View style={{ flex: 1 }}></View>
-              <TouchableOpacity style={{ flex: 8, alignItems: "center" }}>
+              <TouchableOpacity style={{ flex: 8, alignItems: "center" }}
+                onPress={() => this.sizeClicked()}
+              >
                 <Image
                   style={{
                     height: undefined,
@@ -94,7 +109,9 @@ export default class ButtonSet extends Component {
             <View style={{ flex: 1 }}></View>
             <View style={{ flex: 4, flexDirection: "row" }}>
               <View style={{ flex: 1 }}></View>
-              <TouchableOpacity style={{ flex: 8, alignItems: "center" }}>
+              <TouchableOpacity style={{ flex: 8, alignItems: "center" }}
+                onPress={() => this.formsClicked()}
+              >
                 <Image
                   style={{
                     height: undefined,
@@ -113,7 +130,9 @@ export default class ButtonSet extends Component {
             <View style={{ flex: 1 }}></View>
             <View style={{ flex: 4, flexDirection: "row" }}>
               <View style={{ flex: 1 }}></View>
-              <TouchableOpacity style={{ flex: 8, alignItems: "center" }}>
+              <TouchableOpacity style={{ flex: 8, alignItems: "center" }}
+                onPress={() => this.backClicked(this.props.navigation)}
+              >
                 <Image
                   style={{
                     height: undefined,

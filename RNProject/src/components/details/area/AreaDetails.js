@@ -12,7 +12,7 @@ import sty_AreaDetails from "styles/AreaDetailsStyle";
 
 import RegionButtons from "./components/RegionButtons";
 
-import ButtonSet from "./components/ButtonSet";
+import ButtonSet from "../ButtonSet";
 
 import {
   View,
@@ -189,7 +189,7 @@ export default class HomePage extends Component {
             </View>
           </ImageBackground>
 
-          <ButtonSet></ButtonSet>
+          <ButtonSet navigation={navigation}></ButtonSet>
         </View>
         <BottomBorder></BottomBorder>
       </View>
