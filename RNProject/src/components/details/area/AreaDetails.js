@@ -58,6 +58,11 @@ export default class HomePage extends Component {
   }
 
   render() {
+    const {navigation}= this.props
+    const pkmn = navigation.getParam(
+      "pkmn",
+      pkmn
+    );
     return (
       <View style={{ flex: 1 }}>
         <TopBorder></TopBorder>
@@ -78,14 +83,14 @@ export default class HomePage extends Component {
                   <View style={sty_AreaDetails.pokemonSprTopSpacer}></View>
                   <Image
                     style={sty_AreaDetails.pokemonSpr}
-                    source={img_TESTSPRITE}
+                    source={{uri: pkmn.indexSprite}}
                   ></Image>
                 </View>
                 <View style={sty_AreaDetails.pokemonNameCtn}>
                   <Text //take in the pokemonselected props from PokemonList.js
                     style={sty_AreaDetails.pokemonNameFnt}
                   >
-                    BULBASAUR
+                    {pkmn.name.toUpperCase()}
                   </Text>
                 </View>
               </View>

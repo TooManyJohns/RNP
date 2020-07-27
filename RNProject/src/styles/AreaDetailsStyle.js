@@ -60,7 +60,10 @@ export default StyleSheet.create({
         flex:0.15
     },
     pokemonSpr: {
-        flex:1
+        flex:1,
+        height: undefined,
+        width: "100%",
+        aspectRatio: 1 / 1,
     },
 
     //BOTTOM SCREEN
