@@ -69,8 +69,20 @@ export default StyleSheet.create({
     //BOTTOM SCREEN
     bottomScrCtn: {
         height: undefined,
+        width: "100%", 
+        aspectRatio: 256 / 192
+    },
+    behindBottomScrCtn: {
+        height: undefined,
         width: "100%",
         aspectRatio: 256 / 192,
+        zIndex:0,
+        position:'absolute'
+    },
+    frontBottomScrCtn:{
+        flex: 1, 
+        zIndex: 1, 
+        position: "relative"
     },
     regionBtnCtn: {
         flex:1,

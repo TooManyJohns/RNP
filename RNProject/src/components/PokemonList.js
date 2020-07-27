@@ -162,7 +162,6 @@ export default class PokemonList extends Component {
               navigation={this.props.navigation}
               cryURL={this.state.cryURL}
             ></ButtonSet>
-            <View style={{ flex: 0.05 }}></View>
           </View>
         </View>
         <BottomBorder></BottomBorder>
