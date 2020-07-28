@@ -132,6 +132,5 @@ export default StyleSheet.create({
         aspectRatio: 163 / 82,
       }
     //front of bottom screen
-    
 
 })
